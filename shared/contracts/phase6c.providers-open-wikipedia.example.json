@@ -1,0 +1,49 @@
+{
+ "attribution": "Wikipedia contributors, \"Business class\", Wikipedia, The Free Encyclopedia, revision 555, https://en.wikipedia.org/w/index.php?title=Business_class&oldid=555. Text available under CC BY-SA 4.0.",
+ "authors": [],
+ "cache_hit": false,
+ "categories": [
+  "Airline cabin classes"
+ ],
+ "disambiguation": false,
+ "full_text": null,
+ "html_url": null,
+ "label": "Wikipedia (encyclopedia: a tertiary source, edited by volunteers)",
+ "license": "CC BY-SA 4.0",
+ "meta": null,
+ "modified": "2026-03-04T05:06:07Z",
+ "note": "A Wikipedia article: an encyclopedia written by volunteers. Text is shown section by section, as it would be cited.",
+ "pdf_url": null,
+ "permalink": "https://en.wikipedia.org/w/index.php?title=Business_class&oldid=555",
+ "provider": "wikipedia",
+ "published": null,
+ "redirected_from": null,
+ "retrieved_at": "2026-01-01T12:00:00.000000Z",
+ "retrieved_via": "mediawiki-parse",
+ "sections": [
+  {
+   "anchor": null,
+   "canonical": null,
+   "chars": 81,
+   "heading": null,
+   "id": "s0",
+   "level": 0,
+   "page_start": null,
+   "text": "Business class is a travel class on airlines that is more expensive than economy."
+  },
+  {
+   "anchor": "Fares_and_seats",
+   "canonical": null,
+   "chars": 203,
+   "heading": "Fares and seats",
+   "id": "s1",
+   "level": 2,
+   "page_start": null,
+   "text": "Fare class strongly shapes price: a business seat typically costs several times the economy price. Seats available per flight are far fewer in business class, and passengers per flight are fewer as well."
+  }
+ ],
+ "title": "Business class",
+ "url": "https://en.wikipedia.org/wiki/Business_class",
+ "versions": null,
+ "warnings": []
+}

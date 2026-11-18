@@ -1,0 +1,40 @@
+# Secrets and local configuration (never commit)
+.env
+.env.*
+!.env.example
+!config/env.example
+!config/env.production.example
+
+# Local runtime data: development database, generated dev secret, development email outbox
+data/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.eml
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# Node / frontend build output
+node_modules/
+dist/
+.vite/
+coverage/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.log
+
+# Keys and certificates
+*.pem
+*.key

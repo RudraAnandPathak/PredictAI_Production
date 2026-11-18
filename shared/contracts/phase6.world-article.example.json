@@ -1,0 +1,90 @@
+{
+ "author": null,
+ "derived": {
+  "entities": {
+   "entities": [],
+   "figures": {
+    "money": [],
+    "percentages": [],
+    "years": []
+   },
+   "method": "capitalisation-heuristic/1",
+   "note": "Found by capitalisation and cue words, not looked up anywhere. Treat as hints; kinds are only given when the text says so."
+  },
+  "lead": "Officials evacuated 1,200 residents after the river rose 2.4 metres.",
+  "statement": {
+   "basis": "plain wording, no hedge, forecast or opinion marker found",
+   "direction": "up",
+   "kind": "stated",
+   "negated": false,
+   "numbers": [
+    "1200",
+    "2.4"
+   ]
+  },
+  "tone": {
+   "basis": {
+    "negative": [
+     "evacuated",
+     "floods"
+    ],
+    "positive": []
+   },
+   "label": "negative",
+   "method": "word-list-tone/1",
+   "negative": 3.0,
+   "note": "Tone describes how the text is worded, not whether it is true or important.",
+   "positive": 0.0,
+   "score": -0.6
+  },
+  "topics": {
+   "method": "keyword-rules/1",
+   "note": "Labels come from keyword rules, shown as the words that matched. They are a guide to browsing, not a judgement of what the article is about.",
+   "topics": [
+    {
+     "label": "Disasters and weather",
+     "matched": [
+      "evacuated",
+      "flood"
+     ],
+     "share": 1.0,
+     "strength": "moderate",
+     "topic": "disasters"
+    }
+   ]
+  },
+  "version": "world-derive/1"
+ },
+ "domain": "b.example",
+ "duplicate_of": null,
+ "entities": [],
+ "event_id": "b63b7427e0274a9bacbbbf228a7237a7",
+ "expires_at": "2026-01-31T12:00:00Z",
+ "id": "c46a7b53aa1949899952a7c0e444fa45",
+ "language": null,
+ "note": "Only the headline and summary the feed provides are stored. Everything here is the outlet's own wording, quoted; PredictAI has not checked it.",
+ "origin": "external_research",
+ "project_id": "e0c1512ce60e4403a7ff62a2b1d9c765",
+ "published_at": "2025-12-31T12:00:00Z",
+ "publisher": "Outlet B",
+ "quarantine_reason": null,
+ "retrieved_at": "2026-01-01T12:00:00.000000Z",
+ "source_id": "6a512927124245b7a925aeb18648f82b",
+ "statement_kind": "stated",
+ "status": "active",
+ "summary": "Officials evacuated 1,200 residents after the river rose 2.4 metres.",
+ "title": "Floods hit northern village as river rises",
+ "tone": "negative",
+ "topics": [
+  {
+   "label": "Disasters and weather",
+   "matched": [
+    "evacuated",
+    "flood"
+   ],
+   "strength": "moderate",
+   "topic": "disasters"
+  }
+ ],
+ "url": "https://b.example/floods-hit-northern-village-as-river-rises"
+}

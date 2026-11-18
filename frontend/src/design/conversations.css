@@ -1,0 +1,22 @@
+/* Conversations: list + search on the left, the open conversation on the right. Colours come from tokens only. */
+.conv { display: grid; grid-template-columns: minmax(260px, 340px) minmax(0, 1fr); gap: var(--space-4, 1rem); align-items: start; }
+.conv__side { display: grid; gap: var(--space-3, 0.75rem); }
+.conv__group { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin: 0.5rem 0 0.25rem; }
+.conv__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.35rem; }
+.conv__item { width: 100%; text-align: left; display: grid; gap: 0.15rem; padding: 0.6rem 0.75rem; background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: var(--radius-sm); cursor: pointer; }
+.conv__item:hover { border-color: var(--control-border); }
+.conv__item.is-current { border-color: var(--accent); background: var(--surface-2); }
+.conv__title { font-weight: 600; overflow-wrap: anywhere; }
+.conv__preview { color: var(--text-muted); font-size: 0.9rem; overflow-wrap: anywhere; }
+.conv-chat__head { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; align-items: center; justify-content: space-between; }
+.conv-chat__head .card__title { margin: 0; }
+.conv-chat__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.conv-rename { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: end; }
+.conv-thread { display: grid; gap: 0.75rem; max-height: 60vh; overflow-y: auto; padding: 0.75rem 0; }
+.conv-msg { margin: 0; padding: 0.6rem 0.85rem; border-radius: var(--radius-sm); max-width: 100%; overflow-wrap: anywhere; white-space: pre-wrap; }
+.conv-msg--user { justify-self: end; background: var(--surface-2); border: 1px solid var(--border); }
+.conv-msg--assistant { justify-self: start; background: var(--surface); border: 1px solid var(--border); white-space: normal; }
+.conv-msg--assistant p { margin: 0 0 0.4rem; white-space: pre-wrap; }
+.conv-cites { list-style: none; margin: 0.5rem 0 0; padding: 0; display: grid; gap: 0.5rem; font-size: 0.9rem; }
+.conv-cite blockquote { margin: 0.25rem 0 0; padding-left: 0.75rem; border-left: 3px solid var(--border-strong); color: var(--text-muted); }
+@media (max-width: 800px) { .conv { grid-template-columns: minmax(0, 1fr); } .conv-thread { max-height: none; } }

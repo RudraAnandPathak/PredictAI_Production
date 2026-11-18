@@ -1,0 +1,82 @@
+{
+ "items": [
+  {
+   "article_count": 0,
+   "created_at": "2026-01-01T12:00:00.000000Z",
+   "feed_url": "http://127.0.0.1:36569/a.xml",
+   "freshness": "never fetched",
+   "hours_since_fetch": null,
+   "id": "000d91fa1b1840d5a3fdfd48c9698c79",
+   "language": null,
+   "last_error_code": null,
+   "last_fetched_at": null,
+   "last_status": null,
+   "name": "A",
+   "newest_article": null,
+   "policy": {
+    "full_text": false,
+    "item_cap": 50,
+    "min_interval_s": 900,
+    "retention_days": 30,
+    "terms_acknowledged": true
+   },
+   "project_id": "e0c1512ce60e4403a7ff62a2b1d9c765",
+   "publisher": "Outlet A",
+   "quarantined": 0,
+   "status": "active",
+   "updated_at": "2026-01-01T12:00:00.000000Z"
+  },
+  {
+   "article_count": 0,
+   "created_at": "2026-01-01T12:00:00.000000Z",
+   "feed_url": "http://127.0.0.1:36569/b.xml",
+   "freshness": "never fetched",
+   "hours_since_fetch": null,
+   "id": "6a512927124245b7a925aeb18648f82b",
+   "language": null,
+   "last_error_code": null,
+   "last_fetched_at": null,
+   "last_status": null,
+   "name": "B",
+   "newest_article": null,
+   "policy": {
+    "full_text": false,
+    "item_cap": 50,
+    "min_interval_s": 900,
+    "retention_days": 30,
+    "terms_acknowledged": true
+   },
+   "project_id": "e0c1512ce60e4403a7ff62a2b1d9c765",
+   "publisher": "Outlet B",
+   "quarantined": 0,
+   "status": "active",
+   "updated_at": "2026-01-01T12:00:00.000000Z"
+  },
+  {
+   "article_count": 0,
+   "created_at": "2026-01-01T12:00:00.000000Z",
+   "feed_url": "http://127.0.0.1:36569/c.xml",
+   "freshness": "never fetched",
+   "hours_since_fetch": null,
+   "id": "ff2847bfdadf4578a4d751fb75470b07",
+   "language": null,
+   "last_error_code": null,
+   "last_fetched_at": null,
+   "last_status": null,
+   "name": "C",
+   "newest_article": null,
+   "policy": {
+    "full_text": false,
+    "item_cap": 50,
+    "min_interval_s": 900,
+    "retention_days": 30,
+    "terms_acknowledged": true
+   },
+   "project_id": "e0c1512ce60e4403a7ff62a2b1d9c765",
+   "publisher": "Outlet C",
+   "quarantined": 0,
+   "status": "active",
+   "updated_at": "2026-01-01T12:00:00.000000Z"
+  }
+ ]
+}

@@ -1,0 +1,156 @@
+{
+ "config": {
+  "aggregate": "mean",
+  "asset_id": "07ecb8ccf7804355893f38153b8c54ff",
+  "date_column": "day",
+  "entity": null,
+  "label": "Sales vs harbour coverage",
+  "max_lag": 5,
+  "measure": "count",
+  "topic": null,
+  "value_column": "value"
+ },
+ "created_at": "2026-01-01T12:00:00.000000Z",
+ "explanation": {
+  "basis": {
+   "method": "rules",
+   "note": "Written from the calculated result by fixed rules. No figure is added, rounded away or inferred; the technical result above is unchanged.",
+   "numbers_cited": 5
+  },
+  "cautions": [],
+  "kind": "world:influence",
+  "points": [
+   "What this is: a test of whether daily coverage and a daily value from your dataset rise and fall together, at several time offsets.",
+   "What was found: the strongest pattern is at a lag of 2 days, with a rank correlation of 0.98 over 38 days. The chance of a pattern this strong across all lags tested, if there were no real link, is 0.001.",
+   "How it was found: ranks were compared at each offset, and chance was judged by shifting the data in time 999 times (keeping each series' day-to-day persistence), correcting for having looked at many offsets."
+  ],
+  "schema": "predictai.explanation/1",
+  "status": "available",
+  "summary": "Coverage tended to come before the change in your data.",
+  "terms": [
+   {
+    "meaning": "How many days coverage came before (positive) or after (negative) the change in your data.",
+    "term": "lag"
+   },
+   {
+    "meaning": "The data is shifted around in time many times to see how often a pattern this strong appears by chance, while keeping each series' day-to-day persistence.",
+    "term": "permutation test"
+   }
+  ],
+  "title": "Explanation"
+ },
+ "id": "e6dc884427794d6396e72a2cc48db982",
+ "input_hash": "44104accab458c9172f95c113520630a4a6b4d3bce607f2f2880f7d3f1209b68",
+ "integrity_ok": true,
+ "label": "Sales vs harbour coverage",
+ "payload": {
+  "config": {
+   "aggregate": "mean",
+   "asset_id": "07ecb8ccf7804355893f38153b8c54ff",
+   "date_column": "day",
+   "entity": null,
+   "label": "Sales vs harbour coverage",
+   "max_lag": 5,
+   "measure": "count",
+   "topic": null,
+   "value_column": "value"
+  },
+  "coverage_articles": 89,
+  "coverage_days": 40,
+  "coverage_range": [
+   "2025-11-22",
+   "2025-12-31"
+  ],
+  "dataset": {
+   "aggregate": "mean",
+   "asset_id": "07ecb8ccf7804355893f38153b8c54ff",
+   "checksum_sha256": "77924602cc4685f6387262661183fb72852f7d759e952adf0dcbf85f4abc3f6e",
+   "date_column": "day",
+   "name": "sales.csv",
+   "value_column": "value",
+   "version_id": "8735173e2940449aa8bcb11cfff50e85"
+  },
+  "dataset_days": 40,
+  "dataset_rows_used": 40,
+  "dataset_warnings": [],
+  "result": {
+   "alpha": 0.05,
+   "best": {
+    "lag": 2,
+    "n": 38,
+    "p_adjusted": 0.001,
+    "rho": 0.9782
+   },
+   "causal_status": "not established",
+   "differenced": null,
+   "evidence": "temporal",
+   "max_lag": 5,
+   "method": "lagged-spearman-circular-permutation/1",
+   "overlap_days": 40,
+   "permutations_requested": 999,
+   "raw": {
+    "best": {
+     "lag": 2,
+     "n": 38,
+     "p_adjusted": 0.001,
+     "rho": 0.9782
+    },
+    "lags": [
+     {
+      "lag": -5,
+      "n": 35,
+      "p": 0.369,
+      "q": 0.7081,
+      "rho": 0.2449
+     },
+     {
+      "lag": -4,
+      "n": 36,
+      "p": 0.499,
+      "q": 0.7081,
+      "rho": 0.1953
+     },
+     {
+      "lag": -3,
+      "n": 37,
+      "p": 0.931,
+      "q": 1.0,
+      "rho": -0.0456
+     }
+    ],
+    "p_selected": 0.001,
+    "permutations": 999,
+    "skipped": [],
+    "tested": [
+     -5,
+     -4,
+     -3
+    ]
+   },
+   "reading": "When coverage is higher, the value tends to be higher 2 day(s) after the coverage (rank correlation +0.98, adjusted p 0.001, 38 days). Coverage came first, which is an ordering in time and nothing more.",
+   "robust_to_trend": null,
+   "seed": 20260101,
+   "status": "ok",
+   "trend": {
+    "coverage": 0.29,
+    "strong": false,
+    "value": 0.282
+   },
+   "warnings": [],
+   "what_would_help": [
+    "Check whether the pattern repeats in a period that was not used here.",
+    "Look for a known event that could drive both series.",
+    "Compare with a similar dataset or region that had no such coverage."
+   ],
+   "why_not_causal": [
+    "A pattern in time does not show that one thing changed the other.",
+    "Something else (a season, a holiday, an event both react to) can move both series.",
+    "Coverage depends on which feeds were collected and when they were fetched."
+   ]
+  }
+ },
+ "project_id": "e0c1512ce60e4403a7ff62a2b1d9c765",
+ "result_hash": "6331671e80dd40766f6d36e820fa5c237765bf7caf42df3355cbf8988f0993f4",
+ "rule_version": "lagged-spearman-circular-permutation/1",
+ "warnings": []
+}

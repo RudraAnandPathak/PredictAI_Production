@@ -1,0 +1,41 @@
+{
+ "articles": [
+  {
+   "headline": "Floods hit northern village as river rises",
+   "outlet": "Outlet B",
+   "published": "2025-12-31T12:00:00Z",
+   "statement_kind": "stated",
+   "url": "https://b.example/floods-hit-northern-village-as-river-rises"
+  },
+  {
+   "headline": "River flood: village evacuated",
+   "outlet": "Outlet C",
+   "published": "2025-12-31T12:00:00Z",
+   "statement_kind": "stated",
+   "url": "https://c.example/river-flood--village-evacuated"
+  },
+  {
+   "headline": "River floods northern village",
+   "outlet": "Outlet A",
+   "published": "2025-12-31T12:00:00Z",
+   "statement_kind": "stated",
+   "url": "https://a.example/river-floods-northern-village"
+  }
+ ],
+ "basis": "3 outlets report matching facts in plain wording and no disagreement was found.",
+ "caveat": "Reported by news outlets and not verified by PredictAI. Agreement between outlets is not proof.",
+ "disagreements": [],
+ "event_id": "b63b7427e0274a9bacbbbf228a7237a7",
+ "first_seen": "2025-12-31T12:00:00Z",
+ "label": "River floods northern village",
+ "last_seen": "2025-12-31T12:00:00Z",
+ "origin": "external_research",
+ "outlets": [
+  "outlet a",
+  "outlet b",
+  "outlet c"
+ ],
+ "schema": "predictai.world_event_summary/1",
+ "statement_type": "reported",
+ "status": "confirmed"
+}

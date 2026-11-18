@@ -1,0 +1,6 @@
+# Phase 11: Turso (libSQL) database client, needed only when PREDICTAI_DATABASE_BACKEND=turso.
+# libsql is Turso's official Python client for libSQL databases (remote and embedded replicas), MIT licence, free.
+# Pinned to the release the adapter was written against (0.1.11). It could NOT be installed or tested in the build environment
+# (no network): run tests/test_p17_turso_live.py against a test database after installing, before relying on it.
+# The app is tested on Python 3.13. If pip finds no libsql wheel for your Python version, try 3.12 (on Render: PYTHON_VERSION=3.12) and run the live tests.
+libsql==0.1.11

@@ -1,0 +1,15 @@
+{
+ "analyses": 0,
+ "articles": 3,
+ "events": {
+  "confirmed": 1,
+  "disputed": 0,
+  "reported": 0,
+  "unverified": 0
+ },
+ "freshness_warnings": [],
+ "news_allowed": true,
+ "quarantined": 0,
+ "sources": 3,
+ "why_not": []
+}

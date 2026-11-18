@@ -1,0 +1,28 @@
+# A private SearXNG for PredictAI. Free and open source; no account or API key.
+#   1. cp .env.example .env   and put a random value in SEARXNG_SECRET  (openssl rand -hex 32)
+#   2. docker compose up -d
+#   3. curl 'http://127.0.0.1:8080/search?q=test&format=json'   -> JSON, not an error page
+#   4. set PREDICTAI_SEARXNG_URL=http://127.0.0.1:8080 in PredictAI's .env and restart the backend
+services:
+  searxng:
+    image: docker.io/searxng/searxng:latest
+    container_name: predictai-searxng
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8080:8080"                      # this machine only: the instance has no limiter, so it must not be reachable from other machines
+    volumes:
+      - ./settings.yml:/etc/searxng/settings.yml:ro
+    environment:
+      SEARXNG_SECRET: "${SEARXNG_SECRET:?Set SEARXNG_SECRET in docker/searxng/.env (openssl rand -hex 32)}"
+      SEARXNG_BASE_URL: "http://127.0.0.1:8080/"
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETGID
+      - SETUID
+    logging:
+      driver: json-file
+      options:
+        max-size: "1m"
+        max-file: "1"

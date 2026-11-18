@@ -1,0 +1,117 @@
+{
+ "calculation": {
+  "facts": {
+   "columns": 8,
+   "dataset": "airline.csv",
+   "duplicates": 0,
+   "missing_cells": 60,
+   "rows": 600
+  },
+  "how": "A fixed template wrote this sentence from the stored result below; a language model wrote nothing. The sentence is rebuilt from the stored result each time you open this citation.",
+  "model_id": null,
+  "operation": "dataset_summary",
+  "result_hash": "89006d7153a48c1052a7edc7285528a6aed495d455d01cb4d600ea5c0fb2e10d",
+  "run_id": "20d3dd3f792f4dd29334e9ae95ed80bc"
+ },
+ "context": null,
+ "evidence": {
+  "citation": {
+   "asset_id": "bea21d444b954ae2820659d527f00077",
+   "calc": {
+    "claim": "summary",
+    "ctx": {
+     "name": "airline.csv",
+     "target": null
+    },
+    "fn": "dataset_summary",
+    "run": {
+     "op": "dataset_summary",
+     "op_index": 0,
+     "result_hash": "89006d7153a48c1052a7edc7285528a6aed495d455d01cb4d600ea5c0fb2e10d",
+     "run_id": "20d3dd3f792f4dd29334e9ae95ed80bc"
+    }
+   },
+   "claim": "summary",
+   "document": "airline.csv",
+   "kind": "calculation",
+   "op": "dataset_summary",
+   "quote_sha256": "bf3ea539e172fc71",
+   "result_hash": "89006d7153a48c1052a7edc7285528a6aed495d455d01cb4d600ea5c0fb2e10d",
+   "run_id": "20d3dd3f792f4dd29334e9ae95ed80bc"
+  },
+  "facts": {
+   "columns": 8,
+   "dataset": "airline.csv",
+   "duplicates": 0,
+   "missing_cells": 60,
+   "rows": 600
+  },
+  "flags": {
+   "direction": null,
+   "hedged": false,
+   "negated": false
+  },
+  "id": "E1",
+  "kind": "computed",
+  "location": {
+   "claim": "summary",
+   "kind": "calculation",
+   "op": "dataset_summary",
+   "run_id": "20d3dd3f792f4dd29334e9ae95ed80bc"
+  },
+  "numbers": [
+   "0",
+   "1.25",
+   "1.25%"
+  ],
+  "origin": "calculated",
+  "pass": 1,
+  "quote": "airline.csv has 600 rows and 8 columns (4 float, 4 text). 60 cells (1.25%) are missing, 540 rows are complete, and 0 rows are exact duplicates of an earlier row.",
+  "score": 1.0,
+  "source": "S1",
+  "subtopic": "d1"
+ },
+ "note": "The text above was read again from the saved source just now. If a check fails, the passage is shown with a warning and should not be relied on.",
+ "open": {
+  "asset_id": "bea21d444b954ae2820659d527f00077",
+  "label": "Open the calculation",
+  "run_id": "20d3dd3f792f4dd29334e9ae95ed80bc",
+  "type": "analysis_run"
+ },
+ "source": {
+  "asset_id": "bea21d444b954ae2820659d527f00077",
+  "freshness": {
+   "age_days": null,
+   "label": "not applicable",
+   "note": "Your own material.",
+   "outdated": null,
+   "published": null
+  },
+  "id": "S1",
+  "injection_removed": 0,
+  "kind": "analysis",
+  "origin": "calculated",
+  "origin_label": "calculated",
+  "ref_id": "db801f2d95654aea8bdf7388eb4b75ec",
+  "reliability": {
+   "level": "calculated",
+   "note": "These are indicators, not a verdict. Check important claims against the source itself.",
+   "signals": [
+    {
+     "basis": "Computed from your data by PredictAI; it is only as good as the data and the method.",
+     "effect": "0",
+     "name": "calculated from your data"
+    }
+   ]
+  },
+  "source_label": "Calculated from your data",
+  "status": "ok",
+  "title": "Calculations on airline.csv"
+ },
+ "source_label": "Calculated from your data",
+ "verification": {
+  "note": "Rebuilt from the stored result of your own calculation; the statement and the numbers in it match.",
+  "reason": null,
+  "verified": true
+ }
+}

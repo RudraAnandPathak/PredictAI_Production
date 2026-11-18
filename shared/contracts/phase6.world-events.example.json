@@ -1,0 +1,44 @@
+{
+ "items": [
+  {
+   "article_count": 3,
+   "basis": "3 outlets report matching facts in plain wording and no disagreement was found.",
+   "cluster": {
+    "entity_bonus": 0.1,
+    "method": "tfidf-agglomerative/1",
+    "threshold": 0.3,
+    "window_days": 5.0
+   },
+   "disagreements": [],
+   "entities": [],
+   "first_seen": "2025-12-31T12:00:00Z",
+   "id": "b63b7427e0274a9bacbbbf228a7237a7",
+   "label": "River floods northern village",
+   "label_from": {
+    "article_id": "ead705201a134c15b5e2402011feb1c1",
+    "note": "The headline of the most typical article, quoted from its outlet.",
+    "publisher": "outlet a"
+   },
+   "last_seen": "2025-12-31T12:00:00Z",
+   "method": "event-summary/1",
+   "note": "Agreement between outlets is not proof: outlets often repeat one wire report or one official statement.",
+   "outlets": [
+    "outlet a",
+    "outlet b",
+    "outlet c"
+   ],
+   "project_id": "e0c1512ce60e4403a7ff62a2b1d9c765",
+   "source_count": 3,
+   "statement_kinds": {
+    "stated": 3
+   },
+   "status": "confirmed",
+   "topics": [
+    "disasters"
+   ],
+   "undated": 0,
+   "updated_at": "2026-01-01T12:00:00.000000Z"
+  }
+ ],
+ "total": 1
+}

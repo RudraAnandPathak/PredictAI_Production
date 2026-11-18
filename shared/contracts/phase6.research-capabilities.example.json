@@ -1,0 +1,66 @@
+{
+ "external_ai_allowed": false,
+ "freshness_days": null,
+ "levels": [
+  {
+   "about": "A quick answer from your own documents, plus a couple of web sources if you allow them.",
+   "key": "basic",
+   "label": "Basic",
+   "min_sources": 1,
+   "subtopics": 1,
+   "web_pages": 2
+  },
+  {
+   "about": "Background, key facts and recent developments on one topic.",
+   "key": "topic",
+   "label": "Topic overview",
+   "min_sources": 2,
+   "subtopics": 3,
+   "web_pages": 4
+  },
+  {
+   "about": "Two or more things side by side, with differences and agreements.",
+   "key": "comparative",
+   "label": "Comparative",
+   "min_sources": 2,
+   "subtopics": 3,
+   "web_pages": 6
+  }
+ ],
+ "search_providers": [
+  {
+   "available": true,
+   "description": "Free encyclopedia articles. Good for background and definitions; verify important claims against primary sources.",
+   "host": "en.wikipedia.org",
+   "key": "wikipedia",
+   "label": "Wikipedia (English)",
+   "reason": null,
+   "source_type": "encyclopedia"
+  },
+  {
+   "available": true,
+   "description": "Free scientific preprints (physics, mathematics, computer science, statistics, biology). Preprints may not be peer reviewed.",
+   "host": "export.arxiv.org",
+   "key": "arxiv",
+   "label": "arXiv (preprints)",
+   "reason": null,
+   "source_type": "preprint"
+  },
+  {
+   "available": true,
+   "description": "General web search through a SearXNG metasearch server that the platform owner runs. Needs PREDICTAI_SEARXNG_URL.",
+   "host": "the configured SearXNG instance",
+   "key": "searxng",
+   "label": "SearXNG (your own instance)",
+   "reason": null,
+   "source_type": "web"
+  }
+ ],
+ "web": {
+  "allowed": false,
+  "providers": [],
+  "why_not": [
+   "You have not turned on web research."
+  ]
+ }
+}

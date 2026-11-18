@@ -1,0 +1,30 @@
+import { config } from '../app/config.js';
+import { createApiClient } from './client.js';
+import { identityApi, ownerApi } from './identity.js';
+import { analyticsApi } from './analytics.js';
+import { conversationsApi } from './conversations.js';
+import { devApi } from './dev.js';
+import { phase7Api } from './phase7.js';
+import { predictiveApi } from './predictive.js';
+import { aiApi, researchApi, worldApi } from './research.js';
+import { workspaceApi } from './workspace.js';
+import { researchIntelligenceApi } from '../modules/research_intelligence/api.js';
+import { notebookApi } from '../modules/notebook/api.js';
+import { reviewsApi } from './reviews.js';
+
+/** The application's single API client. Components never call fetch directly. */
+export const api = createApiClient({ baseUrl: config.apiBaseUrl, timeoutMs: config.apiTimeoutMs });
+export const identity = identityApi(api);
+export const owner = ownerApi(api);
+export const workspace = workspaceApi(api);
+export const analytics = analyticsApi(api);
+export const predictive = predictiveApi(api);
+export const research = researchApi(api);
+export const world = worldApi(api);
+export const ai = aiApi(api);
+export const phase7 = phase7Api(api);
+export const dev = devApi(api);
+export const ri = researchIntelligenceApi(api);
+export const nb = notebookApi(api);
+export const reviews = reviewsApi(api);
+export const conversations = conversationsApi(api);

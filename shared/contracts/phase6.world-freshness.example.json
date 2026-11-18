@@ -1,0 +1,91 @@
+{
+ "note": "Freshness is how recently a feed was read and how recent its newest article is. It says nothing about whether the news is accurate.",
+ "sources": [
+  {
+   "article_count": 1,
+   "created_at": "2026-01-01T12:00:00.000000Z",
+   "feed_url": "http://127.0.0.1:36569/a.xml",
+   "freshness": "fresh",
+   "hours_since_fetch": 0.0,
+   "id": "000d91fa1b1840d5a3fdfd48c9698c79",
+   "language": null,
+   "last_error_code": null,
+   "last_fetched_at": "2026-01-01T12:00:00.000000Z",
+   "last_status": "ok",
+   "name": "A",
+   "newest_article": "2025-12-31T12:00:00Z",
+   "newest_article_age_hours": 24.0,
+   "policy": {
+    "full_text": false,
+    "item_cap": 50,
+    "min_interval_s": 900,
+    "retention_days": 30,
+    "terms_acknowledged": true
+   },
+   "project_id": "e0c1512ce60e4403a7ff62a2b1d9c765",
+   "publisher": "Outlet A",
+   "quarantined": 0,
+   "status": "active",
+   "updated_at": "2026-01-01T12:00:00.000000Z"
+  },
+  {
+   "article_count": 1,
+   "created_at": "2026-01-01T12:00:00.000000Z",
+   "feed_url": "http://127.0.0.1:36569/b.xml",
+   "freshness": "fresh",
+   "hours_since_fetch": 0.0,
+   "id": "6a512927124245b7a925aeb18648f82b",
+   "language": null,
+   "last_error_code": null,
+   "last_fetched_at": "2026-01-01T12:00:00.000000Z",
+   "last_status": "ok",
+   "name": "B",
+   "newest_article": "2025-12-31T12:00:00Z",
+   "newest_article_age_hours": 24.0,
+   "policy": {
+    "full_text": false,
+    "item_cap": 50,
+    "min_interval_s": 900,
+    "retention_days": 30,
+    "terms_acknowledged": true
+   },
+   "project_id": "e0c1512ce60e4403a7ff62a2b1d9c765",
+   "publisher": "Outlet B",
+   "quarantined": 0,
+   "status": "active",
+   "updated_at": "2026-01-01T12:00:00.000000Z"
+  },
+  {
+   "article_count": 1,
+   "created_at": "2026-01-01T12:00:00.000000Z",
+   "feed_url": "http://127.0.0.1:36569/c.xml",
+   "freshness": "fresh",
+   "hours_since_fetch": 0.0,
+   "id": "ff2847bfdadf4578a4d751fb75470b07",
+   "language": null,
+   "last_error_code": null,
+   "last_fetched_at": "2026-01-01T12:00:00.000000Z",
+   "last_status": "ok",
+   "name": "C",
+   "newest_article": "2025-12-31T12:00:00Z",
+   "newest_article_age_hours": 24.0,
+   "policy": {
+    "full_text": false,
+    "item_cap": 50,
+    "min_interval_s": 900,
+    "retention_days": 30,
+    "terms_acknowledged": true
+   },
+   "project_id": "e0c1512ce60e4403a7ff62a2b1d9c765",
+   "publisher": "Outlet C",
+   "quarantined": 0,
+   "status": "active",
+   "updated_at": "2026-01-01T12:00:00.000000Z"
+  }
+ ],
+ "thresholds_hours": {
+  "aging": 72,
+  "fresh": 24
+ },
+ "warnings": []
+}

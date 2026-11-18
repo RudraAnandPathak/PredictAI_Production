@@ -1,0 +1,12 @@
+{
+ "days": 30,
+ "items": [
+  {
+   "articles": 3,
+   "label": "Disasters and weather",
+   "topic": "disasters"
+  }
+ ],
+ "method": "keyword-rules/1",
+ "note": "Topics come from simple keyword rules and are a guide to browsing."
+}

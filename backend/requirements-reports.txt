@@ -1,0 +1,11 @@
+# Phase 7 report exports. All free and open source; none are needed to run the API. Without one, the matching export format reports
+# "this export format is not available on this server" (a typed error) instead of failing silently, and every other format keeps working.
+# Install with:  pip install -r requirements-reports.txt
+# Developed and tested in the sandbox with the versions in the comments; the ranges are the series the code was written against and have NOT been
+# tested on macOS / Python 3.14 (wheel availability there is unverified).
+reportlab>=4.0,<6        # PDF            (tested 5.0.1)
+python-docx>=1.1,<2      # Word .docx     (tested 1.2.0)
+python-pptx>=1.0,<2      # PowerPoint     (tested 1.0.2)
+openpyxl>=3.1,<4         # Excel .xlsx    (tested 3.1.5)
+matplotlib>=3.8,<4       # figures and the PNG export (tested 3.11.2)
+# Markdown and CSV exports need nothing extra.

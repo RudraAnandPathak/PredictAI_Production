@@ -1,0 +1,47 @@
+/* Research and world intelligence. Reuses the shared tokens and components; only what is new lives here. */
+.link-button { background: none; border: 0; padding: 0 0.15rem; margin: 0 0.1rem; color: var(--accent); font: inherit; text-decoration: underline; cursor: pointer; border-radius: var(--radius-sm); }
+.link-button:hover { color: var(--accent-strong); }
+.link-button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+.conclusions { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+.conclusion { border: 1px solid var(--border); border-radius: var(--radius); padding: 0.85rem 1rem; background: var(--surface); min-width: 0; }
+.conclusion__text { margin: 0 0 0.4rem; overflow-wrap: anywhere; }
+.conclusion__tags { display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: center; margin: 0 0 0.4rem; }
+.conclusion__caveats { margin: 0 0 0.4rem; padding-left: 1.1rem; color: var(--text-muted); font-size: 0.875rem; }
+.conflict { border-left: 3px solid var(--warm); padding-left: 0.85rem; }
+
+.citation__quote { margin: 0; padding: 0.6rem 0.85rem; border-left: 3px solid var(--border-strong); background: var(--surface-2); border-radius: var(--radius-sm); white-space: pre-wrap; overflow-wrap: anywhere; max-height: 22rem; overflow: auto; }
+.citation__quote mark { background: var(--warm-soft); color: var(--text); padding: 0.05rem 0.1rem; border-radius: 2px; }
+.citation__around { color: var(--text-muted); }
+.evidence { padding: 0.5rem 0; border-top: 1px solid var(--border); list-style: none; }
+.evidence:first-child { border-top: 0; }
+details > summary { cursor: pointer; }
+details[open] > summary { margin-bottom: 0.5rem; }
+
+.timeline { list-style: none; margin: 0; padding: 0 0 0 1rem; border-left: 2px solid var(--border-strong); display: grid; gap: 0.85rem; }
+.timeline > li { display: grid; gap: 0.1rem; position: relative; min-width: 0; }
+.timeline > li::before { content: ''; position: absolute; left: -1.38rem; top: 0.35rem; width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--accent); }
+
+.note__body { white-space: pre-wrap; overflow-wrap: anywhere; }
+.article__detail { margin-top: 0.5rem; padding: 0.6rem 0.85rem; background: var(--surface-2); border-radius: var(--radius-sm); }
+.article .row__main, .provider .row__main, .conclusion { min-width: 0; }
+.job .progress { margin: 0.25rem 0; }
+
+@media (max-width: 40rem) {
+  .row { flex-wrap: wrap; }
+  .conclusion { padding: 0.7rem 0.75rem; }
+  .citation__quote { max-height: 16rem; }
+}
+@media (prefers-reduced-motion: reduce) { .timeline > li::before { transition: none; } }
+
+/* ---- Report, citations and search tools: a badge may carry a whole source description ("Wikipedia (encyclopedia: a tertiary source, edited by volunteers)"), so on these screens it wraps
+        instead of pushing the page wider than a phone. The global badge stays on one line everywhere else. ---- */
+section[aria-label="Report"] .badge,
+section[aria-label="Conclusions"] .badge,
+section[aria-label="Source list"] .badge,
+[aria-label="Search tools"] .badge,
+[role="dialog"] .badge,
+.conclusion__tags .badge { white-space: normal; max-width: 100%; text-align: left; overflow-wrap: anywhere; line-height: 1.4; }
+section[aria-label="Report"] code,
+[aria-label="Search tools"] code,
+[role="dialog"] code { overflow-wrap: anywhere; }

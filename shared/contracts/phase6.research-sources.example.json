@@ -1,0 +1,41 @@
+{
+ "items": [
+  {
+   "asset_id": "eb28f6750d714a05b6bb8d97af0c2300",
+   "bundle_id": "a502da053c34403393e57be893e3d768",
+   "domain": null,
+   "freshness": {
+    "age_days": null,
+    "label": "not applicable",
+    "note": "Your own material.",
+    "outdated": null,
+    "published": null
+   },
+   "id": "2d486b22a8f342f3a3440ca9cc47697a",
+   "kind": "document",
+   "origin": "user_provided",
+   "provider": null,
+   "published_at": null,
+   "publisher": null,
+   "reliability": {
+    "level": "your file",
+    "note": "These are indicators, not a verdict. Check important claims against the source itself.",
+    "signals": [
+     {
+      "basis": "You provided it. PredictAI has not checked whether its content is accurate.",
+      "effect": "0",
+      "name": "your own file"
+     }
+    ]
+   },
+   "retrieved_at": null,
+   "saved": false,
+   "session_id": "e381043d4561497ba9c6f9edda747406",
+   "status": "ok",
+   "status_code": null,
+   "title": "river.pdf",
+   "updated_at": "2026-01-01T12:00:00.000000Z",
+   "url": null
+  }
+ ]
+}

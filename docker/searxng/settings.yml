@@ -1,0 +1,24 @@
+# SearXNG settings for PredictAI research (private, single-user or small-team use).
+# It starts from SearXNG's own defaults and changes only what PredictAI needs:
+#   * search.formats lists "json". A stock SearXNG lists only "html" and answers 403 to every API request, which PredictAI used to report as "blocked".
+#   * server.limiter is false. The bot limiter rejects automated requests (HTTP 429); it is meant for public instances, and this one is bound to 127.0.0.1 only.
+#   * the secret key is a placeholder; docker-compose.yml passes the real one in SEARXNG_SECRET (see README.md).
+use_default_settings: true
+
+general:
+  instance_name: "PredictAI research search"
+  debug: false
+
+server:
+  secret_key: "REPLACE_WITH_A_RANDOM_SECRET"
+  limiter: false
+  public_instance: false
+  image_proxy: false
+
+search:
+  safe_search: 1
+  autocomplete: ""
+  default_lang: "en"
+  formats:
+    - html
+    - json

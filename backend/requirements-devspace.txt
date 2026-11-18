@@ -1,0 +1,9 @@
+# Phase 9 Development Workspace. Free and open source; none are needed to run the API itself.
+# Install with:  pip install -r requirements-devspace.txt
+# Developed and tested in the sandbox with the versions in the comments. NOT tested on macOS / Python 3.14 (wheel availability there is unverified).
+cryptography>=42,<51     # encrypts stored secrets (Git credentials, job secrets). Without it, storing a secret is refused with SECRETS_UNAVAILABLE; nothing else is affected. (tested 50.0.1)
+# Optional, install only if you want the matching feature (none are bundled or required):
+#   pip-audit            vulnerability check of an environment's packages (queries a public advisory service; reported "unavailable" when absent or offline)
+#   jupyterlab           the JupyterLab session (PREDICTAI_DEV_JUPYTER_COMMAND or `jupyter-lab` on PATH)
+#   code-server          browser IDE (not a Python package; https://github.com/coder/code-server)
+#   pytest               used by pipeline test stages when it is in the environment's lockfile; otherwise unittest is used

@@ -1,0 +1,82 @@
+{
+ "context": {
+  "after": "\nOfficials evacuated 1,200 residents from low lying areas.\nThe levee held at the northern bridge.",
+  "before": "",
+  "quote": "The river rose by 2.4 metres on Tuesday after heavy rainfall."
+ },
+ "evidence": {
+  "citation": {
+   "asset_id": "eb28f6750d714a05b6bb8d97af0c2300",
+   "chunk_id": "c00001",
+   "document": "river.pdf",
+   "end": 61,
+   "page_end": 1,
+   "page_estimated": false,
+   "page_start": 1,
+   "quote_sha256": "cc92583ed5a6b41e",
+   "section": null,
+   "start": 0,
+   "version_id": "5a0117fecc974121b51347a91ca21068"
+  },
+  "flags": {
+   "direction": "up",
+   "hedged": false,
+   "negated": false
+  },
+  "id": "E1",
+  "kind": "stated",
+  "location": {
+   "chunk_id": "c00001",
+   "page_end": 1,
+   "page_estimated": false,
+   "page_start": 1,
+   "section": null
+  },
+  "numbers": [
+   "2.4"
+  ],
+  "origin": "user_provided",
+  "pass": 1,
+  "quote": "The river rose by 2.4 metres on Tuesday after heavy rainfall.",
+  "score": 3.5079,
+  "source": "S1",
+  "subtopic": "t1"
+ },
+ "note": "The text above was read again from the saved source just now. If a check fails, the passage is shown with a warning and should not be relied on.",
+ "source": {
+  "asset_id": "eb28f6750d714a05b6bb8d97af0c2300",
+  "freshness": {
+   "age_days": null,
+   "label": "not applicable",
+   "note": "Your own material.",
+   "outdated": null,
+   "published": null
+  },
+  "id": "S1",
+  "injection_removed": 0,
+  "kind": "document",
+  "origin": "user_provided",
+  "origin_label": "user_provided",
+  "page_estimated": false,
+  "ref_id": "5a0117fecc974121b51347a91ca21068",
+  "reliability": {
+   "level": "your file",
+   "note": "These are indicators, not a verdict. Check important claims against the source itself.",
+   "signals": [
+    {
+     "basis": "You provided it. PredictAI has not checked whether its content is accurate.",
+     "effect": "0",
+     "name": "your own file"
+    }
+   ]
+  },
+  "status": "ok",
+  "title": "river.pdf"
+ },
+ "verification": {
+  "ocr": false,
+  "ocr_confidence": null,
+  "reason": null,
+  "verified": true
+ }
+}

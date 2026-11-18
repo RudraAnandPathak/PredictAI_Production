@@ -1,0 +1,47 @@
+{
+ "items": [
+  {
+   "active_job": null,
+   "created_at": "2026-01-01T12:00:00.000000Z",
+   "id": "e381043d4561497ba9c6f9edda747406",
+   "last_run_at": "2026-01-01T12:00:00.000000Z",
+   "latest_bundle_id": "a502da053c34403393e57be893e3d768",
+   "level": "topic",
+   "level_label": "Topic overview",
+   "needs_approval": false,
+   "notes": 1,
+   "options": {
+    "ai_summary": false,
+    "datasets": null,
+    "documents": [
+     "eb28f6750d714a05b6bb8d97af0c2300"
+    ],
+    "freshness_days": null,
+    "providers": [
+     "wikipedia"
+    ],
+    "reuse_earlier": false,
+    "web": false
+   },
+   "plan_approved": false,
+   "plan_hash": "4cd6c95f279f346e6fe7cc9b8913dca7abb1ea3ed3bdad268091d833452005f9",
+   "project_id": "e0c1512ce60e4403a7ff62a2b1d9c765",
+   "purpose": "general",
+   "question": "How high did the river rise after the heavy rainfall?",
+   "run_count": 2,
+   "saved": false,
+   "status": "completed",
+   "title": "How high did the river rise after the heavy rainfall?",
+   "updated_at": "2026-01-01T12:00:00.000000Z",
+   "web": {
+    "allowed_now": false,
+    "note": "Only these search phrases, taken from your question, would leave the platform. No document text is ever sent.",
+    "why_not": [
+     "You have not turned on web research."
+    ],
+    "will_send": []
+   }
+  }
+ ],
+ "total": 1
+}

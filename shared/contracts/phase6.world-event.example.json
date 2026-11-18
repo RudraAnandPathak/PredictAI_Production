@@ -1,0 +1,264 @@
+{
+ "articles": [
+  {
+   "author": null,
+   "domain": "b.example",
+   "duplicate_of": null,
+   "entities": [],
+   "event_id": "b63b7427e0274a9bacbbbf228a7237a7",
+   "expires_at": "2026-01-31T12:00:00Z",
+   "id": "c46a7b53aa1949899952a7c0e444fa45",
+   "language": null,
+   "origin": "external_research",
+   "project_id": "e0c1512ce60e4403a7ff62a2b1d9c765",
+   "published_at": "2025-12-31T12:00:00Z",
+   "publisher": "Outlet B",
+   "quarantine_reason": null,
+   "retrieved_at": "2026-01-01T12:00:00.000000Z",
+   "source_id": "6a512927124245b7a925aeb18648f82b",
+   "statement_kind": "stated",
+   "status": "active",
+   "title": "Floods hit northern village as river rises",
+   "tone": "negative",
+   "topics": [
+    {
+     "label": "Disasters and weather",
+     "matched": [
+      "evacuated",
+      "flood"
+     ],
+     "strength": "moderate",
+     "topic": "disasters"
+    }
+   ],
+   "url": "https://b.example/floods-hit-northern-village-as-river-rises"
+  },
+  {
+   "author": null,
+   "domain": "c.example",
+   "duplicate_of": null,
+   "entities": [],
+   "event_id": "b63b7427e0274a9bacbbbf228a7237a7",
+   "expires_at": "2026-01-31T12:00:00Z",
+   "id": "d5bbf5248a314cd481ccd112def06a5f",
+   "language": null,
+   "origin": "external_research",
+   "project_id": "e0c1512ce60e4403a7ff62a2b1d9c765",
+   "published_at": "2025-12-31T12:00:00Z",
+   "publisher": "Outlet C",
+   "quarantine_reason": null,
+   "retrieved_at": "2026-01-01T12:00:00.000000Z",
+   "source_id": "ff2847bfdadf4578a4d751fb75470b07",
+   "statement_kind": "stated",
+   "status": "active",
+   "title": "River flood: village evacuated",
+   "tone": "negative",
+   "topics": [
+    {
+     "label": "Disasters and weather",
+     "matched": [
+      "evacuated",
+      "flood"
+     ],
+     "strength": "moderate",
+     "topic": "disasters"
+    }
+   ],
+   "url": "https://c.example/river-flood--village-evacuated"
+  },
+  {
+   "author": null,
+   "domain": "a.example",
+   "duplicate_of": null,
+   "entities": [],
+   "event_id": "b63b7427e0274a9bacbbbf228a7237a7",
+   "expires_at": "2026-01-31T12:00:00Z",
+   "id": "ead705201a134c15b5e2402011feb1c1",
+   "language": null,
+   "origin": "external_research",
+   "project_id": "e0c1512ce60e4403a7ff62a2b1d9c765",
+   "published_at": "2025-12-31T12:00:00Z",
+   "publisher": "Outlet A",
+   "quarantine_reason": null,
+   "retrieved_at": "2026-01-01T12:00:00.000000Z",
+   "source_id": "000d91fa1b1840d5a3fdfd48c9698c79",
+   "statement_kind": "stated",
+   "status": "active",
+   "title": "River floods northern village",
+   "tone": "negative",
+   "topics": [
+    {
+     "label": "Disasters and weather",
+     "matched": [
+      "evacuated",
+      "flood"
+     ],
+     "strength": "moderate",
+     "topic": "disasters"
+    }
+   ],
+   "url": "https://a.example/river-floods-northern-village"
+  }
+ ],
+ "comparison": {
+  "note": "Differences in wording, tone and numbers are shown side by side. None of them is judged right or wrong here, and tone is not truth.",
+  "outlets": [
+   {
+    "articles": 1,
+    "headline": "River floods northern village",
+    "hours_after_first": 0.0,
+    "kind": "stated",
+    "lead": "The river rose by 2.4 metres and 1,200 residents were evacuated.",
+    "numbers": [
+     "1200",
+     "2.4"
+    ],
+    "only_this_outlet_gives": [],
+    "outlet": "outlet a",
+    "published": "2025-12-31T12:00:00Z",
+    "tone": "negative",
+    "url": "https://a.example/river-floods-northern-village"
+   },
+   {
+    "articles": 1,
+    "headline": "Floods hit northern village as river rises",
+    "hours_after_first": 0.0,
+    "kind": "stated",
+    "lead": "Officials evacuated 1,200 residents after the river rose 2.4 metres.",
+    "numbers": [
+     "1200",
+     "2.4"
+    ],
+    "only_this_outlet_gives": [],
+    "outlet": "outlet b",
+    "published": "2025-12-31T12:00:00Z",
+    "tone": "negative",
+    "url": "https://b.example/floods-hit-northern-village-as-river-rises"
+   },
+   {
+    "articles": 1,
+    "headline": "River flood: village evacuated",
+    "hours_after_first": 0.0,
+    "kind": "stated",
+    "lead": "The river rose 2.4 metres and 1,200 residents left the village.",
+    "numbers": [
+     "1200",
+     "2.4"
+    ],
+    "only_this_outlet_gives": [],
+    "outlet": "outlet c",
+    "published": "2025-12-31T12:00:00Z",
+    "tone": "negative",
+    "url": "https://c.example/river-flood--village-evacuated"
+   }
+  ],
+  "tone_differs": false,
+  "tones": [
+   "negative"
+  ]
+ },
+ "event": {
+  "article_count": 3,
+  "basis": "3 outlets report matching facts in plain wording and no disagreement was found.",
+  "cluster": {
+   "entity_bonus": 0.1,
+   "method": "tfidf-agglomerative/1",
+   "threshold": 0.3,
+   "window_days": 5.0
+  },
+  "disagreements": [],
+  "entities": [],
+  "first_seen": "2025-12-31T12:00:00Z",
+  "id": "b63b7427e0274a9bacbbbf228a7237a7",
+  "label": "River floods northern village",
+  "label_from": {
+   "article_id": "ead705201a134c15b5e2402011feb1c1",
+   "note": "The headline of the most typical article, quoted from its outlet.",
+   "publisher": "outlet a"
+  },
+  "last_seen": "2025-12-31T12:00:00Z",
+  "method": "event-summary/1",
+  "note": "Agreement between outlets is not proof: outlets often repeat one wire report or one official statement.",
+  "outlets": [
+   "outlet a",
+   "outlet b",
+   "outlet c"
+  ],
+  "project_id": "e0c1512ce60e4403a7ff62a2b1d9c765",
+  "source_count": 3,
+  "statement_kinds": {
+   "stated": 3
+  },
+  "status": "confirmed",
+  "topics": [
+   "disasters"
+  ],
+  "undated": 0,
+  "updated_at": "2026-01-01T12:00:00.000000Z"
+ },
+ "explanation": {
+  "basis": {
+   "method": "rules",
+   "note": "Written from the calculated result by fixed rules. No figure is added, rounded away or inferred; the technical result above is unchanged.",
+   "numbers_cited": 4
+  },
+  "cautions": [],
+  "kind": "world:event",
+  "points": [
+   "What this is: a group of 3 articles that seem to describe the same thing, first seen 2025-12-31T12:00:00Z and last seen 2025-12-31T12:00:00Z. The headline shown is quoted from \"outlet a\".",
+   "How the outlets worded it: 3 articles in plain wording.",
+   "Where outlets differ: no disagreement in numbers or direction was found, though subtle differences can be missed."
+  ],
+  "schema": "predictai.explanation/1",
+  "status": "available",
+  "summary": "Several outlets report matching facts, and no disagreement was found. It is covered by 3 outlets in 3 articles.",
+  "terms": [
+   {
+    "meaning": "A group of articles that appear to describe the same thing. Grouping is done by comparing headlines and opening sentences, so it can be wrong.",
+    "term": "event"
+   },
+   {
+    "meaning": "Three or more outlets report matching facts in plain wording and none disagrees. It is agreement between outlets, not verification by PredictAI.",
+    "term": "confirmed"
+   },
+   {
+    "meaning": "How an article is worded (alarming, upbeat). It is not a measure of truth, importance or fairness.",
+    "term": "tone"
+   }
+  ],
+  "title": "Explanation"
+ },
+ "related": [],
+ "timeline": [
+  {
+   "article_id": "c46a7b53aa1949899952a7c0e444fa45",
+   "first_reported": true,
+   "headline": "Floods hit northern village as river rises",
+   "kind": "stated",
+   "publisher": "outlet b",
+   "time": "2025-12-31T12:00:00Z",
+   "tone": "negative",
+   "url": "https://b.example/floods-hit-northern-village-as-river-rises"
+  },
+  {
+   "article_id": "d5bbf5248a314cd481ccd112def06a5f",
+   "first_reported": false,
+   "headline": "River flood: village evacuated",
+   "kind": "stated",
+   "publisher": "outlet c",
+   "time": "2025-12-31T12:00:00Z",
+   "tone": "negative",
+   "url": "https://c.example/river-flood--village-evacuated"
+  },
+  {
+   "article_id": "ead705201a134c15b5e2402011feb1c1",
+   "first_reported": false,
+   "headline": "River floods northern village",
+   "kind": "stated",
+   "publisher": "outlet a",
+   "time": "2025-12-31T12:00:00Z",
+   "tone": "negative",
+   "url": "https://a.example/river-floods-northern-village"
+  }
+ ]
+}

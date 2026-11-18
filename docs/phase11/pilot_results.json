@@ -1,0 +1,301 @@
+{
+  "environment": {
+    "platform": "Linux-6.18.44-fc-v470-x86_64-with-glibc2.39",
+    "python": "3.13.18",
+    "date": "2026-11-15 17:26",
+    "fastapi": "stand-in over real Starlette/pydantic"
+  },
+  "results": [
+    {
+      "scenario": "A",
+      "title": "Document intelligence",
+      "role": "standard user",
+      "steps": [
+        {
+          "id": "test_p10_api.Flow.test_upload_process_search_ask_cite_and_delete_over_http",
+          "ran": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.3,
+          "detail": "",
+          "layer": "HTTP, real app stack, fresh SQLite",
+          "mocked": "no AI model: extractive answers; citations verified as exact quotes"
+        },
+        {
+          "id": "test_p10_reports.Building",
+          "ran": 8,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 2.3,
+          "detail": "",
+          "layer": "service layer, real SQLite",
+          "mocked": "report from a finished analysis"
+        },
+        {
+          "id": "test_p10_reports.Exports",
+          "ran": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 2.6,
+          "detail": "",
+          "layer": "service layer, real SQLite",
+          "mocked": "PDF/DOCX/PPTX/MD read back"
+        }
+      ],
+      "tests_run": 15,
+      "problems": 0,
+      "skipped": 0,
+      "status": "PASS with limitations",
+      "gate": null,
+      "limitations": "Scanned PDFs (OCR) are not supported; no model-written answers were exercised."
+    },
+    {
+      "scenario": "B",
+      "title": "Data analytics",
+      "role": "standard user",
+      "steps": [
+        {
+          "id": "test_analytics_api.AnalyticsApiTests.test_schema_run_get_rows_export_over_http",
+          "ran": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 1.2,
+          "detail": "",
+          "layer": "HTTP, real app stack, fresh SQLite",
+          "mocked": "synthetic CSV"
+        },
+        {
+          "id": "test_p7_reports",
+          "ran": 10,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 8.4,
+          "detail": "",
+          "layer": "service layer, real SQLite",
+          "mocked": "dataset/prediction/exam/research to report, versions, citations"
+        }
+      ],
+      "tests_run": 11,
+      "problems": 0,
+      "skipped": 0,
+      "status": "PASS with limitations",
+      "gate": null,
+      "limitations": "XLSX path is covered by parser tests, not by this scenario; charts are data-only (never rendered)."
+    },
+    {
+      "scenario": "C",
+      "title": "Predictive modelling",
+      "role": "standard user",
+      "steps": [
+        {
+          "id": "test_predictive_api.Workflow",
+          "ran": 10,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 8.0,
+          "detail": "",
+          "layer": "HTTP, real app stack, fresh SQLite",
+          "mocked": "in-process training of a synthetic dataset"
+        },
+        {
+          "id": "test_p7_api.Phase7Api.test_lifecycle_needs_confirmation_and_prediction_names_its_version",
+          "ran": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 2.3,
+          "detail": "",
+          "layer": "HTTP, real app stack, fresh SQLite",
+          "mocked": ""
+        },
+        {
+          "id": "test_p7_api.Phase7Api.test_model_to_report_export_and_download",
+          "ran": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 2.1,
+          "detail": "",
+          "layer": "HTTP, real app stack, fresh SQLite",
+          "mocked": ""
+        }
+      ],
+      "tests_run": 12,
+      "problems": 0,
+      "skipped": 0,
+      "status": "PASS with limitations",
+      "gate": null,
+      "limitations": "Large-data training times not measured here."
+    },
+    {
+      "scenario": "D",
+      "title": "Research",
+      "role": "standard user",
+      "steps": [
+        {
+          "id": "test_research_api.ResearchApi.test_a_research_session_from_question_to_evidence_to_export_and_deletion",
+          "ran": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 1.0,
+          "detail": "",
+          "layer": "HTTP, real app stack, fresh SQLite",
+          "mocked": "MOCKED web/Wikipedia/arXiv providers"
+        },
+        {
+          "id": "test_research_intelligence",
+          "ran": 27,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 22.2,
+          "detail": "",
+          "layer": "service layer, real SQLite",
+          "mocked": "includes the Louis XVI historical question with canned sources"
+        },
+        {
+          "id": "test_p10_reasoning",
+          "ran": 41,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 7.9,
+          "detail": "",
+          "layer": "service layer, real SQLite",
+          "mocked": "multi-source analysis; quotes exact"
+        }
+      ],
+      "tests_run": 69,
+      "problems": 0,
+      "skipped": 0,
+      "status": "PASS with limitations",
+      "gate": null,
+      "limitations": "NOT a live-provider test: Wikipedia, arXiv, SearXNG and the AI providers were never reached."
+    },
+    {
+      "scenario": "E",
+      "title": "Exam Intelligence",
+      "role": "standard user",
+      "steps": [
+        {
+          "id": "test_p7_exam",
+          "ran": 10,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.1,
+          "detail": "",
+          "layer": "service layer, real SQLite",
+          "mocked": "synthetic syllabus and past papers"
+        }
+      ],
+      "tests_run": 10,
+      "problems": 0,
+      "skipped": 0,
+      "status": "PASS with limitations",
+      "gate": null,
+      "limitations": "OCR of scanned papers not exercised."
+    },
+    {
+      "scenario": "F",
+      "title": "Collaboration",
+      "role": "standard user, viewer, editor, admin",
+      "steps": [
+        {
+          "id": "test_p7_collab",
+          "ran": 13,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 2.0,
+          "detail": "",
+          "layer": "service layer, real SQLite",
+          "mocked": "roles, grants, revocation incl. downloads"
+        },
+        {
+          "id": "test_p7_api.Phase7Api.test_sharing_over_http_grants_then_revokes_access",
+          "ran": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 2.0,
+          "detail": "",
+          "layer": "HTTP, real app stack, fresh SQLite",
+          "mocked": ""
+        }
+      ],
+      "tests_run": 14,
+      "problems": 0,
+      "skipped": 0,
+      "status": "PASS with limitations",
+      "gate": null,
+      "limitations": "Two simulated sessions on the stand-in server; no second real person, browser or notification delivery."
+    },
+    {
+      "scenario": "G",
+      "title": "Development Workspace",
+      "role": "special-access user",
+      "steps": [
+        {
+          "id": "test_p9_api",
+          "ran": 10,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 2.1,
+          "detail": "",
+          "layer": "HTTP, real app stack, fresh SQLite",
+          "mocked": "Linux-namespace local_trusted engine only"
+        },
+        {
+          "id": "test_p9_security",
+          "ran": 20,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 11.5,
+          "detail": "",
+          "layer": "service layer, real SQLite",
+          "mocked": "20 release-blocking tests for the Linux layer"
+        }
+      ],
+      "tests_run": 30,
+      "problems": 0,
+      "skipped": 0,
+      "status": "PASS (restricted)",
+      "gate": "BLOCKED for untrusted execution",
+      "limitations": "Docker and macOS isolation were never run here. Untrusted multi-user code execution stays DISABLED; this scenario proves only the restricted local_trusted path."
+    },
+    {
+      "scenario": "H",
+      "title": "Report delivery",
+      "role": "standard user",
+      "steps": [
+        {
+          "id": "test_p7_schedule.Schedules",
+          "ran": 10,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 1.9,
+          "detail": "",
+          "layer": "service layer, real SQLite",
+          "mocked": "TEST ADAPTER for email/Slack; failure, retry and dead-letter simulated"
+        }
+      ],
+      "tests_run": 10,
+      "problems": 0,
+      "skipped": 0,
+      "status": "PASS with limitations",
+      "gate": null,
+      "limitations": "No real email or Slack delivery was attempted."
+    }
+  ]
+}

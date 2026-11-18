@@ -1,0 +1,8 @@
+# Phase 10 Research Intelligence: document extraction and indexing. All free/open-source.
+# The module degrades with clear messages when one is missing (that format is refused, not silently skipped).
+pypdf>=4.0,<7        # tested 6.17.0
+python-docx>=1.1,<2   # tested 1.2.0
+openpyxl>=3.1,<4      # tested 3.1.5
+beautifulsoup4>=4.12,<5  # tested 4.15.0
+numpy>=1.26,<3      # tested 2.5.3
+# Optional (not Python): ClamAV (`clamscan`) for malware scanning; Qdrant server for the optional vector backend.

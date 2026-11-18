@@ -1,0 +1,139 @@
+{
+ "environment": {
+  "platform": "Linux-6.18.44-fc-v470-x86_64-with-glibc2.39",
+  "python": "3.13.18",
+  "cpus": 2,
+  "note": "in-process test client over the FastAPI STAND-IN (real Starlette), SQLite on local disk, synthetic data"
+ },
+ "api_latency_sequential": {
+  "GET /health": {
+   "n": 100,
+   "p50_ms": 2.13,
+   "p95_ms": 2.55,
+   "max_ms": 3.75
+  },
+  "GET /research-intelligence/limits": {
+   "n": 100,
+   "p50_ms": 6.43,
+   "p95_ms": 7.89,
+   "max_ms": 9.47
+  },
+  "GET /research-intelligence/workspaces": {
+   "n": 100,
+   "p50_ms": 6.75,
+   "p95_ms": 7.86,
+   "max_ms": 8.29
+  },
+  "GET /research-intelligence/home": {
+   "n": 100,
+   "p50_ms": 6.54,
+   "p95_ms": 8.5,
+   "max_ms": 10.01
+  },
+  "GET /projects": {
+   "n": 100,
+   "p50_ms": 7.06,
+   "p95_ms": 8.54,
+   "max_ms": 9.58
+  },
+  "POST note (write)": {
+   "n": 100,
+   "p50_ms": 7.96,
+   "p95_ms": 9.68,
+   "max_ms": 11.35
+  }
+ },
+ "api_concurrency": {
+  "1 concurrent users": {
+   "requests": 50,
+   "wall_s": 0.42,
+   "req_per_s": 118.8,
+   "status_codes": {
+    "200": 25,
+    "201": 25
+   },
+   "n": 50,
+   "p50_ms": 8.01,
+   "p95_ms": 9.39,
+   "max_ms": 9.5
+  },
+  "4 concurrent users": {
+   "requests": 200,
+   "wall_s": 1.4,
+   "req_per_s": 142.9,
+   "status_codes": {
+    "200": 100,
+    "201": 100
+   },
+   "n": 200,
+   "p50_ms": 26.78,
+   "p95_ms": 36.87,
+   "max_ms": 46.11
+  },
+  "8 concurrent users": {
+   "requests": 400,
+   "wall_s": 3.13,
+   "req_per_s": 127.9,
+   "status_codes": {
+    "200": 200,
+    "201": 200
+   },
+   "n": 400,
+   "p50_ms": 59.34,
+   "p95_ms": 85.83,
+   "max_ms": 117.0
+  }
+ },
+ "research": {
+  "synthetic_document_chars": 87250,
+  "ingest_seconds": 0.146,
+  "chunks_in_workspace": 86,
+  "hybrid_search": {
+   "n": 50,
+   "p50_ms": 2.9,
+   "p95_ms": 3.73,
+   "max_ms": 4.29
+  },
+  "analysis_of_3_sources_seconds": 0.016,
+  "report_build_seconds": 0.002,
+  "exports": {
+   "md": {
+    "seconds": 0.001,
+    "bytes": 7535
+   },
+   "docx": {
+    "seconds": 0.128,
+    "bytes": 38690
+   },
+   "pdf": {
+    "seconds": 0.087,
+    "bytes": 70640
+   },
+   "pptx": {
+    "seconds": 0.095,
+    "bytes": 47033
+   }
+  }
+ },
+ "backup_restore": {
+  "files": 5,
+  "bytes": 2185315,
+  "backup_seconds": 0.026,
+  "restore_and_verify_seconds": 0.011
+ },
+ "tabular": {
+  "csv_1000_rows": {
+   "file_mb": 0.02,
+   "read_and_profile_seconds": 0.02,
+   "rows_profiled": 1000,
+   "peak_rss_mb_after": 238.2
+  },
+  "csv_100000_rows": {
+   "file_mb": 3.05,
+   "read_and_profile_seconds": 1.513,
+   "rows_profiled": 100000,
+   "peak_rss_mb_after": 300.2
+  }
+ },
+ "process_peak_rss_mb": 300.2
+}

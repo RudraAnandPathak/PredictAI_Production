@@ -1,0 +1,25 @@
+{
+ "items": [
+  {
+   "config": {
+    "aggregate": "mean",
+    "asset_id": "07ecb8ccf7804355893f38153b8c54ff",
+    "date_column": "day",
+    "entity": null,
+    "label": "Sales vs harbour coverage",
+    "max_lag": 5,
+    "measure": "count",
+    "topic": null,
+    "value_column": "value"
+   },
+   "created_at": "2026-01-01T12:00:00.000000Z",
+   "evidence": null,
+   "id": "e6dc884427794d6396e72a2cc48db982",
+   "input_hash": "44104accab458c9172f95c113520630a4a6b4d3bce607f2f2880f7d3f1209b68",
+   "label": "Sales vs harbour coverage",
+   "project_id": "e0c1512ce60e4403a7ff62a2b1d9c765",
+   "result_hash": "6331671e80dd40766f6d36e820fa5c237765bf7caf42df3355cbf8988f0993f4",
+   "rule_version": "lagged-spearman-circular-permutation/1"
+  }
+ ]
+}

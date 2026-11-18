@@ -1,0 +1,153 @@
+{
+ "calculation": null,
+ "context": {
+  "after": "\n\nFare class strongly shapes price: a business seat typically costs several times the economy price. Seats available per flight are far fewer in business class, and passengers per flight are fewer as well.",
+  "before": "",
+  "quote": "Business class is a travel class on airlines that is more expensive than economy."
+ },
+ "evidence": {
+  "citation": {
+   "content_hash": "4e2b238139da598a25f23a931878eb49d291d7989f9fdf03849690f17911690c",
+   "end": 81,
+   "kind": "web",
+   "quote_sha256": "f330e514aa10a9f2",
+   "start": 0,
+   "url": "https://en.wikipedia.org/wiki/Business_class"
+  },
+  "flags": {
+   "direction": null,
+   "hedged": false,
+   "negated": false
+  },
+  "id": "E17",
+  "kind": "stated",
+  "location": {
+   "deep_url": "https://en.wikipedia.org/w/index.php?title=Business_class&oldid=555",
+   "section": "Introduction (lead)",
+   "url": "https://en.wikipedia.org/wiki/Business_class"
+  },
+  "numbers": [],
+  "origin": "external_research",
+  "pass": 1,
+  "quote": "Business class is a travel class on airlines that is more expensive than economy.",
+  "score": 1.2698,
+  "source": "S2",
+  "subtopic": "t1"
+ },
+ "note": "The text above was read again from the saved source just now. If a check fails, the passage is shown with a warning and should not be relied on.",
+ "open": {
+  "label": "Open the original section",
+  "note": "This opens the live address. It may have changed since PredictAI read it on 2026-01-01T12:00:00.000000Z; the quoted text above is the saved copy.",
+  "section": "Introduction (lead)",
+  "type": "external",
+  "url": "https://en.wikipedia.org/w/index.php?title=Business_class&oldid=555"
+ },
+ "source": {
+  "cache_hit": false,
+  "content_hash": "4e2b238139da598a25f23a931878eb49d291d7989f9fdf03849690f17911690c",
+  "content_scope": "the article's lead and the sections that match the question",
+  "domain": "en.wikipedia.org",
+  "domain_class": "encyclopedia",
+  "final_url": "https://en.wikipedia.org/wiki/Business_class",
+  "found_by": [
+   "business class seat availability",
+   "airline"
+  ],
+  "freshness": {
+   "age_days": 0,
+   "label": "current",
+   "note": "Published about 0 days before it was read.",
+   "outdated": null,
+   "published": "2026-03-04"
+  },
+  "hidden_blocks_removed": 0,
+  "id": "S2",
+  "injection_removed": 0,
+  "kind": "web",
+  "license": "CC BY-SA 4.0",
+  "meta": {
+   "attribution": "Wikipedia contributors, \"Business class\", Wikipedia, The Free Encyclopedia, revision 555, https://en.wikipedia.org/w/index.php?title=Business_class&oldid=555. Text available under CC BY-SA 4.0.",
+   "categories": [
+    "Airline cabin classes"
+   ],
+   "disambiguation": false,
+   "html_url": null,
+   "license": "CC BY-SA 4.0",
+   "pdf_url": null,
+   "permalink": "https://en.wikipedia.org/w/index.php?title=Business_class&oldid=555",
+   "redirected_from": null,
+   "retrieved_via": "mediawiki-parse",
+   "versions": null,
+   "warnings": []
+  },
+  "modified": "2026-03-04T05:06:07Z",
+  "origin": "external_research",
+  "origin_label": "external_research",
+  "provider": "wikipedia",
+  "published": "2026-03-04T05:06:07Z",
+  "publisher": "Wikipedia",
+  "relevance": 0.4917,
+  "reliability": {
+   "level": "weak signals",
+   "note": "These are indicators, not a verdict. Check important claims against the source itself.",
+   "signals": [
+    {
+     "basis": "Anyone can edit it; it is a tertiary source: good for background and for finding primary sources, not a primary source itself.",
+     "effect": "-",
+     "name": "community-edited encyclopedia"
+    },
+    {
+     "basis": "The page was fetched over HTTPS.",
+     "effect": "+",
+     "name": "secure connection"
+    },
+    {
+     "basis": "No author is named on the page.",
+     "effect": "-",
+     "name": "author named"
+    }
+   ]
+  },
+  "retrieved_at": "2026-01-01T12:00:00.000000Z",
+  "sections": [
+   {
+    "anchor": null,
+    "end": 81,
+    "heading": null,
+    "id": "s0",
+    "number": null,
+    "path": [],
+    "start": 0
+   },
+   {
+    "anchor": "Fares_and_seats",
+    "end": 286,
+    "heading": "Fares and seats",
+    "id": "s1",
+    "number": null,
+    "path": [
+     "Fares and seats"
+    ],
+    "start": 83
+   }
+  ],
+  "sections_used": [
+   "Introduction (lead)",
+   "Fares and seats"
+  ],
+  "site": "wikipedia.org",
+  "source_label": "Wikipedia (encyclopedia: a tertiary source, edited by volunteers)",
+  "source_type": "encyclopedia",
+  "status": "ok",
+  "tier": "tertiary",
+  "title": "Business class",
+  "total_sections": 1,
+  "url": "https://en.wikipedia.org/wiki/Business_class",
+  "via": "mediawiki-parse"
+ },
+ "source_label": "Wikipedia (encyclopedia: a tertiary source, edited by volunteers)",
+ "verification": {
+  "reason": null,
+  "verified": true
+ }
+}

@@ -1,0 +1,49 @@
+{
+ "caveats": [
+  "Counts reflect only the feeds you added and how they were fetched.",
+  "More coverage does not mean more happened, and less coverage does not mean it stopped.",
+  "A change is called rising or falling only when it is large compared with chance and there are enough articles."
+ ],
+ "entities": [],
+ "explanation": {
+  "basis": {
+   "method": "rules",
+   "note": "Written from the calculated result by fixed rules. No figure is added, rounded away or inferred; the technical result above is unchanged.",
+   "numbers_cited": 4
+  },
+  "cautions": [
+   "Counts reflect only the feeds you added and how they were fetched.",
+   "More coverage does not mean more happened, and less coverage does not mean it stopped."
+  ],
+  "kind": "world:trends",
+  "points": [
+   "What this shows: how often each topic and name appeared in the articles you collected, this period against the one before.",
+   "Rising: nothing changed by more than chance would explain. Falling: nothing changed by more than chance would explain.",
+   "How it was found: counting articles per topic and name, and calling a change rising or falling only when it is large compared with chance and there are enough articles."
+  ],
+  "schema": "predictai.explanation/1",
+  "status": "available",
+  "summary": "In the last 7 days there were 3 articles compared with 0 in the 7 before.",
+  "terms": [
+   {
+    "meaning": "How an article is worded (alarming, upbeat). It is not a measure of truth, importance or fairness.",
+    "term": "tone"
+   }
+  ],
+  "title": "Explanation"
+ },
+ "method": "coverage-trend/1",
+ "previous_articles": 0,
+ "recent_articles": 3,
+ "topics": [
+  {
+   "label": "too few to say",
+   "name": "disasters",
+   "previous": 0,
+   "recent": 3,
+   "z": null
+  }
+ ],
+ "undated_articles": 0,
+ "window_days": 7
+}

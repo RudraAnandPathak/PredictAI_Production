@@ -1,0 +1,102 @@
+{
+ "attribution": "Ada L., Alan T.. \"Attention is all you need\". arXiv:2101.00001v2. Retrieved from arXiv.org (not endorsed by arXiv).",
+ "authors": [
+  "Ada L.",
+  "Alan T."
+ ],
+ "cache_hit": false,
+ "categories": null,
+ "disambiguation": null,
+ "full_text": true,
+ "html_url": "https://arxiv.org/html/2101.00001v2",
+ "label": "arXiv preprint (not peer reviewed)",
+ "license": null,
+ "meta": {
+  "abstract_url": "https://arxiv.org/abs/2101.00001v2",
+  "affiliations": [
+   "Univ A"
+  ],
+  "arxiv_id": "2101.00001",
+  "authors": [
+   "Ada L.",
+   "Alan T."
+  ],
+  "categories": [
+   "cs.LG",
+   "stat.ML"
+  ],
+  "category": "cs.LG",
+  "comment": "12 pages",
+  "doi": null,
+  "doi_url": null,
+  "first_submitted": "2021-01-01T00:00:00Z",
+  "html_url": "https://arxiv.org/html/2101.00001v2",
+  "is_latest": true,
+  "journal_ref": null,
+  "latest_revision": "2021-03-02T00:00:00Z",
+  "latest_version": 2,
+  "pdf_url": "https://arxiv.org/pdf/2101.00001v2",
+  "peer_review": "preprint",
+  "peer_review_note": "Preprint: posted on arXiv without peer review.",
+  "preprint": true,
+  "primary_category": "cs.LG",
+  "tier": "preprint",
+  "version": 2
+ },
+ "modified": "2021-03-02T00:00:00Z",
+ "note": "An arXiv preprint: not peer reviewed unless it says so. Text is shown section by section, as it would be cited.",
+ "pdf_url": "https://arxiv.org/pdf/2101.00001v2",
+ "permalink": "https://arxiv.org/abs/2101.00001v2",
+ "provider": "arxiv",
+ "published": "2021-01-01T00:00:00Z",
+ "redirected_from": null,
+ "retrieved_at": "2026-01-01T12:00:00.000000Z",
+ "retrieved_via": "arxiv-html",
+ "sections": [
+  {
+   "anchor": null,
+   "canonical": null,
+   "chars": 0,
+   "heading": null,
+   "id": "s0",
+   "level": 0,
+   "page_start": null,
+   "text": ""
+  },
+  {
+   "anchor": null,
+   "canonical": "abstract",
+   "chars": 102,
+   "heading": "Abstract",
+   "id": "s1",
+   "level": 6,
+   "page_start": null,
+   "text": "The dominant sequence transduction models are based on recurrent networks. We propose the Transformer."
+  },
+  {
+   "anchor": "S1",
+   "canonical": "introduction",
+   "chars": 576,
+   "heading": "Introduction",
+   "id": "s2",
+   "level": 2,
+   "page_start": null,
+   "text": "Recurrent models have cost $O(n^{2})$ per layer.\n\nSequence models have long relied on recurrence and convolution to relate positions in a sentence. Recurrent computation is inherently sequential, which limits parallelism within a training example and becomes a bottleneck for longer sequences, because memory constraints limit batching across examples. We argue that attention alone can model these dependencies and describe an architecture, the Transformer, that dispenses with recurrence and relies entirely on attention to draw global dependencies between input and output."
+  }
+ ],
+ "title": "Attention is all you need",
+ "url": "https://arxiv.org/abs/2101.00001v2",
+ "versions": [
+  {
+   "latest": false,
+   "submitted": "2021-01-01T00:00:00Z",
+   "version": 1
+  },
+  {
+   "latest": true,
+   "submitted": "2021-03-02T00:00:00Z",
+   "version": 2
+  }
+ ],
+ "warnings": []
+}

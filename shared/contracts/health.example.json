@@ -1,0 +1,13 @@
+{
+  "data": {
+    "status": "ok",
+    "service": "predictai-api",
+    "version": "0.1.0",
+    "environment": "development",
+    "timestamp": "2026-01-01T00:00:00Z",
+    "uptime_seconds": 0.0
+  },
+  "meta": {
+    "request_id": "0123456789abcdef0123456789abcdef"
+  }
+}

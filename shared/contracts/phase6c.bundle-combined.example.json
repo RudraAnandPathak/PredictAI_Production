@@ -1,0 +1,1433 @@
+{
+ "bundle": {
+  "ai": {
+   "note": "Conclusions are quotations; no model wrote any of them.",
+   "requested": false,
+   "status": "not_requested"
+  },
+  "asset_ids": [
+   "bea21d444b954ae2820659d527f00077"
+  ],
+  "calculations": [
+   {
+    "asset_id": "bea21d444b954ae2820659d527f00077",
+    "dataset": "airline.csv",
+    "evidence_status": "VERIFIED",
+    "kind": "dashboard",
+    "operations": [
+     "dataset_summary",
+     "data_quality",
+     "missing_values"
+    ],
+    "result_hash": "89006d7153a48c1052a7edc7285528a6aed495d455d01cb4d600ea5c0fb2e10d",
+    "rows_used": 600,
+    "run_id": "20d3dd3f792f4dd29334e9ae95ed80bc"
+   },
+   {
+    "asset_id": "bea21d444b954ae2820659d527f00077",
+    "dataset": "airline.csv",
+    "evidence_status": "VERIFIED",
+    "kind": "relationships",
+    "operations": [
+     "discover",
+     "correlation"
+    ],
+    "result_hash": "cd07a2d032c5314e1118e1bda8fa72a10e720732c71f2b8b69c2a46125f8d46d",
+    "rows_used": 600,
+    "run_id": "53d03d7fd5b14e6c9def5d6b1cfde65b"
+   },
+   {
+    "asset_id": "bea21d444b954ae2820659d527f00077",
+    "dataset": "airline.csv",
+    "evidence_status": "VERIFIED",
+    "kind": "descriptive",
+    "operations": [
+     "column_stats"
+    ],
+    "result_hash": "8eb1bbd87a4ed642ba30613574cf44baf0fa631723ddbc837e921e8a9d8c6d41",
+    "rows_used": 600,
+    "run_id": "f9aac5e390d94c89aab899c8029ebb94"
+   }
+  ],
+  "collection": {
+   "dropped": [
+    {
+     "provider": "arxiv",
+     "reason": "matched none of the question's topic words",
+     "title": "Attention is all you need",
+     "url": "https://arxiv.org/abs/2101.00001v2"
+    }
+   ],
+   "failures": [],
+   "searches": [
+    {
+     "cache_hit": false,
+     "hits": 2,
+     "provider": "wikipedia",
+     "query": "business class seat availability",
+     "retrieved_at": "2026-01-01T12:00:00.000000Z",
+     "role": "primary",
+     "subtopic": "t1"
+    },
+    {
+     "cache_hit": false,
+     "hits": 2,
+     "provider": "wikipedia",
+     "query": "airline",
+     "retrieved_at": "2026-01-01T12:00:00.000000Z",
+     "role": "additional",
+     "subtopic": "t1"
+    },
+    {
+     "cache_hit": false,
+     "hits": 1,
+     "provider": "arxiv",
+     "query": "(ti:\"business class seat availability\" OR abs:\"business class seat availability\") AND (ti:airline OR abs:airline)",
+     "retrieved_at": "2026-01-01T12:00:00.000000Z",
+     "role": "primary",
+     "subtopic": "t1"
+    }
+   ]
+  },
+  "conclusions": [
+   {
+    "authored_by": "extracted",
+    "caveats": [],
+    "confidence": "calculated",
+    "evidence": [
+     "E1"
+    ],
+    "finding": "F1",
+    "id": "C1",
+    "kind": "computed",
+    "sources": [
+     "S1"
+    ],
+    "subtopic": "d1",
+    "text": "airline.csv has 600 rows and 8 columns (4 float, 4 text). 60 cells (1.25%) are missing, 540 rows are complete, and 0 rows are exact duplicates of an earlier row."
+   },
+   {
+    "authored_by": "extracted",
+    "caveats": [],
+    "confidence": "calculated",
+    "evidence": [
+     "E2"
+    ],
+    "finding": "F2",
+    "id": "C2",
+    "kind": "computed",
+    "sources": [
+     "S1"
+    ],
+    "subtopic": "d1",
+    "text": "'price': mean 6,131, median 4,243, standard deviation 3,724, range 2,407 to 16,237, 0 missing. The distribution is right-skewed (skewness 1.2)."
+   },
+   {
+    "authored_by": "extracted",
+    "caveats": [],
+    "confidence": "calculated",
+    "evidence": [
+     "E3"
+    ],
+    "finding": "F3",
+    "id": "C3",
+    "kind": "computed",
+    "sources": [
+     "S1"
+    ],
+    "subtopic": "d1",
+    "text": "'seats_available': mean 90.7, median 113, standard deviation 50.7, range 2 to 168, 0 missing."
+   }
+  ],
+  "conflicts": [],
+  "context": {
+   "calculations": [
+    {
+     "asset_id": "bea21d444b954ae2820659d527f00077",
+     "dataset": "airline.csv",
+     "kind": "dashboard",
+     "operations": [
+      "dataset_summary",
+      "data_quality",
+      "missing_values"
+     ],
+     "result_hash": "89006d7153a48c1052a7edc7285528a6aed495d455d01cb4d600ea5c0fb2e10d",
+     "rows_used": 600,
+     "run_id": "20d3dd3f792f4dd29334e9ae95ed80bc"
+    },
+    {
+     "asset_id": "bea21d444b954ae2820659d527f00077",
+     "dataset": "airline.csv",
+     "kind": "relationships",
+     "operations": [
+      "discover",
+      "correlation"
+     ],
+     "result_hash": "cd07a2d032c5314e1118e1bda8fa72a10e720732c71f2b8b69c2a46125f8d46d",
+     "rows_used": 600,
+     "run_id": "53d03d7fd5b14e6c9def5d6b1cfde65b"
+    },
+    {
+     "asset_id": "bea21d444b954ae2820659d527f00077",
+     "dataset": "airline.csv",
+     "kind": "descriptive",
+     "operations": [
+      "column_stats"
+     ],
+     "result_hash": "8eb1bbd87a4ed642ba30613574cf44baf0fa631723ddbc837e921e8a9d8c6d41",
+     "rows_used": 600,
+     "run_id": "f9aac5e390d94c89aab899c8029ebb94"
+    }
+   ],
+   "counts": {
+    "calculated": 15,
+    "external_research": 0,
+    "model_prediction": 0,
+    "user_provided": 0
+   },
+   "excluded": [],
+   "included": [
+    {
+     "asset_id": "bea21d444b954ae2820659d527f00077",
+     "calculated": 15,
+     "kind": "dataset",
+     "name": "airline.csv",
+     "runs": 3
+    }
+   ],
+   "private_material": true,
+   "project_id": "a1b039909a6e4513b2533f12eb224c2c"
+  },
+  "counts": {
+   "conclusions": 18,
+   "conflicts": 0,
+   "evidence": 19,
+   "findings": 19,
+   "gaps": 2,
+   "sources": 3
+  },
+  "created_at": "2026-01-01T12:00:00.000000Z",
+  "engine": "research-engine/1",
+  "evidence": [
+   {
+    "citation": {
+     "asset_id": "bea21d444b954ae2820659d527f00077",
+     "calc": {
+      "claim": "summary",
+      "ctx": {
+       "name": "airline.csv",
+       "target": null
+      },
+      "fn": "dataset_summary",
+      "run": {
+       "op": "dataset_summary",
+       "op_index": 0,
+       "result_hash": "89006d7153a48c1052a7edc7285528a6aed495d455d01cb4d600ea5c0fb2e10d",
+       "run_id": "20d3dd3f792f4dd29334e9ae95ed80bc"
+      }
+     },
+     "claim": "summary",
+     "document": "airline.csv",
+     "kind": "calculation",
+     "op": "dataset_summary",
+     "quote_sha256": "bf3ea539e172fc71",
+     "result_hash": "89006d7153a48c1052a7edc7285528a6aed495d455d01cb4d600ea5c0fb2e10d",
+     "run_id": "20d3dd3f792f4dd29334e9ae95ed80bc"
+    },
+    "facts": {
+     "columns": 8,
+     "dataset": "airline.csv",
+     "duplicates": 0,
+     "missing_cells": 60,
+     "rows": 600
+    },
+    "flags": {
+     "direction": null,
+     "hedged": false,
+     "negated": false
+    },
+    "id": "E1",
+    "kind": "computed",
+    "location": {
+     "claim": "summary",
+     "kind": "calculation",
+     "op": "dataset_summary",
+     "run_id": "20d3dd3f792f4dd29334e9ae95ed80bc"
+    },
+    "numbers": [
+     "0",
+     "1.25",
+     "1.25%"
+    ],
+    "origin": "calculated",
+    "pass": 1,
+    "quote": "airline.csv has 600 rows and 8 columns (4 float, 4 text). 60 cells (1.25%) are missing, 540 rows are complete, and 0 rows are exact duplicates of an earlier row.",
+    "score": 1.0,
+    "source": "S1",
+    "subtopic": "d1"
+   },
+   {
+    "citation": {
+     "asset_id": "bea21d444b954ae2820659d527f00077",
+     "calc": {
+      "claim": "stats:price",
+      "ctx": {
+       "name": "airline.csv",
+       "target": null
+      },
+      "fn": "column_stats",
+      "run": {
+       "op": "column_stats",
+       "op_index": 0,
+       "result_hash": "8eb1bbd87a4ed642ba30613574cf44baf0fa631723ddbc837e921e8a9d8c6d41",
+       "run_id": "f9aac5e390d94c89aab899c8029ebb94"
+      }
+     },
+     "claim": "stats:price",
+     "document": "airline.csv",
+     "kind": "calculation",
+     "op": "column_stats",
+     "quote_sha256": "16c515fad8c719d8",
+     "result_hash": "8eb1bbd87a4ed642ba30613574cf44baf0fa631723ddbc837e921e8a9d8c6d41",
+     "run_id": "f9aac5e390d94c89aab899c8029ebb94"
+    },
+    "facts": {
+     "column": "price",
+     "dataset": "airline.csv",
+     "max": 16237.0,
+     "mean": 6130.54,
+     "median": 4243.0,
+     "min": 2407.0,
+     "outliers": 0,
+     "skewness": 1.17978144,
+     "std": 3723.832988
+    },
+    "flags": {
+     "direction": null,
+     "hedged": false,
+     "negated": false
+    },
+    "id": "E2",
+    "kind": "computed",
+    "location": {
+     "claim": "stats:price",
+     "kind": "calculation",
+     "op": "column_stats",
+     "run_id": "f9aac5e390d94c89aab899c8029ebb94"
+    },
+    "numbers": [
+     "0",
+     "1.2",
+     "16237"
+    ],
+    "origin": "calculated",
+    "pass": 1,
+    "quote": "'price': mean 6,131, median 4,243, standard deviation 3,724, range 2,407 to 16,237, 0 missing. The distribution is right-skewed (skewness 1.2).",
+    "score": 1.0,
+    "source": "S1",
+    "subtopic": "d1"
+   },
+   {
+    "citation": {
+     "asset_id": "bea21d444b954ae2820659d527f00077",
+     "calc": {
+      "claim": "stats:seats_available",
+      "ctx": {
+       "name": "airline.csv",
+       "target": null
+      },
+      "fn": "column_stats",
+      "run": {
+       "op": "column_stats",
+       "op_index": 0,
+       "result_hash": "8eb1bbd87a4ed642ba30613574cf44baf0fa631723ddbc837e921e8a9d8c6d41",
+       "run_id": "f9aac5e390d94c89aab899c8029ebb94"
+      }
+     },
+     "claim": "stats:seats_available",
+     "document": "airline.csv",
+     "kind": "calculation",
+     "op": "column_stats",
+     "quote_sha256": "63d77b0f2a41bc10",
+     "result_hash": "8eb1bbd87a4ed642ba30613574cf44baf0fa631723ddbc837e921e8a9d8c6d41",
+     "run_id": "f9aac5e390d94c89aab899c8029ebb94"
+    },
+    "facts": {
+     "column": "seats_available",
+     "dataset": "airline.csv",
+     "max": 168.0,
+     "mean": 90.69333333,
+     "median": 113.0,
+     "min": 2.0,
+     "outliers": 0,
+     "skewness": -0.8764033331,
+     "std": 50.74140754
+    },
+    "flags": {
+     "direction": null,
+     "hedged": false,
+     "negated": false
+    },
+    "id": "E3",
+    "kind": "computed",
+    "location": {
+     "claim": "stats:seats_available",
+     "kind": "calculation",
+     "op": "column_stats",
+     "run_id": "f9aac5e390d94c89aab899c8029ebb94"
+    },
+    "numbers": [
+     "0",
+     "113",
+     "168"
+    ],
+    "origin": "calculated",
+    "pass": 1,
+    "quote": "'seats_available': mean 90.7, median 113, standard deviation 50.7, range 2 to 168, 0 missing.",
+    "score": 1.0,
+    "source": "S1",
+    "subtopic": "d1"
+   }
+  ],
+  "findings": [
+   {
+    "agreement": "single_source",
+    "evidence": [
+     "E1"
+    ],
+    "id": "F1",
+    "kind": "computed",
+    "near_identical": false,
+    "numbers": [
+     "0",
+     "1.25",
+     "1.25%"
+    ],
+    "origin": "calculated",
+    "representative": "E1",
+    "sources": [
+     "S1"
+    ],
+    "statement": "airline.csv has 600 rows and 8 columns (4 float, 4 text). 60 cells (1.25%) are missing, 540 rows are complete, and 0 rows are exact duplicates of an earlier row.",
+    "subtopic": "d1"
+   },
+   {
+    "agreement": "single_source",
+    "evidence": [
+     "E2"
+    ],
+    "id": "F2",
+    "kind": "computed",
+    "near_identical": false,
+    "numbers": [
+     "0",
+     "1.2",
+     "16237"
+    ],
+    "origin": "calculated",
+    "representative": "E2",
+    "sources": [
+     "S1"
+    ],
+    "statement": "'price': mean 6,131, median 4,243, standard deviation 3,724, range 2,407 to 16,237, 0 missing. The distribution is right-skewed (skewness 1.2).",
+    "subtopic": "d1"
+   },
+   {
+    "agreement": "single_source",
+    "evidence": [
+     "E3"
+    ],
+    "id": "F3",
+    "kind": "computed",
+    "near_identical": false,
+    "numbers": [
+     "0",
+     "113",
+     "168"
+    ],
+    "origin": "calculated",
+    "representative": "E3",
+    "sources": [
+     "S1"
+    ],
+    "statement": "'seats_available': mean 90.7, median 113, standard deviation 50.7, range 2 to 168, 0 missing.",
+    "subtopic": "d1"
+   }
+  ],
+  "gaps": [
+   {
+    "note": "Nothing relevant was found for this part.",
+    "subtopic": "t2",
+    "title": "Background and definitions"
+   },
+   {
+    "note": "Nothing relevant was found for this part.",
+    "subtopic": "t3",
+    "title": "Key facts and figures"
+   }
+  ],
+  "id": "29bec18390d04d2699881e16a305a4c7",
+  "integrity": {
+   "algorithm": "sha256",
+   "covers": "every field except this one",
+   "sha256": "31a52d916499d6c575207e865d78df814dd54cf1b7e81e1ecbd122f95732d421"
+  },
+  "job_id": "8a9002ae23bc423f8cd9ff5054ee4eb2",
+  "level": "topic",
+  "level_label": "Topic overview",
+  "limitations": [
+   "Findings quote the sources; the platform does not add facts of its own.",
+   "A search returns what a provider ranks highly, not everything that exists.",
+   "Wikipedia is an encyclopedia (a tertiary source) and arXiv papers are preprints that may not be peer reviewed; both are labelled that way wherever they appear."
+  ],
+  "number": 1,
+  "plan": {
+   "entities": [],
+   "focus": {
+    "phrases": [
+     "business class seat availability",
+     "airline",
+     "aviation"
+    ],
+    "terms": [
+     "business",
+     "class",
+     "seat"
+    ]
+   },
+   "intent": "general",
+   "level": "topic",
+   "level_label": "Topic overview",
+   "limitations": [
+    "Findings quote the sources; the platform does not add facts of its own.",
+    "A search returns what a provider ranks highly, not everything that exists.",
+    "Wikipedia is an encyclopedia (a tertiary source) and arXiv papers are preprints that may not be peer reviewed; both are labelled that way wherever they appear."
+   ],
+   "local": {
+    "datasets": [
+     "bea21d444b954ae2820659d527f00077"
+    ],
+    "documents": [],
+    "passages_per_subtopic": 6
+   },
+   "min_sources": 2,
+   "plan_hash": "19593113b2eb30c66e0b5aeccec7d8f1d181bba9167f4c1cf2b4480f438512b1",
+   "question": "What does the airline dataset tell us about business class seat availability, and what do aviation sources say?",
+   "rounds": 1,
+   "subtopics": [
+    {
+     "facet": "",
+     "id": "d1",
+     "intent": "overview",
+     "purpose": "calculated from your data",
+     "query": "airline dataset tell business class seat availability aviation",
+     "scope": "dataset",
+     "title": "What the dataset contains",
+     "topic_terms": []
+    },
+    {
+     "facet": "",
+     "id": "d2",
+     "intent": "relationships",
+     "purpose": "calculated from your data",
+     "query": "airline dataset tell business class seat availability aviation",
+     "scope": "dataset",
+     "title": "Strongest relationships in the data",
+     "topic_terms": []
+    },
+    {
+     "facet": "",
+     "id": "d3",
+     "intent": "quality",
+     "purpose": "calculated from your data",
+     "query": "airline dataset tell business class seat availability aviation",
+     "scope": "dataset",
+     "title": "Missing, suspicious or unusual values",
+     "topic_terms": []
+    }
+   ],
+   "tasks": [
+    {
+     "depends_on": [],
+     "description": "Collect what is in your project that relates to the question (documents, datasets, saved analyses and models).",
+     "id": "k1",
+     "kind": "context"
+    },
+    {
+     "depends_on": [
+      "k1"
+     ],
+     "description": "Calculate verified statistics on 1 selected dataset(s) with the platform's own analysis and model services (no data values leave the platform, and no number in the answer is written by a language model).",
+     "id": "k1b",
+     "kind": "dataset_analysis"
+    },
+    {
+     "depends_on": [
+      "k1b"
+     ],
+     "description": "Search wikipedia, arxiv, searxng with up to 9 approved search phrases, then open the most relevant Wikipedia articles, arXiv papers and web pages and read the sections that bear on the question.",
+     "id": "k2",
+     "kind": "web_search"
+    }
+   ],
+   "web": {
+    "enabled": true,
+    "freshness_days": null,
+    "max_pages": 6,
+    "providers": [
+     "wikipedia",
+     "arxiv",
+     "searxng"
+    ],
+    "queries": [
+     {
+      "by_provider": {
+       "arxiv": [
+        {
+         "query": "(ti:\"business class seat availability\" OR abs:\"business class seat availability\") AND (ti:airline OR abs:airline)",
+         "role": "primary"
+        },
+        {
+         "query": "(ti:business OR abs:business) AND (ti:class OR abs:class) AND (ti:seat OR abs:seat)",
+         "role": "fallback"
+        },
+        {
+         "query": "all:business AND all:class",
+         "role": "fallback"
+        }
+       ],
+       "searxng": [
+        {
+         "query": "business class seat availability airline aviation",
+         "role": "primary"
+        },
+        {
+         "query": "What does the airline dataset tell us about business class seat availability and what do aviation sources say",
+         "role": "fallback"
+        }
+       ],
+       "wikipedia": [
+        {
+         "query": "business class seat availability",
+         "role": "primary"
+        },
+        {
+         "query": "airline",
+         "role": "additional"
+        },
+        {
+         "query": "business class seat availability airline",
+         "role": "fallback"
+        }
+       ]
+      },
+      "providers": [
+       "wikipedia",
+       "arxiv",
+       "searxng"
+      ],
+      "query": "business class seat availability",
+      "removed": [],
+      "subtopic": "t1"
+     },
+     {
+      "by_provider": {
+       "searxng": [
+        {
+         "query": "business class seat availability airline aviation statistics",
+         "role": "primary"
+        }
+       ]
+      },
+      "providers": [
+       "searxng"
+      ],
+      "query": "business class seat availability airline aviation statistics",
+      "removed": [],
+      "subtopic": "t3"
+     }
+    ]
+   }
+  },
+  "project_id": "a1b039909a6e4513b2533f12eb224c2c",
+  "purpose": "general",
+  "quality": {
+   "checks": [
+    {
+     "detail": "All 19 cited passages were found again at the recorded place and match what was quoted.",
+     "id": "citations_exist",
+     "items": [],
+     "status": "pass",
+     "title": "Citations exist"
+    },
+    {
+     "detail": "All 18 conclusions quote or closely follow passages that were found.",
+     "id": "claims_supported",
+     "items": [],
+     "status": "pass",
+     "title": "Claims are supported"
+    },
+    {
+     "detail": "Every source was read successfully.",
+     "id": "sources_accessible",
+     "items": [],
+     "status": "pass",
+     "title": "Sources could be read"
+    }
+   ],
+   "counts": {
+    "fail": 0,
+    "info": 0,
+    "pass": 13,
+    "warn": 3
+   },
+   "note": "These checks re-read the finished result. They catch missing or broken citations and over-strong wording; they cannot tell you whether a source is right.",
+   "schema": "predictai.research_quality/1",
+   "verdict": "caution",
+   "warnings": [
+    "Enough evidence: 2 part(s) of the plan found nothing.",
+    "Conclusions are no stronger than the evidence: 3 conclusion(s) rest on one source, hedged wording, a prediction or a disputed claim; each is labelled that way.",
+    "Every part of the question was covered: 4 of 6 parts have evidence; 2 found nothing."
+   ]
+  },
+  "question": "What does the airline dataset tell us about business class seat availability, and what do aviation sources say?",
+  "removed": [],
+  "report": {
+   "answer": [
+    {
+     "caveats": [],
+     "class": "calculated",
+     "conclusion": "C1",
+     "confidence": "calculated",
+     "evidence": [
+      "E1"
+     ],
+     "kind": "computed",
+     "label": "Calculated from your data",
+     "location": {
+      "claim": "summary",
+      "kind": "calculation",
+      "op": "dataset_summary",
+      "run_id": "20d3dd3f792f4dd29334e9ae95ed80bc"
+     },
+     "origin": "calculated",
+     "section": "What the dataset contains",
+     "sources": [
+      "S1"
+     ],
+     "subtopic": "d1",
+     "text": "airline.csv has 600 rows and 8 columns (4 float, 4 text). 60 cells (1.25%) are missing, 540 rows are complete, and 0 rows are exact duplicates of an earlier row.",
+     "title": "Calculations on airline.csv"
+    },
+    {
+     "caveats": [
+      "This is an association in your data. It does not show that one thing causes the other."
+     ],
+     "class": "calculated",
+     "conclusion": "C6",
+     "confidence": "calculated",
+     "evidence": [
+      "E6"
+     ],
+     "kind": "computed",
+     "label": "Calculated from your data",
+     "location": {
+      "claim": "pattern:0",
+      "kind": "calculation",
+      "op": "discover",
+      "run_id": "53d03d7fd5b14e6c9def5d6b1cfde65b"
+     },
+     "origin": "calculated",
+     "section": "Strongest relationships in the data",
+     "sources": [
+      "S1"
+     ],
+     "subtopic": "d2",
+     "text": "'price' and 'fare_class' are associated (correlation ratio (eta) = 0.966; large strength; p < 0.001 after adjusting for the number of pairs compared; n = 600).",
+     "title": "Calculations on airline.csv"
+    },
+    {
+     "caveats": [],
+     "class": "calculated",
+     "conclusion": "C12",
+     "confidence": "calculated",
+     "evidence": [
+      "E12"
+     ],
+     "kind": "computed",
+     "label": "Calculated from your data",
+     "location": {
+      "claim": "issue:0",
+      "kind": "calculation",
+      "op": "data_quality",
+      "run_id": "20d3dd3f792f4dd29334e9ae95ed80bc"
+     },
+     "origin": "calculated",
+     "section": "Missing, suspicious or unusual values",
+     "sources": [
+      "S1"
+     ],
+     "subtopic": "d3",
+     "text": "Data check (warning): 40 value(s) of 'delay_minutes' lie outside the usual range (values outside Q1 - 1.5*IQR .. Q3 + 1.5*IQR (Tukey fences)).",
+     "title": "Calculations on airline.csv"
+    }
+   ],
+   "comparison": [
+    {
+     "calculated": {
+      "dataset": "airline.csv",
+      "evidence": "E3",
+      "text": "'seats_available': mean 90.7, median 113, standard deviation 50.7, range 2 to 168, 0 missing."
+     },
+     "external": [
+      {
+       "alignment": null,
+       "evidence": "E18",
+       "label": "Wikipedia (encyclopedia: a tertiary source, edited by volunteers)",
+       "matched": [
+        "seats_available"
+       ],
+       "source": "S2",
+       "text": "Seats available per flight are far fewer in business class, and passengers per flight are fewer as well."
+      }
+     ],
+     "note": "The outside passage mentions one of the variables in the calculated result. The match is by words, not by meaning: read both passages before drawing a conclusion.",
+     "relation": "same_subject"
+    },
+    {
+     "calculated": {
+      "dataset": "airline.csv",
+      "evidence": "E4",
+      "text": "'passengers': mean 69.5, median 88, standard deviation 41.9, range 0 to 129, 60 missing."
+     },
+     "external": [
+      {
+       "alignment": null,
+       "evidence": "E18",
+       "label": "Wikipedia (encyclopedia: a tertiary source, edited by volunteers)",
+       "matched": [
+        "passengers"
+       ],
+       "source": "S2",
+       "text": "Seats available per flight are far fewer in business class, and passengers per flight are fewer as well."
+      }
+     ],
+     "note": "The outside passage mentions one of the variables in the calculated result. The match is by words, not by meaning: read both passages before drawing a conclusion.",
+     "relation": "same_subject"
+    },
+    {
+     "calculated": {
+      "dataset": "airline.csv",
+      "evidence": "E6",
+      "text": "'price' and 'fare_class' are associated (correlation ratio (eta) = 0.966; large strength; p < 0.001 after adjusting for the number of pairs compared; n = 600)."
+     },
+     "external": [
+      {
+       "alignment": null,
+       "evidence": "E18",
+       "label": "Wikipedia (encyclopedia: a tertiary source, edited by volunteers)",
+       "matched": [
+        "fare_class"
+       ],
+       "source": "S2",
+       "text": "Seats available per flight are far fewer in business class, and passengers per flight are fewer as well."
+      },
+      {
+       "alignment": null,
+       "evidence": "E19",
+       "label": "General web page",
+       "matched": [
+        "fare_class"
+       ],
+       "source": "S3",
+       "text": "Fares for business class are several times higher than economy fares on the same route."
+      }
+     ],
+     "note": "The outside passage mentions one of the variables in the calculated result. The match is by words, not by meaning: read both passages before drawing a conclusion.",
+     "relation": "same_subject"
+    }
+   ],
+   "conflicts": [],
+   "dataset": {
+    "datasets": [
+     {
+      "asset_id": "bea21d444b954ae2820659d527f00077",
+      "calculations": [
+       {
+        "evidence_status": "VERIFIED",
+        "kind": "dashboard",
+        "operations": [
+         "dataset_summary",
+         "data_quality",
+         "missing_values"
+        ],
+        "result_hash": "89006d7153a48c1052a7edc7285528a6aed495d455d01cb4d600ea5c0fb2e10d",
+        "rows_used": 600,
+        "run_id": "20d3dd3f792f4dd29334e9ae95ed80bc"
+       },
+       {
+        "evidence_status": "VERIFIED",
+        "kind": "relationships",
+        "operations": [
+         "discover",
+         "correlation"
+        ],
+        "result_hash": "cd07a2d032c5314e1118e1bda8fa72a10e720732c71f2b8b69c2a46125f8d46d",
+        "rows_used": 600,
+        "run_id": "53d03d7fd5b14e6c9def5d6b1cfde65b"
+       },
+       {
+        "evidence_status": "VERIFIED",
+        "kind": "descriptive",
+        "operations": [
+         "column_stats"
+        ],
+        "result_hash": "8eb1bbd87a4ed642ba30613574cf44baf0fa631723ddbc837e921e8a9d8c6d41",
+        "rows_used": 600,
+        "run_id": "f9aac5e390d94c89aab899c8029ebb94"
+       }
+      ],
+      "name": "airline.csv"
+     }
+    ],
+    "notes": [],
+    "present": true
+   },
+   "external": {
+    "by_class": {
+     "web": [
+      "S3"
+     ],
+     "wikipedia": [
+      "S2"
+     ]
+    },
+    "present": true,
+    "requested": true,
+    "searches": 8,
+    "unread": [],
+    "used": true
+   },
+   "reading_guide": "Each line shows what kind of evidence it is. Open its citation to see the exact passage, where it came from and when it was read.",
+   "schema": "predictai.research_report/1",
+   "sections": [
+    {
+     "intent": "overview",
+     "items": [
+      {
+       "caveats": [],
+       "class": "calculated",
+       "conclusion": "C1",
+       "confidence": "calculated",
+       "evidence": [
+        "E1"
+       ],
+       "kind": "computed",
+       "label": "Calculated from your data",
+       "location": {
+        "claim": "summary",
+        "kind": "calculation",
+        "op": "dataset_summary",
+        "run_id": "20d3dd3f792f4dd29334e9ae95ed80bc"
+       },
+       "origin": "calculated",
+       "sources": [
+        "S1"
+       ],
+       "text": "airline.csv has 600 rows and 8 columns (4 float, 4 text). 60 cells (1.25%) are missing, 540 rows are complete, and 0 rows are exact duplicates of an earlier row.",
+       "title": "Calculations on airline.csv"
+      },
+      {
+       "caveats": [],
+       "class": "calculated",
+       "conclusion": "C2",
+       "confidence": "calculated",
+       "evidence": [
+        "E2"
+       ],
+       "kind": "computed",
+       "label": "Calculated from your data",
+       "location": {
+        "claim": "stats:price",
+        "kind": "calculation",
+        "op": "column_stats",
+        "run_id": "f9aac5e390d94c89aab899c8029ebb94"
+       },
+       "origin": "calculated",
+       "sources": [
+        "S1"
+       ],
+       "text": "'price': mean 6,131, median 4,243, standard deviation 3,724, range 2,407 to 16,237, 0 missing. The distribution is right-skewed (skewness 1.2).",
+       "title": "Calculations on airline.csv"
+      },
+      {
+       "caveats": [],
+       "class": "calculated",
+       "conclusion": "C3",
+       "confidence": "calculated",
+       "evidence": [
+        "E3"
+       ],
+       "kind": "computed",
+       "label": "Calculated from your data",
+       "location": {
+        "claim": "stats:seats_available",
+        "kind": "calculation",
+        "op": "column_stats",
+        "run_id": "f9aac5e390d94c89aab899c8029ebb94"
+       },
+       "origin": "calculated",
+       "sources": [
+        "S1"
+       ],
+       "text": "'seats_available': mean 90.7, median 113, standard deviation 50.7, range 2 to 168, 0 missing.",
+       "title": "Calculations on airline.csv"
+      }
+     ],
+     "note": null,
+     "scope": "dataset",
+     "status": "answered",
+     "subtopic": "d1",
+     "title": "What the dataset contains"
+    },
+    {
+     "intent": "relationships",
+     "items": [
+      {
+       "caveats": [
+        "This is an association in your data. It does not show that one thing causes the other."
+       ],
+       "class": "calculated",
+       "conclusion": "C6",
+       "confidence": "calculated",
+       "evidence": [
+        "E6"
+       ],
+       "kind": "computed",
+       "label": "Calculated from your data",
+       "location": {
+        "claim": "pattern:0",
+        "kind": "calculation",
+        "op": "discover",
+        "run_id": "53d03d7fd5b14e6c9def5d6b1cfde65b"
+       },
+       "origin": "calculated",
+       "sources": [
+        "S1"
+       ],
+       "text": "'price' and 'fare_class' are associated (correlation ratio (eta) = 0.966; large strength; p < 0.001 after adjusting for the number of pairs compared; n = 600).",
+       "title": "Calculations on airline.csv"
+      },
+      {
+       "caveats": [
+        "This is an association in your data. It does not show that one thing causes the other."
+       ],
+       "class": "calculated",
+       "conclusion": "C7",
+       "confidence": "calculated",
+       "evidence": [
+        "E7"
+       ],
+       "kind": "computed",
+       "label": "Calculated from your data",
+       "location": {
+        "claim": "pattern:1",
+        "kind": "calculation",
+        "op": "discover",
+        "run_id": "53d03d7fd5b14e6c9def5d6b1cfde65b"
+       },
+       "origin": "calculated",
+       "sources": [
+        "S1"
+       ],
+       "text": "'price' and 'seats_available' are associated (Spearman rho = -0.547, negative direction; large strength; p < 0.001 after adjusting for the number of pairs compared; n = 600).",
+       "title": "Calculations on airline.csv"
+      },
+      {
+       "caveats": [
+        "This is an association in your data. It does not show that one thing causes the other."
+       ],
+       "class": "calculated",
+       "conclusion": "C8",
+       "confidence": "calculated",
+       "evidence": [
+        "E8"
+       ],
+       "kind": "computed",
+       "label": "Calculated from your data",
+       "location": {
+        "claim": "pattern:2",
+        "kind": "calculation",
+        "op": "discover",
+        "run_id": "53d03d7fd5b14e6c9def5d6b1cfde65b"
+       },
+       "origin": "calculated",
+       "sources": [
+        "S1"
+       ],
+       "text": "'seats_available' and 'fare_class' are associated (correlation ratio (eta) = 0.968; large strength; p < 0.001 after adjusting for the number of pairs compared; n = 600).",
+       "title": "Calculations on airline.csv"
+      }
+     ],
+     "note": null,
+     "scope": "dataset",
+     "status": "answered",
+     "subtopic": "d2",
+     "title": "Strongest relationships in the data"
+    },
+    {
+     "intent": "quality",
+     "items": [
+      {
+       "caveats": [],
+       "class": "calculated",
+       "conclusion": "C12",
+       "confidence": "calculated",
+       "evidence": [
+        "E12"
+       ],
+       "kind": "computed",
+       "label": "Calculated from your data",
+       "location": {
+        "claim": "issue:0",
+        "kind": "calculation",
+        "op": "data_quality",
+        "run_id": "20d3dd3f792f4dd29334e9ae95ed80bc"
+       },
+       "origin": "calculated",
+       "sources": [
+        "S1"
+       ],
+       "text": "Data check (warning): 40 value(s) of 'delay_minutes' lie outside the usual range (values outside Q1 - 1.5*IQR .. Q3 + 1.5*IQR (Tukey fences)).",
+       "title": "Calculations on airline.csv"
+      },
+      {
+       "caveats": [],
+       "class": "calculated",
+       "conclusion": "C13",
+       "confidence": "calculated",
+       "evidence": [
+        "E13"
+       ],
+       "kind": "computed",
+       "label": "Calculated from your data",
+       "location": {
+        "claim": "issue:1",
+        "kind": "calculation",
+        "op": "data_quality",
+        "run_id": "20d3dd3f792f4dd29334e9ae95ed80bc"
+       },
+       "origin": "calculated",
+       "sources": [
+        "S1"
+       ],
+       "text": "Data check (info): 'flight_no' has 600 distinct values (more than half the rows), so it may be an identifier.",
+       "title": "Calculations on airline.csv"
+      },
+      {
+       "caveats": [],
+       "class": "calculated",
+       "conclusion": "C14",
+       "confidence": "calculated",
+       "evidence": [
+        "E14"
+       ],
+       "kind": "computed",
+       "label": "Calculated from your data",
+       "location": {
+        "claim": "issue:2",
+        "kind": "calculation",
+        "op": "data_quality",
+        "run_id": "20d3dd3f792f4dd29334e9ae95ed80bc"
+       },
+       "origin": "calculated",
+       "sources": [
+        "S1"
+       ],
+       "text": "Data check (info): 'note' has 600 distinct values (more than half the rows), so it may be an identifier.",
+       "title": "Calculations on airline.csv"
+      }
+     ],
+     "note": null,
+     "scope": "dataset",
+     "status": "answered",
+     "subtopic": "d3",
+     "title": "Missing, suspicious or unusual values"
+    }
+   ],
+   "separation_note": "Calculated results describe your file and were computed by PredictAI. Outside sources describe what they say in general. They are shown side by side and never combined into one claim; an association in your data is not proof that one thing causes another.",
+   "uncertainty": [
+    "Wikipedia is an encyclopedia written by volunteers (a tertiary source). It is good for background and for finding primary sources, and it can be wrong or out of date.",
+    "Relationships found in your data are associations. They do not show that one thing causes another.",
+    "Background and definitions: Nothing relevant was found for this part."
+   ]
+  },
+  "schema": "predictai.evidence_bundle/1",
+  "session_id": "d49b54ff97b446aba9005901d0f199bc",
+  "sources": [
+   {
+    "asset_id": "bea21d444b954ae2820659d527f00077",
+    "freshness": {
+     "age_days": null,
+     "label": "not applicable",
+     "note": "Your own material.",
+     "outdated": null,
+     "published": null
+    },
+    "id": "S1",
+    "injection_removed": 0,
+    "kind": "analysis",
+    "origin": "calculated",
+    "origin_label": "calculated",
+    "ref_id": "db801f2d95654aea8bdf7388eb4b75ec",
+    "reliability": {
+     "level": "calculated",
+     "note": "These are indicators, not a verdict. Check important claims against the source itself.",
+     "signals": [
+      {
+       "basis": "Computed from your data by PredictAI; it is only as good as the data and the method.",
+       "effect": "0",
+       "name": "calculated from your data"
+      }
+     ]
+    },
+    "source_label": "Calculated from your data",
+    "status": "ok",
+    "title": "Calculations on airline.csv"
+   },
+   {
+    "cache_hit": false,
+    "content_hash": "4e2b238139da598a25f23a931878eb49d291d7989f9fdf03849690f17911690c",
+    "content_scope": "the article's lead and the sections that match the question",
+    "domain": "en.wikipedia.org",
+    "domain_class": "encyclopedia",
+    "final_url": "https://en.wikipedia.org/wiki/Business_class",
+    "found_by": [
+     "business class seat availability",
+     "airline"
+    ],
+    "freshness": {
+     "age_days": 0,
+     "label": "current",
+     "note": "Published about 0 days before it was read.",
+     "outdated": null,
+     "published": "2026-03-04"
+    },
+    "hidden_blocks_removed": 0,
+    "id": "S2",
+    "injection_removed": 0,
+    "kind": "web",
+    "license": "CC BY-SA 4.0",
+    "meta": {
+     "attribution": "Wikipedia contributors, \"Business class\", Wikipedia, The Free Encyclopedia, revision 555, https://en.wikipedia.org/w/index.php?title=Business_class&oldid=555. Text available under CC BY-SA 4.0.",
+     "categories": [
+      "Airline cabin classes"
+     ],
+     "disambiguation": false,
+     "html_url": null,
+     "license": "CC BY-SA 4.0",
+     "pdf_url": null,
+     "permalink": "https://en.wikipedia.org/w/index.php?title=Business_class&oldid=555",
+     "redirected_from": null,
+     "retrieved_via": "mediawiki-parse",
+     "versions": null,
+     "warnings": []
+    },
+    "modified": "2026-03-04T05:06:07Z",
+    "origin": "external_research",
+    "origin_label": "external_research",
+    "provider": "wikipedia",
+    "published": "2026-03-04T05:06:07Z",
+    "publisher": "Wikipedia",
+    "relevance": 0.4917,
+    "reliability": {
+     "level": "weak signals",
+     "note": "These are indicators, not a verdict. Check important claims against the source itself.",
+     "signals": [
+      {
+       "basis": "Anyone can edit it; it is a tertiary source: good for background and for finding primary sources, not a primary source itself.",
+       "effect": "-",
+       "name": "community-edited encyclopedia"
+      },
+      {
+       "basis": "The page was fetched over HTTPS.",
+       "effect": "+",
+       "name": "secure connection"
+      },
+      {
+       "basis": "No author is named on the page.",
+       "effect": "-",
+       "name": "author named"
+      }
+     ]
+    },
+    "retrieved_at": "2026-01-01T12:00:00.000000Z",
+    "sections": [
+     {
+      "anchor": null,
+      "end": 81,
+      "heading": null,
+      "id": "s0",
+      "number": null,
+      "path": [],
+      "start": 0
+     },
+     {
+      "anchor": "Fares_and_seats",
+      "end": 286,
+      "heading": "Fares and seats",
+      "id": "s1",
+      "number": null,
+      "path": [
+       "Fares and seats"
+      ],
+      "start": 83
+     }
+    ],
+    "sections_used": [
+     "Introduction (lead)",
+     "Fares and seats"
+    ],
+    "site": "wikipedia.org",
+    "source_label": "Wikipedia (encyclopedia: a tertiary source, edited by volunteers)",
+    "source_type": "encyclopedia",
+    "status": "ok",
+    "tier": "tertiary",
+    "title": "Business class",
+    "total_sections": 1,
+    "url": "https://en.wikipedia.org/wiki/Business_class",
+    "via": "mediawiki-parse"
+   },
+   {
+    "cache_hit": false,
+    "content_hash": "68b8a44d3d5ed0e978f37dbb51533754fc956212c5229a768ac8fd18c3011a3e",
+    "content_scope": "the page's main text",
+    "domain": "aviation.test",
+    "domain_class": "general web",
+    "final_url": "https://aviation.test/aviation-seats",
+    "found_by": [
+     "business class seat availability airline aviation",
+     "What does the airline dataset tell us about business class seat availability and what do aviation sources say",
+     "business class seat availability airline aviation statistics"
+    ],
+    "freshness": {
+     "age_days": 0,
+     "label": "current",
+     "note": "Published about 0 days before it was read.",
+     "outdated": null,
+     "published": "2026-09-01"
+    },
+    "hidden_blocks_removed": 0,
+    "id": "S3",
+    "injection_removed": 0,
+    "kind": "web",
+    "meta": {},
+    "origin": "external_research",
+    "origin_label": "external_research",
+    "page_hash": "68b8a44d3d5ed0e978f37dbb51533754fc956212c5229a768ac8fd18c3011a3e",
+    "provider": "searxng",
+    "published": "2026-09-01T08:00:00Z",
+    "relevance": 0.6083,
+    "reliability": {
+     "level": "mixed signals",
+     "note": "These are indicators, not a verdict. Check important claims against the source itself.",
+     "signals": [
+      {
+       "basis": "The page was fetched over HTTPS.",
+       "effect": "+",
+       "name": "secure connection"
+      },
+      {
+       "basis": "No author is named on the page.",
+       "effect": "-",
+       "name": "author named"
+      },
+      {
+       "basis": "A publication date is given.",
+       "effect": "+",
+       "name": "dated"
+      }
+     ]
+    },
+    "retrieved_at": "2026-01-01T12:00:00.000000Z",
+    "sections": [],
+    "sections_used": [],
+    "site": "aviation.test",
+    "source_label": "General web page",
+    "source_type": "web",
+    "status": "ok",
+    "tier": "secondary",
+    "title": "Airline seat inventory",
+    "url": "https://aviation.test/aviation-seats",
+    "via": "page"
+   }
+  ],
+  "status": "partial",
+  "used_web": true,
+  "web": {
+   "approved": true,
+   "approved_queries": [
+    "business class seat availability",
+    "airline",
+    "business class seat availability airline"
+   ],
+   "denied_reason": null,
+   "providers": [
+    "wikipedia",
+    "arxiv",
+    "searxng"
+   ],
+   "queries_sent": [
+    "(ti:\"business class seat availability\" OR abs:\"business class seat availability\") AND (ti:airline OR abs:airline)",
+    "(ti:business OR abs:business) AND (ti:class OR abs:class) AND (ti:seat OR abs:seat)",
+    "What does the airline dataset tell us about business class seat availability and what do aviation sources say"
+   ],
+   "requested": true,
+   "used": true
+  }
+ },
+ "explanation": {
+  "basis": {
+   "method": "rules",
+   "note": "Written from the calculated result by fixed rules. No figure is added, rounded away or inferred; the technical result above is unchanged.",
+   "numbers_cited": 7
+  },
+  "cautions": [
+   "Enough evidence: 2 part(s) of the plan found nothing.",
+   "Conclusions are no stronger than the evidence: 3 conclusion(s) rest on one source, hedged wording, a prediction or a disputed claim; each is labelled that way.",
+   "Every part of the question was covered: 4 of 6 parts have evidence; 2 found nothing."
+  ],
+  "kind": "research:bundle",
+  "points": [
+   "What this is: research on \"What does the airline dataset tell us about business class seat availability,...\" at topic overview depth, split into 6 parts.",
+   "What was found (quoted from the sources, not rewritten): \"airline.csv has 600 rows and 8 columns (4 float, 4 text). 60 cells (1.25%) are missing, 540 rows are complete, and 0 rows are exact duplicates of an earlier row.\" (calculated from your data); \"'price': mean 6,131, median 4,243, standard deviation 3,724, range 2,407 to 16,237, 0 missing. The distribution is right-skewed (skewness 1.2).\" (calculated from your data).",
+   "Sources: 1 from your project and 2 from the web. Open any conclusion to see the exact passage and where it came from."
+  ],
+  "schema": "predictai.explanation/1",
+  "status": "available",
+  "summary": "The research found some of what was asked, with gaps listed below. It used 3 readable sources and quotes 19 passages.",
+  "terms": [
+   {
+    "meaning": "The exact place a passage came from: the page of your document, or the web address and the saved copy of the page that was read.",
+    "term": "citation"
+   },
+   {
+    "meaning": "More than one independent source states something similar. It makes a statement more likely to be reliable, but does not prove it.",
+    "term": "corroborated"
+   },
+   {
+    "meaning": "Whether a source states something as fact, hedges it, gives an opinion, or makes a forecast. A forecast or a model estimate is never a fact.",
+    "term": "statement type"
+   }
+  ],
+  "title": "Explanation"
+ },
+ "integrity_ok": true,
+ "label": null,
+ "saved": false,
+ "warnings": [
+  "Enough evidence: 2 part(s) of the plan found nothing.",
+  "Conclusions are no stronger than the evidence: 3 conclusion(s) rest on one source, hedged wording, a prediction or a disputed claim; each is labelled that way.",
+  "Every part of the question was covered: 4 of 6 parts have evidence; 2 found nothing."
+ ]
+}

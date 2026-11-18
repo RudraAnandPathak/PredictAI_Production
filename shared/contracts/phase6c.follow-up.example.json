@@ -1,0 +1,156 @@
+{
+ "active_job": null,
+ "created_at": "2026-01-01T12:00:00.000000Z",
+ "explanation": {
+  "basis": {
+   "method": "rules",
+   "note": "Written from the calculated result by fixed rules. No figure is added, rounded away or inferred; the technical result above is unchanged.",
+   "numbers_cited": 1
+  },
+  "cautions": [],
+  "kind": "research:plan",
+  "points": [
+   "The parts: Answer.",
+   "This plan uses only your own material. Nothing leaves the platform.",
+   "The result will be a set of quoted passages with their sources, conclusions that quote them, any disagreements found, and a list of what could not be found."
+  ],
+  "schema": "predictai.explanation/1",
+  "status": "available",
+  "summary": "This plan splits the question into 1 part and will look through your project's documents and data.",
+  "terms": [
+   {
+    "meaning": "The exact place a passage came from: the page of your document, or the web address and the saved copy of the page that was read.",
+    "term": "citation"
+   },
+   {
+    "meaning": "Whether a source states something as fact, hedges it, gives an opinion, or makes a forecast. A forecast or a model estimate is never a fact.",
+    "term": "statement type"
+   }
+  ],
+  "title": "Explanation"
+ },
+ "id": "4280b275e44241958ea87d16cbac2f7b",
+ "last_run_at": null,
+ "latest_bundle_id": null,
+ "level": "topic",
+ "level_label": "Topic overview",
+ "needs_approval": false,
+ "notes": 0,
+ "options": {
+  "ai_summary": false,
+  "datasets": null,
+  "documents": null,
+  "freshness_days": null,
+  "parent": {
+   "datasets_left_out": 1,
+   "question": "What does the airline dataset tell us about business class seat availability, and what do aviation sources say?",
+   "session_id": "d49b54ff97b446aba9005901d0f199bc"
+  },
+  "providers": [
+   "wikipedia",
+   "arxiv",
+   "searxng"
+  ],
+  "reuse_earlier": false,
+  "web": false
+ },
+ "parent": {
+  "carried": [],
+  "of": "d49b54ff97b446aba9005901d0f199bc",
+  "question": "What does the airline dataset tell us about business class seat availability, and what do aviation sources say?"
+ },
+ "plan": {
+  "entities": [],
+  "focus": {
+   "phrases": [
+    "fares"
+   ],
+   "terms": [
+    "fares"
+   ]
+  },
+  "follow_up": {
+   "carried": [],
+   "of": "d49b54ff97b446aba9005901d0f199bc",
+   "question": "What does the airline dataset tell us about business class seat availability, and what do aviation sources say?"
+  },
+  "intent": "general",
+  "level": "topic",
+  "level_label": "Topic overview",
+  "limitations": [
+   "The 1 dataset used for the earlier question was not used again, because this follow-up is not about the data. Ask about the data to include it.",
+   "Findings quote the sources; the platform does not add facts of its own.",
+   "A search returns what a provider ranks highly, not everything that exists."
+  ],
+  "local": {
+   "datasets": [],
+   "documents": [],
+   "passages_per_subtopic": 6,
+   "reuse_sources_of": "d49b54ff97b446aba9005901d0f199bc"
+  },
+  "min_sources": 2,
+  "plan_hash": "49deb886917601ab35b3798eed0fe23b68a8c86d5d6478d311b7be56104ae66d",
+  "question": "What does the article say about fares?",
+  "rounds": 1,
+  "subtopics": [
+   {
+    "facet": "",
+    "id": "t1",
+    "purpose": "answer the follow-up question",
+    "query": "article say fares",
+    "scope": "general",
+    "title": "Answer",
+    "topic_terms": [
+     "fares"
+    ]
+   }
+  ],
+  "tasks": [
+   {
+    "depends_on": [],
+    "description": "Collect what is in your project that relates to the question (documents, datasets, saved analyses and models).",
+    "id": "k1",
+    "kind": "context"
+   },
+   {
+    "depends_on": [
+     "k1"
+    ],
+    "description": "Pick the passages that answer each subtopic and keep their exact wording and location.",
+    "id": "k3",
+    "kind": "extract"
+   },
+   {
+    "depends_on": [
+     "k3"
+    ],
+    "description": "Group agreeing statements, flag disagreements, separate facts from uncertain or predicted statements, and keep calculated results apart from outside sources.",
+    "id": "k4",
+    "kind": "reconcile"
+   }
+  ],
+  "web": {
+   "enabled": false,
+   "freshness_days": null,
+   "max_pages": 6,
+   "providers": [],
+   "queries": []
+  }
+ },
+ "plan_approved": false,
+ "plan_hash": "49deb886917601ab35b3798eed0fe23b68a8c86d5d6478d311b7be56104ae66d",
+ "project_id": "a1b039909a6e4513b2533f12eb224c2c",
+ "purpose": "general",
+ "question": "What does the article say about fares?",
+ "run_count": 0,
+ "saved": false,
+ "status": "draft",
+ "title": "What does the article say about fares?",
+ "updated_at": "2026-01-01T12:00:00.000000Z",
+ "web": {
+  "allowed_now": true,
+  "note": "Only these search phrases, taken from your question, would leave the platform. No document text is ever sent.",
+  "why_not": [],
+  "will_send": []
+ }
+}

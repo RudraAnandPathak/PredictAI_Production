@@ -1,0 +1,281 @@
+{
+ "active_job": null,
+ "created_at": "2026-01-01T12:00:00.000000Z",
+ "explanation": {
+  "basis": {
+   "method": "rules",
+   "note": "Written from the calculated result by fixed rules. No figure is added, rounded away or inferred; the technical result above is unchanged.",
+   "numbers_cited": 2
+  },
+  "cautions": [],
+  "kind": "research:plan",
+  "points": [
+   "The parts: What the dataset contains; Strongest relationships in the data; Missing, suspicious or unusual values; Overview; Background and definitions; Key facts and figures.",
+   "Only these search phrases, taken from your question, would leave the platform: \"business class seat availability\"; \"business class seat availability airline aviation statistics\". No text from your documents or data is ever sent.",
+   "Nothing is sent until you approve the plan. If you change the question or the options, the plan changes and needs approval again."
+  ],
+  "schema": "predictai.explanation/1",
+  "status": "available",
+  "summary": "This plan splits the question into 6 parts and will look through your project's documents and data, then run 2 web searchs if you approve.",
+  "terms": [
+   {
+    "meaning": "The exact place a passage came from: the page of your document, or the web address and the saved copy of the page that was read.",
+    "term": "citation"
+   },
+   {
+    "meaning": "Whether a source states something as fact, hedges it, gives an opinion, or makes a forecast. A forecast or a model estimate is never a fact.",
+    "term": "statement type"
+   }
+  ],
+  "title": "Explanation"
+ },
+ "id": "8c29430cc8984b86b6fa910202867f50",
+ "last_run_at": null,
+ "latest_bundle_id": null,
+ "level": "topic",
+ "level_label": "Topic overview",
+ "needs_approval": true,
+ "notes": 0,
+ "options": {
+  "ai_summary": false,
+  "datasets": [
+   "bea21d444b954ae2820659d527f00077"
+  ],
+  "documents": null,
+  "freshness_days": null,
+  "parent": null,
+  "providers": [
+   "wikipedia",
+   "arxiv",
+   "searxng"
+  ],
+  "reuse_earlier": false,
+  "web": true
+ },
+ "parent": null,
+ "plan": {
+  "entities": [],
+  "focus": {
+   "phrases": [
+    "business class seat availability",
+    "airline",
+    "aviation"
+   ],
+   "terms": [
+    "business",
+    "class",
+    "seat"
+   ]
+  },
+  "intent": "general",
+  "level": "topic",
+  "level_label": "Topic overview",
+  "limitations": [
+   "Findings quote the sources; the platform does not add facts of its own.",
+   "A search returns what a provider ranks highly, not everything that exists.",
+   "Wikipedia is an encyclopedia (a tertiary source) and arXiv papers are preprints that may not be peer reviewed; both are labelled that way wherever they appear."
+  ],
+  "local": {
+   "datasets": [
+    "bea21d444b954ae2820659d527f00077"
+   ],
+   "documents": [],
+   "passages_per_subtopic": 6
+  },
+  "min_sources": 2,
+  "plan_hash": "19593113b2eb30c66e0b5aeccec7d8f1d181bba9167f4c1cf2b4480f438512b1",
+  "question": "What does the airline dataset tell us about business class seat availability, and what do aviation sources say?",
+  "rounds": 1,
+  "subtopics": [
+   {
+    "facet": "",
+    "id": "d1",
+    "intent": "overview",
+    "purpose": "calculated from your data",
+    "query": "airline dataset tell business class seat availability aviation",
+    "scope": "dataset",
+    "title": "What the dataset contains",
+    "topic_terms": []
+   },
+   {
+    "facet": "",
+    "id": "d2",
+    "intent": "relationships",
+    "purpose": "calculated from your data",
+    "query": "airline dataset tell business class seat availability aviation",
+    "scope": "dataset",
+    "title": "Strongest relationships in the data",
+    "topic_terms": []
+   },
+   {
+    "facet": "",
+    "id": "d3",
+    "intent": "quality",
+    "purpose": "calculated from your data",
+    "query": "airline dataset tell business class seat availability aviation",
+    "scope": "dataset",
+    "title": "Missing, suspicious or unusual values",
+    "topic_terms": []
+   }
+  ],
+  "tasks": [
+   {
+    "depends_on": [],
+    "description": "Collect what is in your project that relates to the question (documents, datasets, saved analyses and models).",
+    "id": "k1",
+    "kind": "context"
+   },
+   {
+    "depends_on": [
+     "k1"
+    ],
+    "description": "Calculate verified statistics on 1 selected dataset(s) with the platform's own analysis and model services (no data values leave the platform, and no number in the answer is written by a language model).",
+    "id": "k1b",
+    "kind": "dataset_analysis"
+   },
+   {
+    "depends_on": [
+     "k1b"
+    ],
+    "description": "Search wikipedia, arxiv, searxng with up to 9 approved search phrases, then open the most relevant Wikipedia articles, arXiv papers and web pages and read the sections that bear on the question.",
+    "id": "k2",
+    "kind": "web_search"
+   }
+  ],
+  "web": {
+   "enabled": true,
+   "freshness_days": null,
+   "max_pages": 6,
+   "providers": [
+    "wikipedia",
+    "arxiv",
+    "searxng"
+   ],
+   "queries": [
+    {
+     "by_provider": {
+      "arxiv": [
+       {
+        "query": "(ti:\"business class seat availability\" OR abs:\"business class seat availability\") AND (ti:airline OR abs:airline)",
+        "role": "primary"
+       },
+       {
+        "query": "(ti:business OR abs:business) AND (ti:class OR abs:class) AND (ti:seat OR abs:seat)",
+        "role": "fallback"
+       },
+       {
+        "query": "all:business AND all:class",
+        "role": "fallback"
+       }
+      ],
+      "searxng": [
+       {
+        "query": "business class seat availability airline aviation",
+        "role": "primary"
+       },
+       {
+        "query": "What does the airline dataset tell us about business class seat availability and what do aviation sources say",
+        "role": "fallback"
+       }
+      ],
+      "wikipedia": [
+       {
+        "query": "business class seat availability",
+        "role": "primary"
+       },
+       {
+        "query": "airline",
+        "role": "additional"
+       },
+       {
+        "query": "business class seat availability airline",
+        "role": "fallback"
+       }
+      ]
+     },
+     "providers": [
+      "wikipedia",
+      "arxiv",
+      "searxng"
+     ],
+     "query": "business class seat availability",
+     "removed": [],
+     "subtopic": "t1"
+    },
+    {
+     "by_provider": {
+      "searxng": [
+       {
+        "query": "business class seat availability airline aviation statistics",
+        "role": "primary"
+       }
+      ]
+     },
+     "providers": [
+      "searxng"
+     ],
+     "query": "business class seat availability airline aviation statistics",
+     "removed": [],
+     "subtopic": "t3"
+    }
+   ]
+  }
+ },
+ "plan_approved": false,
+ "plan_hash": "19593113b2eb30c66e0b5aeccec7d8f1d181bba9167f4c1cf2b4480f438512b1",
+ "project_id": "a1b039909a6e4513b2533f12eb224c2c",
+ "purpose": "general",
+ "question": "What does the airline dataset tell us about business class seat availability, and what do aviation sources say?",
+ "run_count": 0,
+ "saved": false,
+ "status": "draft",
+ "title": "What does the airline dataset tell us about business class seat availability, an",
+ "updated_at": "2026-01-01T12:00:00.000000Z",
+ "web": {
+  "allowed_now": true,
+  "note": "Only these search phrases, taken from your question, would leave the platform. No document text is ever sent.",
+  "why_not": [],
+  "will_send": [
+   {
+    "providers": [
+     "wikipedia",
+     "arxiv",
+     "searxng"
+    ],
+    "query": "business class seat availability",
+    "removed": [],
+    "variants": [
+     {
+      "provider": "wikipedia",
+      "query": "business class seat availability",
+      "role": "primary"
+     },
+     {
+      "provider": "wikipedia",
+      "query": "airline",
+      "role": "additional"
+     },
+     {
+      "provider": "wikipedia",
+      "query": "business class seat availability airline",
+      "role": "fallback"
+     }
+    ]
+   },
+   {
+    "providers": [
+     "searxng"
+    ],
+    "query": "business class seat availability airline aviation statistics",
+    "removed": [],
+    "variants": [
+     {
+      "provider": "searxng",
+      "query": "business class seat availability airline aviation statistics",
+      "role": "primary"
+     }
+    ]
+   }
+  ]
+ }
+}

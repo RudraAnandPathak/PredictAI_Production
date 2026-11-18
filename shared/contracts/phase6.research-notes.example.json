@@ -1,0 +1,14 @@
+{
+ "items": [
+  {
+   "body": "Ask the council about the levee",
+   "created_at": "2026-01-01T12:00:00.000000Z",
+   "id": "b9d1a794e51947f8a10441e8bab17e0c",
+   "origin": "written_by_you",
+   "session_id": "e381043d4561497ba9c6f9edda747406",
+   "target_id": null,
+   "target_type": "session",
+   "updated_at": "2026-01-01T12:00:00.000000Z"
+  }
+ ]
+}

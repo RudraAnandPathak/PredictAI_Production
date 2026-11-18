@@ -1,0 +1,142 @@
+{
+ "active_job": null,
+ "created_at": "2026-01-01T12:00:00.000000Z",
+ "explanation": {
+  "basis": {
+   "method": "rules",
+   "note": "Written from the calculated result by fixed rules. No figure is added, rounded away or inferred; the technical result above is unchanged.",
+   "numbers_cited": 1
+  },
+  "cautions": [],
+  "kind": "research:plan",
+  "points": [
+   "The parts: Overview; Background and definitions; Key facts and figures.",
+   "This plan uses only your own material. Nothing leaves the platform.",
+   "The result will be a set of quoted passages with their sources, conclusions that quote them, any disagreements found, and a list of what could not be found."
+  ],
+  "schema": "predictai.explanation/1",
+  "status": "available",
+  "summary": "This plan splits the question into 3 parts and will look through your project's documents and data.",
+  "terms": [
+   {
+    "meaning": "The exact place a passage came from: the page of your document, or the web address and the saved copy of the page that was read.",
+    "term": "citation"
+   },
+   {
+    "meaning": "Whether a source states something as fact, hedges it, gives an opinion, or makes a forecast. A forecast or a model estimate is never a fact.",
+    "term": "statement type"
+   }
+  ],
+  "title": "Explanation"
+ },
+ "id": "e381043d4561497ba9c6f9edda747406",
+ "last_run_at": null,
+ "latest_bundle_id": null,
+ "level": "topic",
+ "level_label": "Topic overview",
+ "needs_approval": false,
+ "notes": 0,
+ "options": {
+  "ai_summary": false,
+  "datasets": null,
+  "documents": [
+   "eb28f6750d714a05b6bb8d97af0c2300"
+  ],
+  "freshness_days": null,
+  "providers": [
+   "wikipedia"
+  ],
+  "reuse_earlier": false,
+  "web": false
+ },
+ "plan": {
+  "entities": [],
+  "intent": "general",
+  "level": "topic",
+  "level_label": "Topic overview",
+  "limitations": [
+   "Findings quote the sources; the platform does not add facts of its own.",
+   "A search returns what a provider ranks highly, not everything that exists."
+  ],
+  "local": {
+   "datasets": [],
+   "documents": [
+    "eb28f6750d714a05b6bb8d97af0c2300"
+   ],
+   "passages_per_subtopic": 4
+  },
+  "min_sources": 2,
+  "plan_hash": "4cd6c95f279f346e6fe7cc9b8913dca7abb1ea3ed3bdad268091d833452005f9",
+  "question": "How high did the river rise after the heavy rainfall?",
+  "rounds": 1,
+  "subtopics": [
+   {
+    "id": "t1",
+    "purpose": "overview",
+    "query": "high river rise after heavy rainfall",
+    "title": "Overview"
+   },
+   {
+    "id": "t2",
+    "purpose": "background and definitions",
+    "query": "high river rise after heavy rainfall definition background",
+    "title": "Background and definitions"
+   },
+   {
+    "id": "t3",
+    "purpose": "key facts and figures",
+    "query": "high river rise after heavy rainfall facts statistics data",
+    "title": "Key facts and figures"
+   }
+  ],
+  "tasks": [
+   {
+    "depends_on": [],
+    "description": "Collect what is in your project that relates to the question (documents, datasets, saved analyses and models).",
+    "id": "k1",
+    "kind": "context"
+   },
+   {
+    "depends_on": [
+     "k1"
+    ],
+    "description": "Pick the passages that answer each subtopic and keep their exact wording and location.",
+    "id": "k3",
+    "kind": "extract"
+   },
+   {
+    "depends_on": [
+     "k3"
+    ],
+    "description": "Group agreeing statements, flag disagreements, separate facts from uncertain or predicted statements.",
+    "id": "k4",
+    "kind": "reconcile"
+   }
+  ],
+  "web": {
+   "enabled": false,
+   "freshness_days": null,
+   "max_pages": 4,
+   "providers": [],
+   "queries": []
+  }
+ },
+ "plan_approved": false,
+ "plan_hash": "4cd6c95f279f346e6fe7cc9b8913dca7abb1ea3ed3bdad268091d833452005f9",
+ "project_id": "e0c1512ce60e4403a7ff62a2b1d9c765",
+ "purpose": "general",
+ "question": "How high did the river rise after the heavy rainfall?",
+ "run_count": 0,
+ "saved": false,
+ "status": "draft",
+ "title": "How high did the river rise after the heavy rainfall?",
+ "updated_at": "2026-01-01T12:00:00.000000Z",
+ "web": {
+  "allowed_now": false,
+  "note": "Only these search phrases, taken from your question, would leave the platform. No document text is ever sent.",
+  "why_not": [
+   "You have not turned on web research."
+  ],
+  "will_send": []
+ }
+}

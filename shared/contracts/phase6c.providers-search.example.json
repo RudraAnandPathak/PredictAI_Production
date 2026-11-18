@@ -1,0 +1,66 @@
+{
+ "cache_hit": false,
+ "hits": [
+  {
+   "author": null,
+   "can_open": true,
+   "extra": {
+    "categories": [
+     "Airline cabin classes"
+    ],
+    "content": "lead",
+    "description": "Class of airline service",
+    "list_page": false,
+    "pageid": 101,
+    "revid": 555,
+    "tier": "tertiary",
+    "wordcount": 1500
+   },
+   "license": "CC BY-SA 4.0",
+   "modified": "2026-03-04T05:06:07Z",
+   "provider": "wikipedia",
+   "published": null,
+   "publisher": "Wikipedia",
+   "rank": 1,
+   "snippet": "Business class is a travel class",
+   "source_class": "wikipedia",
+   "source_label": "Wikipedia (encyclopedia: a tertiary source, edited by volunteers)",
+   "source_type": "encyclopedia",
+   "text": "Business class is a travel class on airlines.",
+   "title": "Business class",
+   "url": "https://en.wikipedia.org/wiki/Business_class"
+  },
+  {
+   "author": null,
+   "can_open": true,
+   "extra": {
+    "categories": [],
+    "content": "lead",
+    "description": null,
+    "list_page": false,
+    "pageid": 103,
+    "revid": 600,
+    "tier": "tertiary",
+    "wordcount": 900
+   },
+   "license": "CC BY-SA 4.0",
+   "modified": "2025-06-06T00:00:00Z",
+   "provider": "wikipedia",
+   "published": null,
+   "publisher": "Wikipedia",
+   "rank": 2,
+   "snippet": "An airline seat",
+   "source_class": "wikipedia",
+   "source_label": "Wikipedia (encyclopedia: a tertiary source, edited by volunteers)",
+   "source_type": "encyclopedia",
+   "text": null,
+   "title": "Airline seat",
+   "url": "https://en.wikipedia.org/wiki/Airline_seat"
+  }
+ ],
+ "note": "Only this phrase was sent to the provider. Results are search hits, not evidence: open one, or start a research session, to read and cite it.",
+ "provider": "wikipedia",
+ "query": "business class",
+ "retrieved_at": "2026-01-01T12:00:00.000000Z",
+ "sent": true
+}

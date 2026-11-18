@@ -1,0 +1,1504 @@
+{
+ "_note": "A real server response trimmed to its first elements (lists cut to 4 items, numbers rounded; histogram bins kept whole). Tests check that the API still returns every path and type listed here and that the UI reads it correctly. Update it deliberately when the API changes.",
+ "model": {
+  "algorithm": "logistic_regression",
+  "algorithm_label": "Logistic regression",
+  "asset_id": "1133c3bcd78b4af3b4ca3f75721fe2b1",
+  "config": {
+   "algorithms": [
+    "logistic_regression",
+    "decision_tree"
+   ],
+   "class_weight": "auto",
+   "features": {
+    "exclude": [],
+    "include": null,
+    "overrides": {}
+   },
+   "hpo": {
+    "cv_folds": 3,
+    "method": "none",
+    "n_iter": 10,
+    "param_grids": {},
+    "top_k": 2
+   },
+   "max_train_rows": null,
+   "positive_label": null,
+   "preprocessing": {
+    "categorical_impute": "most_frequent",
+    "datetime_features": true,
+    "drop_duplicates": true,
+    "encoding": "onehot",
+    "high_cardinality": "frequency",
+    "log_transform": "none",
+    "max_missing_pct": 60.0,
+    "max_onehot_levels": 20,
+    "missing_indicator": false,
+    "numeric_impute": "median",
+    "outliers": "none",
+    "rare_category_min_frequency": 0.01,
+    "scaling": "auto"
+   },
+   "primary_metric": "auto",
+   "problem_type": "auto",
+   "rare_classes": "error",
+   "seed": 20240601,
+   "target": "bought",
+   "time_budget_s": 60,
+   "validation": {
+    "cv_folds": 3,
+    "cv_repeats": 2,
+    "cv_strategy": "auto",
+    "shuffle": true,
+    "test_size": 0.2,
+    "time_column": null
+   }
+  },
+  "cv_score": 0.8267,
+  "dataset": {
+   "asset_id": "1133c3bcd78b4af3b4ca3f75721fe2b1",
+   "checksum_sha256": "b2b8e184ae5c7e5ff5eb0bd6bf02bebc7574cc77dca0175b99455e53f0e1e626",
+   "columns": 7,
+   "name": "binary.csv",
+   "rows": 300,
+   "version_id": "e612178948d7473f9a269c555391e4d6",
+   "version_number": 1
+  },
+  "duration_ms": 1440,
+  "feature_config": {
+   "dropped": [
+    {
+     "name": "row_id",
+     "reason": "Looks like a row number or identifier: whole numbers in strictly increasing order."
+    },
+    {
+     "name": "flat",
+     "reason": "Constant: it has a single value, so it cannot help tell rows apart."
+    }
+   ],
+   "leakage": [],
+   "used": [
+    {
+     "action": "use",
+     "clip": false,
+     "flags": [],
+     "impute": "median",
+     "missing_indicator": false,
+     "name": "x1",
+     "notes": [],
+     "role": "numeric",
+     "scale": "auto",
+     "source_type": "float",
+     "transform": "none",
+     "why": "Numeric input."
+    },
+    {
+     "action": "use",
+     "clip": false,
+     "flags": [],
+     "impute": "median",
+     "missing_indicator": false,
+     "name": "x2",
+     "notes": [],
+     "role": "numeric",
+     "scale": "auto",
+     "source_type": "float",
+     "transform": "none",
+     "why": "Numeric input."
+    },
+    {
+     "action": "use",
+     "encoding": "onehot",
+     "flags": [],
+     "impute": "most_frequent",
+     "levels": 3,
+     "max_levels": 20,
+     "min_frequency": 0.01,
+     "missing_indicator": false,
+     "name": "plan",
+     "notes": [],
+     "numeric_labels": false,
+     "role": "categorical",
+     "source_type": "text",
+     "why": "Category column with 3 values."
+    },
+    {
+     "action": "use",
+     "clip": false,
+     "flags": [],
+     "impute": "median",
+     "missing_indicator": false,
+     "name": "noise",
+     "notes": [],
+     "role": "numeric",
+     "scale": "auto",
+     "source_type": "float",
+     "transform": "none",
+     "why": "Numeric input."
+    }
+   ]
+  },
+  "features": {
+   "dropped": 2,
+   "used": [
+    "x1",
+    "x2",
+    "plan",
+    "noise"
+   ]
+  },
+  "hyperparameters": {
+   "C": 1.0,
+   "class_weight": null,
+   "dual": false,
+   "fit_intercept": true,
+   "intercept_scaling": 1,
+   "l1_ratio": 0.0,
+   "max_iter": 2000,
+   "n_jobs": null,
+   "penalty": "deprecated",
+   "random_state": 20240601,
+   "solver": "lbfgs",
+   "tol": 0.0001,
+   "verbose": 0,
+   "warm_start": false
+  },
+  "id": "4b512def281241e39ab7e552f97cab5c",
+  "input_schema": [
+   {
+    "integer_only": false,
+    "max": 2.5695,
+    "median": 0.0912,
+    "min": -2.3172,
+    "missing_share": 0.0,
+    "name": "x1",
+    "role": "numeric",
+    "source_type": "float"
+   },
+   {
+    "integer_only": false,
+    "max": 3.6236,
+    "median": 0.13,
+    "min": -2.7924,
+    "missing_share": 0.0,
+    "name": "x2",
+    "role": "numeric",
+    "source_type": "float"
+   },
+   {
+    "level_count": 3,
+    "levels": [
+     "basic",
+     "plus",
+     "pro"
+    ],
+    "missing_share": 0.0,
+    "most_common": "basic",
+    "name": "plan",
+    "numeric_labels": false,
+    "role": "categorical",
+    "source_type": "text"
+   },
+   {
+    "integer_only": false,
+    "max": 2.4553,
+    "median": 0.0638,
+    "min": -3.1486,
+    "missing_share": 0.0,
+    "name": "noise",
+    "role": "numeric",
+    "source_type": "float"
+   }
+  ],
+  "job_id": "b254b130135049daa40f7837eff3bcb4",
+  "lower_is_better": false,
+  "metrics": {
+   "basis": "holdout",
+   "evaluation": {
+    "accuracy": 0.8167,
+    "average_precision": 0.8293,
+    "balanced_accuracy": 0.8125,
+    "brier_score": 0.1469,
+    "f1": 0.7925,
+    "f1_macro": 0.8141,
+    "f1_weighted": 0.8156,
+    "log_loss": 0.4689,
+    "precision": 0.84,
+    "precision_macro": 0.82,
+    "precision_weighted": 0.8187,
+    "recall": 0.75,
+    "recall_macro": 0.8125,
+    "recall_weighted": 0.8167,
+    "roc_auc": 0.8638,
+    "specificity": 0.875
+   },
+   "primary_label": "ROC-AUC",
+   "primary_metric": "roc_auc"
+  },
+  "ml_version": "1",
+  "model_bytes": 2578,
+  "model_sha256": "b812730cd46b0f6b55616ea523428bf2270cf16d95db7d54f0d11319ea255516",
+  "model_version": 1,
+  "name": "binary",
+  "preprocessing_config": {
+   "categorical_impute": "most_frequent",
+   "datetime_features": true,
+   "drop_duplicates": true,
+   "encoding": "onehot",
+   "high_cardinality": "frequency",
+   "log_transform": "none",
+   "max_missing_pct": 60.0,
+   "max_onehot_levels": 20,
+   "missing_indicator": false,
+   "numeric_impute": "median",
+   "outliers": "none",
+   "rare_category_min_frequency": 0.01,
+   "scaling": "auto"
+  },
+  "primary_label": "ROC-AUC",
+  "primary_metric": "roc_auc",
+  "problem_type": "binary_classification",
+  "project_id": "a7f3d37463244db3b294891b8f3b56a5",
+  "seed": 20240601,
+  "status": "ready",
+  "target": "bought",
+  "test_score": 0.8638,
+  "trained_at": "2026-01-01T12:00:00.000000Z",
+  "tuned": false,
+  "version_id": "e612178948d7473f9a269c555391e4d6",
+  "versions": [
+   {
+    "algorithm_label": "Logistic regression",
+    "cv_score": 0.8267,
+    "id": "4b512def281241e39ab7e552f97cab5c",
+    "model_version": 1,
+    "name": "binary",
+    "test_score": 0.8638,
+    "trained_at": "2026-01-01T12:00:00.000000Z"
+   }
+  ]
+ },
+ "report": {
+  "algorithms": {
+   "skipped": [],
+   "trained": [
+    "decision_tree",
+    "logistic_regression"
+   ]
+  },
+  "baseline": {
+   "cv_primary": 0.5,
+   "cv_primary_shown": 0.5,
+   "cv_std": 0.0,
+   "description": "A reference that ignores every input and always predicts the most common class. A useful model must clearly beat it.",
+   "test": {
+    "majority_class_share": 0.5375,
+    "name": "baseline (always the most common class)",
+    "scores": {
+     "accuracy": 0.5333,
+     "average_precision": 0.4667,
+     "balanced_accuracy": 0.5,
+     "f1": 0.0,
+     "f1_macro": 0.3478,
+     "neg_log_loss": -0.691,
+     "roc_auc": 0.5
+    }
+   }
+  },
+  "best": {
+   "algorithm": "logistic_regression",
+   "beats_baseline_by": 0.3267,
+   "close_alternatives": [],
+   "cv_primary": 0.8267,
+   "cv_primary_shown": 0.8267,
+   "cv_std": 0.044,
+   "id": "logistic_regression",
+   "label": "Logistic regression",
+   "lower_is_better": false,
+   "params": {},
+   "primary_label": "ROC-AUC",
+   "primary_metric": "roc_auc",
+   "simpler_alternative": null,
+   "test_primary": 0.8638,
+   "test_primary_shown": 0.8638,
+   "trained_on": "the training split only; the figures describe this exact model",
+   "tuned": false
+  },
+  "candidates": [
+   {
+    "algorithm": "decision_tree",
+    "class_weight": null,
+    "cost": 1,
+    "cv": {
+     "folds": 3,
+     "metrics": {
+      "accuracy": {
+       "folds": 3,
+       "mean": 0.6542,
+       "std": 0.0711
+      },
+      "average_precision": {
+       "folds": 3,
+       "mean": 0.6337,
+       "std": 0.1008
+      },
+      "balanced_accuracy": {
+       "folds": 3,
+       "mean": 0.6538,
+       "std": 0.0724
+      },
+      "f1": {
+       "folds": 3,
+       "mean": 0.6335,
+       "std": 0.0816
+      },
+      "f1_macro": {
+       "folds": 3,
+       "mean": 0.6529,
+       "std": 0.0719
+      },
+      "neg_log_loss": {
+       "folds": 3,
+       "mean": -7.557,
+       "std": 3.053
+      },
+      "roc_auc": {
+       "folds": 3,
+       "mean": 0.6841,
+       "std": 0.0837
+      }
+     },
+     "primary": {
+      "folds": 3,
+      "mean": 0.6841,
+      "metric": "roc_auc",
+      "scores": [
+       0.638,
+       0.6336,
+       0.7806
+      ],
+      "std": 0.0837
+     }
+    },
+    "generalisation": {
+     "consistent": true,
+     "cv_primary": 0.6841,
+     "difference": -0.0278,
+     "reading": "Test and cross-validation scores agree within normal variation.",
+     "test_primary": 0.6562
+    },
+    "id": "decision_tree",
+    "label": "Decision tree",
+    "model_bytes": 9485,
+    "overfitting": {
+     "gap": 0.2582,
+     "level": "high",
+     "message": "The model scores far better on rows it learned from than on new rows: it has memorised the training data and is likely to disappoint on new data.",
+     "metric": "balanced accuracy"
+    },
+    "params": {},
+    "rank": 2,
+    "reason": "",
+    "status": "ok",
+    "test": {
+     "primary": 0.6562,
+     "rows": 60,
+     "scores": {
+      "accuracy": 0.6167,
+      "average_precision": 0.6624,
+      "balanced_accuracy": 0.6094,
+      "f1": 0.549,
+      "f1_macro": 0.6078,
+      "neg_log_loss": -8.8094,
+      "roc_auc": 0.6562
+     }
+    },
+    "timing": {
+     "cv_s": 0.121,
+     "fit_s": 0.009,
+     "fit_s_per_fold": 0.013,
+     "predict_ms_per_1000_rows": 77.99
+    },
+    "tuned": false
+   },
+   {
+    "algorithm": "logistic_regression",
+    "class_weight": null,
+    "cost": 1,
+    "cv": {
+     "folds": 3,
+     "metrics": {
+      "accuracy": {
+       "folds": 3,
+       "mean": 0.7375,
+       "std": 0.0375
+      },
+      "average_precision": {
+       "folds": 3,
+       "mean": 0.8236,
+       "std": 0.0418
+      },
+      "balanced_accuracy": {
+       "folds": 3,
+       "mean": 0.7332,
+       "std": 0.0387
+      },
+      "f1": {
+       "folds": 3,
+       "mean": 0.7038,
+       "std": 0.0464
+      },
+      "f1_macro": {
+       "folds": 3,
+       "mean": 0.734,
+       "std": 0.0387
+      },
+      "neg_log_loss": {
+       "folds": 3,
+       "mean": -0.5045,
+       "std": 0.0545
+      },
+      "roc_auc": {
+       "folds": 3,
+       "mean": 0.8267,
+       "std": 0.044
+      }
+     },
+     "primary": {
+      "folds": 3,
+      "mean": 0.8267,
+      "metric": "roc_auc",
+      "scores": [
+       0.8121,
+       0.792,
+       0.8762
+      ],
+      "std": 0.044
+     }
+    },
+    "generalisation": {
+     "consistent": true,
+     "cv_primary": 0.8267,
+     "difference": 0.0371,
+     "reading": "Test and cross-validation scores agree within normal variation.",
+     "test_primary": 0.8638
+    },
+    "id": "logistic_regression",
+    "label": "Logistic regression",
+    "model_bytes": 3244,
+    "overfitting": {
+     "gap": 0.0077,
+     "level": "low",
+     "message": "The model scores about the same on rows it learned from and rows it had not seen.",
+     "metric": "balanced accuracy"
+    },
+    "params": {},
+    "rank": 1,
+    "reason": "",
+    "status": "ok",
+    "test": {
+     "primary": 0.8638,
+     "rows": 60,
+     "scores": {
+      "accuracy": 0.8167,
+      "average_precision": 0.8293,
+      "balanced_accuracy": 0.8125,
+      "f1": 0.7925,
+      "f1_macro": 0.8141,
+      "neg_log_loss": -0.4689,
+      "roc_auc": 0.8638
+     }
+    },
+    "timing": {
+     "cv_s": 0.16,
+     "fit_s": 0.01,
+     "fit_s_per_fold": 0.025,
+     "predict_ms_per_1000_rows": 79.94
+    },
+    "tuned": false
+   }
+  ],
+  "data": {
+   "class_balance": {
+    "accuracy_warning": false,
+    "classes": 2,
+    "level": "balanced",
+    "message": "The classes are roughly balanced, so accuracy is a fair first measure alongside the others.",
+    "ratio": 1.158,
+    "recommend_class_weight": false,
+    "smallest_class": "true",
+    "smallest_share": 0.4633
+   },
+   "class_table": [
+    {
+     "count": 161,
+     "label": "false",
+     "share": 0.5367
+    },
+    {
+     "count": 139,
+     "label": "true",
+     "share": 0.4633
+    }
+   ],
+   "duplicates_removed": 0,
+   "rare_class_rows_dropped": 0,
+   "rows_in_table": 300,
+   "rows_used": 300,
+   "rows_without_target": 0,
+   "sampled": null,
+   "test_rows": 60,
+   "train_rows": 240
+  },
+  "dataset": {
+   "asset_id": "1133c3bcd78b4af3b4ca3f75721fe2b1",
+   "checksum_sha256": "b2b8e184ae5c7e5ff5eb0bd6bf02bebc7574cc77dca0175b99455e53f0e1e626",
+   "columns": 7,
+   "name": "binary.csv",
+   "rows": 300,
+   "version_id": "e612178948d7473f9a269c555391e4d6",
+   "version_number": 1
+  },
+  "evaluation": {
+   "basis": "holdout",
+   "basis_note": "Computed on rows held out before any training.",
+   "calibration": {
+    "available": true,
+    "bins": 3,
+    "mean_gap": 0.0429,
+    "mean_predicted": [
+     0.1229,
+     0.4019,
+     0.7923
+    ],
+    "observed_rate": [
+     0.1,
+     0.45,
+     0.85
+    ],
+    "verdict": "good"
+   },
+   "classification_report": {
+    "accuracy": 0.8167,
+    "false": {
+     "f1-score": 0.8358,
+     "precision": 0.8,
+     "recall": 0.875,
+     "support": 32
+    },
+    "macro avg": {
+     "f1-score": 0.8141,
+     "precision": 0.82,
+     "recall": 0.8125,
+     "support": 60
+    },
+    "true": {
+     "f1-score": 0.7925,
+     "precision": 0.84,
+     "recall": 0.75,
+     "support": 28
+    },
+    "weighted avg": {
+     "f1-score": 0.8156,
+     "precision": 0.8187,
+     "recall": 0.8167,
+     "support": 60
+    }
+   },
+   "confusion_matrix": {
+    "counts": [
+     [
+      28,
+      4
+     ],
+     [
+      7,
+      21
+     ]
+    ],
+    "labels": [
+     "false",
+     "true"
+    ],
+    "note": "Rows are the true class, columns the predicted class.",
+    "row_normalised": [
+     [
+      0.875,
+      0.125
+     ],
+     [
+      0.25,
+      0.75
+     ]
+    ]
+   },
+   "curves": {
+    "pr": [
+     {
+      "average_precision": 0.8293,
+      "class": "true",
+      "precision": [
+       0.4667,
+       0.4746,
+       0.4828,
+       0.4737
+      ],
+      "prevalence": 0.4667,
+      "recall": [
+       1.0,
+       1.0,
+       1.0,
+       0.9643
+      ]
+     }
+    ],
+    "roc": [
+     {
+      "auc": 0.8638,
+      "class": "true",
+      "fpr": [
+       0.0,
+       0.0,
+       0.0,
+       0.0312
+      ],
+      "tpr": [
+       0.0,
+       0.0357,
+       0.1071,
+       0.1071
+      ]
+     }
+    ]
+   },
+   "metrics": {
+    "accuracy": 0.8167,
+    "average_precision": 0.8293,
+    "balanced_accuracy": 0.8125,
+    "brier_score": 0.1469,
+    "f1": 0.7925,
+    "f1_macro": 0.8141,
+    "f1_weighted": 0.8156,
+    "log_loss": 0.4689,
+    "precision": 0.84,
+    "precision_macro": 0.82,
+    "precision_weighted": 0.8187,
+    "recall": 0.75,
+    "recall_macro": 0.8125,
+    "recall_weighted": 0.8167,
+    "roc_auc": 0.8638,
+    "specificity": 0.875
+   },
+   "model": "logistic_regression",
+   "n": 60,
+   "not_computed": {},
+   "support": {
+    "false": 32,
+    "true": 28
+   }
+  },
+  "explanations": {
+   "baseline": {
+    "basis": {
+     "method": "rules",
+     "note": "Written from the calculated result by fixed rules. No figure is added, rounded away or inferred; the technical result above is unchanged.",
+     "numbers_cited": 3
+    },
+    "cautions": [],
+    "kind": "ml:baseline",
+    "points": [
+     "A reference that ignores every input and always predicts the most common class. A useful model must clearly beat it.",
+     "On the held-out rows, always guessing the most common class is right 54% of the time; accuracy only means something above that."
+    ],
+    "schema": "predictai.explanation/1",
+    "status": "available",
+    "summary": "A model that ignores all inputs scores 0.5 on ROC-AUC; the chosen model scores 0.827.",
+    "terms": [
+     {
+      "meaning": "A reference model that ignores every input (always the most common class, or always the average). A useful model has to beat it clearly.",
+      "term": "baseline"
+     }
+    ],
+    "title": "Explanation"
+   },
+   "evaluation": {
+    "basis": {
+     "method": "rules",
+     "note": "Written from the calculated result by fixed rules. No figure is added, rounded away or inferred; the technical result above is unchanged.",
+     "numbers_cited": 12
+    },
+    "cautions": [
+     "Only 60 rows were available for this check, so every figure here is uncertain."
+    ],
+    "kind": "ml:evaluation",
+    "points": [
+     "Balanced accuracy, which gives every class equal weight, is 0.812.",
+     "For 'true': precision 0.84 (of cases flagged, the share that were) and recall 0.75 (of real cases, the share found); F1 0.792 balances the two.",
+     "ROC-AUC is 0.864, which measures how well the model ranks real cases above non-cases.",
+     "PR-AUC is 0.829, which tracks how precise the model stays while it finds more of the real cases."
+    ],
+    "schema": "predictai.explanation/1",
+    "status": "available",
+    "summary": "On 60 held-out rows the model never saw, the model was right for 82% of cases (accuracy 0.817).",
+    "terms": [
+     {
+      "meaning": "The share of predictions that were right. It can look good on imbalanced data even when the model never finds the rare class.",
+      "term": "accuracy"
+     },
+     {
+      "meaning": "The average of the share found in each class, so a rare class counts as much as a common one.",
+      "term": "balanced accuracy"
+     },
+     {
+      "meaning": "Of the cases the model flagged as positive, the share that really were.",
+      "term": "precision"
+     },
+     {
+      "meaning": "Of the cases that really were positive, the share the model found.",
+      "term": "recall"
+     }
+    ],
+    "title": "Explanation"
+   },
+   "features": {
+    "basis": {
+     "method": "rules",
+     "note": "Written from the calculated result by fixed rules. No figure is added, rounded away or inferred; the technical result above is unchanged.",
+     "numbers_cited": 2
+    },
+    "cautions": [],
+    "kind": "ml:features",
+    "points": [
+     "Left out: 'row_id' (looks like a row number or identifier: whole numbers in strictly increasing order); 'flat' (constant: it has a single value, so it cannot help tell rows apart).",
+     "Medians, scaling factors, category lists and clipping limits are learned from each training part only, inside every validation fold."
+    ],
+    "schema": "predictai.explanation/1",
+    "status": "available",
+    "summary": "The model uses 4 input columns, which become 6 numeric features after preparation.",
+    "terms": [
+     {
+      "meaning": "When an input contains the answer, or is only known after the outcome. A leaky model looks excellent in testing and fails in real use.",
+      "term": "data leakage"
+     }
+    ],
+    "title": "Explanation"
+   },
+   "importance": {
+    "basis": {
+     "method": "rules",
+     "note": "Written from the calculated result by fixed rules. No figure is added, rounded away or inferred; the technical result above is unchanged.",
+     "numbers_cited": 10
+    },
+    "cautions": [
+     "Importance describes what the model uses to predict. It does not show that a column causes the outcome, and correlated columns can share importance between them."
+    ],
+    "kind": "ml:importance",
+    "points": [
+     "Shuffling a column's values and re-scoring the model shows how much it depends on that column. The largest effects: 'x1' (0.236, 72% of the total); 'plan' (0.056, 17% of the total); 'x2' (0.035, 11% of the total); 'noise' (-0.003, 0% of the total).",
+     "For 'plan', 'x2' and 'noise' the effect is within normal run-to-run variation, so the model may not really use them.",
+     "The model's own internal weights point to 'plan' (39%) as the heaviest input, which differs from the shuffling test. The two views measure different things (weights are not the same as dependence), so treat the ranking as uncertain.",
+     "SHAP is not part of this build, so no SHAP values are computed or claimed. Permutation importance, partial dependence and one-column-at-a-time local effects are provided instead."
+    ],
+    "schema": "predictai.explanation/1",
+    "status": "available",
+    "summary": "The model relies most on 'x1', which accounts for about 72% of the total importance.",
+    "terms": [
+     {
+      "meaning": "How much the model's score drops when one column's values are shuffled. A big drop means the model leans on that column.",
+      "term": "permutation importance"
+     }
+    ],
+    "title": "Explanation"
+   },
+   "learning_curve": {
+    "basis": {
+     "method": "rules",
+     "note": "Written from the calculated result by fixed rules. No figure is added, rounded away or inferred; the technical result above is unchanged.",
+     "numbers_cited": 6
+    },
+    "cautions": [],
+    "kind": "ml:learning_curve",
+    "points": [
+     "With 32 training rows the validation score was 0.813; with 160 it was 0.827.",
+     "At the largest size the training score was 0.836, a gap of 0.009 from the validation score."
+    ],
+    "schema": "predictai.explanation/1",
+    "status": "available",
+    "summary": "The validation score has levelled off, so more rows of the same kind are unlikely to change much.",
+    "terms": [
+     {
+      "meaning": "How the score changes as the model is given more training rows. It shows whether collecting more data is likely to help.",
+      "term": "learning curve"
+     },
+     {
+      "meaning": "When a model memorises its training data and does worse on new data. A large gap between training and validation scores is the warning sign.",
+      "term": "overfitting"
+     }
+    ],
+    "title": "Explanation"
+   },
+   "overfitting": {
+    "basis": {
+     "method": "rules",
+     "note": "Written from the calculated result by fixed rules. No figure is added, rounded away or inferred; the technical result above is unchanged.",
+     "numbers_cited": 4
+    },
+    "cautions": [],
+    "kind": "ml:overfitting",
+    "points": [
+     "Measured as balanced accuracy, the gap between the training rows and unseen rows is 0.008.",
+     "The cross-validation score (0.827) and the held-out score (0.864) differ by 0.037. Test and cross-validation scores agree within normal variation."
+    ],
+    "schema": "predictai.explanation/1",
+    "status": "available",
+    "summary": "The chosen model shows no sign of overfitting: the model scores about the same on rows it learned from and rows it had not seen.",
+    "terms": [
+     {
+      "meaning": "When a model memorises its training data and does worse on new data. A large gap between training and validation scores is the warning sign.",
+      "term": "overfitting"
+     },
+     {
+      "meaning": "Training and testing the model several times on different slices of the training data to see how stable its score is.",
+      "term": "cross-validation"
+     }
+    ],
+    "title": "Explanation"
+   },
+   "problem": {
+    "basis": {
+     "method": "rules",
+     "note": "Written from the calculated result by fixed rules. No figure is added, rounded away or inferred; the technical result above is unchanged.",
+     "numbers_cited": 6
+    },
+    "cautions": [],
+    "kind": "ml:problem",
+    "points": [
+     "The target has exactly two categories, so this is a binary classification.",
+     "300 rows were used: 240 to train and compare models, and 60 held back and used only for the final check.",
+     "Share of rows by outcome: 'false' (54%), 'true' (46%).",
+     "Models were compared using 3-fold cross-validation on the training rows; the held-out rows were never used to choose a model."
+    ],
+    "schema": "predictai.explanation/1",
+    "status": "available",
+    "summary": "The model predicts 'bought' as binary classification (two possible outcomes).",
+    "terms": [
+     {
+      "meaning": "Training and testing the model several times on different slices of the training data to see how stable its score is.",
+      "term": "cross-validation"
+     },
+     {
+      "meaning": "Rows set aside before any training. Because the model never saw them, their score is an honest preview of performance on new data.",
+      "term": "held-out rows"
+     }
+    ],
+    "title": "Explanation"
+   },
+   "ranking": {
+    "basis": {
+     "method": "rules",
+     "note": "Written from the calculated result by fixed rules. No figure is added, rounded away or inferred; the technical result above is unchanged.",
+     "numbers_cited": 6
+    },
+    "cautions": [],
+    "kind": "ml:ranking",
+    "points": [
+     "For reference, a model that ignores every input scores 0.5. The best model beats it clearly.",
+     "The cross-validation score varied by about 0.044 between folds, so differences smaller than that between models are not meaningful.",
+     "Next: Decision tree (0.684)."
+    ],
+    "schema": "predictai.explanation/1",
+    "status": "available",
+    "summary": "2 models were compared by ROC-AUC (higher is better). Logistic regression came first, scoring 0.827 in cross-validation and 0.864 on the held-out rows.",
+    "terms": [
+     {
+      "meaning": "Training and testing the model several times on different slices of the training data to see how stable its score is.",
+      "term": "cross-validation"
+     },
+     {
+      "meaning": "A reference model that ignores every input (always the most common class, or always the average). A useful model has to beat it clearly.",
+      "term": "baseline"
+     },
+     {
+      "meaning": "How well the model ranks positives above negatives, from 0.5 (no better than chance) to 1 (perfect ranking).",
+      "term": "ROC-AUC"
+     }
+    ],
+    "title": "Explanation"
+   }
+  },
+  "features": {
+   "dropped": [
+    {
+     "name": "row_id",
+     "reason": "Looks like a row number or identifier: whole numbers in strictly increasing order."
+    },
+    {
+     "name": "flat",
+     "reason": "Constant: it has a single value, so it cannot help tell rows apart."
+    }
+   ],
+   "encoded_columns": 6,
+   "leakage": [],
+   "principle": "Medians, scaling factors, category lists and clipping limits are learned from each training part only, inside every validation fold.",
+   "settings": {
+    "categorical_impute": "most_frequent",
+    "datetime_features": true,
+    "drop_duplicates": true,
+    "encoding": "onehot",
+    "high_cardinality": "frequency",
+    "log_transform": "none",
+    "max_missing_pct": 60.0,
+    "max_onehot_levels": 20,
+    "missing_indicator": false,
+    "numeric_impute": "median",
+    "outliers": "none",
+    "rare_category_min_frequency": 0.01,
+    "scaling": "auto"
+   },
+   "used": [
+    {
+     "action": "use",
+     "clip": false,
+     "flags": [],
+     "impute": "median",
+     "missing_indicator": false,
+     "name": "x1",
+     "notes": [],
+     "role": "numeric",
+     "scale": "auto",
+     "source_type": "float",
+     "transform": "none",
+     "why": "Numeric input."
+    },
+    {
+     "action": "use",
+     "clip": false,
+     "flags": [],
+     "impute": "median",
+     "missing_indicator": false,
+     "name": "x2",
+     "notes": [],
+     "role": "numeric",
+     "scale": "auto",
+     "source_type": "float",
+     "transform": "none",
+     "why": "Numeric input."
+    },
+    {
+     "action": "use",
+     "encoding": "onehot",
+     "flags": [],
+     "impute": "most_frequent",
+     "levels": 3,
+     "max_levels": 20,
+     "min_frequency": 0.01,
+     "missing_indicator": false,
+     "name": "plan",
+     "notes": [],
+     "numeric_labels": false,
+     "role": "categorical",
+     "source_type": "text",
+     "why": "Category column with 3 values."
+    },
+    {
+     "action": "use",
+     "clip": false,
+     "flags": [],
+     "impute": "median",
+     "missing_indicator": false,
+     "name": "noise",
+     "notes": [],
+     "role": "numeric",
+     "scale": "auto",
+     "source_type": "float",
+     "transform": "none",
+     "why": "Numeric input."
+    }
+   ]
+  },
+  "hpo": null,
+  "importance": {
+   "native": {
+    "available": true,
+    "basis": "Size of each coefficient (inputs were standardised, so sizes are comparable).",
+    "features": [
+     {
+      "feature": "plan",
+      "importance": 1.5365,
+      "share": 0.3925
+     },
+     {
+      "feature": "x1",
+      "importance": 1.2873,
+      "share": 0.3289
+     },
+     {
+      "feature": "x2",
+      "importance": 0.8666,
+      "share": 0.2214
+     },
+     {
+      "feature": "noise",
+      "importance": 0.224,
+      "share": 0.0572
+     }
+    ],
+    "kind": "coef",
+    "note": "Importance describes what the model uses to predict. It does not show that a column causes the outcome, and correlated columns can share importance between them.",
+    "top_encoded": [
+     {
+      "feature": "x1",
+      "origin": "x1",
+      "share": 0.3289
+     },
+     {
+      "feature": "x2",
+      "origin": "x2",
+      "share": 0.2214
+     },
+     {
+      "feature": "plan_pro",
+      "origin": "plan",
+      "share": 0.1952
+     },
+     {
+      "feature": "plan_basic",
+      "origin": "plan",
+      "share": 0.192
+     }
+    ]
+   },
+   "note": "Importance describes what the model uses to predict. It does not show that a column causes the outcome, and correlated columns can share importance between them.",
+   "partial_dependence": [
+    {
+     "available": true,
+     "explanation": {
+      "basis": {
+       "method": "rules",
+       "note": "Written from the calculated result by fixed rules. No figure is added, rounded away or inferred; the technical result above is unchanged.",
+       "numbers_cited": 5
+      },
+      "cautions": [
+       "This describes how the model behaves. It does not show what would happen if the real-world value changed."
+      ],
+      "kind": "ml:pdp",
+      "points": [
+       "The line is the average prediction when this column is set to each value and every other column keeps its real values.",
+       "Based on 60 reference rows for 'true'. The shaded band shows how much predictions vary between rows."
+      ],
+      "schema": "predictai.explanation/1",
+      "status": "available",
+      "summary": "As 'x1' goes from -1.595 to 1.262, the average prediction rises, from 0.11 to 0.785.",
+      "terms": [
+       {
+        "meaning": "The average prediction as one column is moved across its range while the others keep their real values. It describes the model's behaviour, not a cause.",
+        "term": "partial dependence"
+       }
+      ],
+      "title": "Explanation"
+     },
+     "feature": "x1",
+     "grid": [
+      -1.5945,
+      -1.3425,
+      -1.1087,
+      -0.9427
+     ],
+     "high": [
+      0.2532,
+      0.3257,
+      0.4014,
+      0.4585
+     ],
+     "kind": "numeric",
+     "low": [
+      0.0265,
+      0.0373,
+      0.051,
+      0.0636
+     ],
+     "note": "Average prediction when this column is set to each value and the other columns keep their real values. The band spans the 10th to 90th percentile of predictions across rows. This describes the model, not a cause.",
+     "rows_used": 60,
+     "series": {
+      "true": [
+       0.1103,
+       0.145,
+       0.1838,
+       0.2155
+      ]
+     },
+     "y_label": "Predicted probability"
+    },
+    {
+     "available": true,
+     "explanation": {
+      "basis": {
+       "method": "rules",
+       "note": "Written from the calculated result by fixed rules. No figure is added, rounded away or inferred; the technical result above is unchanged.",
+       "numbers_cited": 3
+      },
+      "cautions": [
+       "This describes how the model behaves. It does not show what would happen if the real-world value changed."
+      ],
+      "kind": "ml:pdp",
+      "points": [
+       "Each bar is the average prediction when the column is set to that category and every other column keeps its real values.",
+       "Based on 60 reference rows for 'true'. The shaded band shows how much predictions vary between rows."
+      ],
+      "schema": "predictai.explanation/1",
+      "status": "available",
+      "summary": "The model predicts the highest average for 'pro' (0.613) and the lowest for 'basic' (0.352).",
+      "terms": [
+       {
+        "meaning": "The average prediction as one column is moved across its range while the others keep their real values. It describes the model's behaviour, not a cause.",
+        "term": "partial dependence"
+       }
+      ],
+      "title": "Explanation"
+     },
+     "feature": "plan",
+     "grid": [
+      "basic",
+      "plus",
+      "pro"
+     ],
+     "high": [
+      0.7044,
+      0.8377,
+      0.9156
+     ],
+     "kind": "categorical",
+     "low": [
+      0.0757,
+      0.1506,
+      0.2716
+     ],
+     "note": "Average prediction when this column is set to each value and the other columns keep their real values. The band spans the 10th to 90th percentile of predictions across rows. This describes the model, not a cause.",
+     "rows_used": 60,
+     "series": {
+      "true": [
+       0.3517,
+       0.4838,
+       0.6126
+      ]
+     },
+     "y_label": "Predicted probability"
+    },
+    {
+     "available": true,
+     "explanation": {
+      "basis": {
+       "method": "rules",
+       "note": "Written from the calculated result by fixed rules. No figure is added, rounded away or inferred; the technical result above is unchanged.",
+       "numbers_cited": 5
+      },
+      "cautions": [
+       "This describes how the model behaves. It does not show what would happen if the real-world value changed."
+      ],
+      "kind": "ml:pdp",
+      "points": [
+       "The line is the average prediction when this column is set to each value and every other column keeps its real values.",
+       "Based on 60 reference rows for 'true'. The shaded band shows how much predictions vary between rows."
+      ],
+      "schema": "predictai.explanation/1",
+      "status": "available",
+      "summary": "As 'x2' goes from -1.661 to 1.611, the average prediction falls, from 0.658 to 0.214.",
+      "terms": [
+       {
+        "meaning": "The average prediction as one column is moved across its range while the others keep their real values. It describes the model's behaviour, not a cause.",
+        "term": "partial dependence"
+       }
+      ],
+      "title": "Explanation"
+     },
+     "feature": "x2",
+     "grid": [
+      -1.6614,
+      -1.4192,
+      -1.181,
+      -0.9933
+     ],
+     "high": [
+      0.9485,
+      0.9376,
+      0.9249,
+      0.9132
+     ],
+     "kind": "numeric",
+     "low": [
+      0.3313,
+      0.288,
+      0.2489,
+      0.2206
+     ],
+     "note": "Average prediction when this column is set to each value and the other columns keep their real values. The band spans the 10th to 90th percentile of predictions across rows. This describes the model, not a cause.",
+     "rows_used": 60,
+     "series": {
+      "true": [
+       0.6583,
+       0.6241,
+       0.5897,
+       0.5622
+      ]
+     },
+     "y_label": "Predicted probability"
+    }
+   ],
+   "permutation": {
+    "available": true,
+    "baseline_score": 0.8638,
+    "complete": true,
+    "features": [
+     {
+      "feature": "x1",
+      "importance": 0.2362,
+      "reliable": true,
+      "share": 0.7222,
+      "std": 0.0648
+     },
+     {
+      "feature": "plan",
+      "importance": 0.0563,
+      "reliable": false,
+      "share": 0.172,
+      "std": 0.0377
+     },
+     {
+      "feature": "x2",
+      "importance": 0.0346,
+      "reliable": false,
+      "share": 0.1058,
+      "std": 0.0451
+     },
+     {
+      "feature": "noise",
+      "importance": -0.0029,
+      "reliable": false,
+      "share": 0.0,
+      "std": 0.0071
+     }
+    ],
+    "metric": "roc_auc",
+    "note": "Importance describes what the model uses to predict. It does not show that a column causes the outcome, and correlated columns can share importance between them.",
+    "reading": "Importance is the drop in the score when a column's values are shuffled; a drop near zero means the model barely uses that column. 'reliable' means the drop is more than twice its run-to-run variation.",
+    "repeats": 5,
+    "rows_used": 60
+   },
+   "shap": {
+    "available": false,
+    "reason": "SHAP is not part of this build, so no SHAP values are computed or claimed. Permutation importance, partial dependence and one-column-at-a-time local effects are provided instead."
+   }
+  },
+  "isolation": {
+   "limits_applied": [
+    "row/cell caps",
+    "cooperative time budget",
+    "cooperative cancellation"
+   ],
+   "mode": "inprocess",
+   "note": "same process as the API"
+  },
+  "learning_curve": {
+   "available": true,
+   "complete": true,
+   "final_gap": 0.009,
+   "last_step_gain": 0.0,
+   "metric": "roc_auc",
+   "points": [
+    {
+     "train_rows": 32,
+     "train_score": 0.9185,
+     "validation_score": 0.8129,
+     "validation_std": 0.0494
+    },
+    {
+     "train_rows": 64,
+     "train_score": 0.8648,
+     "validation_score": 0.8152,
+     "validation_std": 0.058
+    },
+    {
+     "train_rows": 96,
+     "train_score": 0.8627,
+     "validation_score": 0.8213,
+     "validation_std": 0.047
+    },
+    {
+     "train_rows": 128,
+     "train_score": 0.8476,
+     "validation_score": 0.8267,
+     "validation_std": 0.0405
+    }
+   ],
+   "verdict": "converging"
+  },
+  "library_warnings": {},
+  "limitations": [
+   "The model describes patterns in the data it was trained on. It does not show what causes the outcome, and it can be wrong for new situations that differ from the training data.",
+   "Scores come from one random split plus cross-validation; with different data or a different seed they will move by a normal amount.",
+   "Predicted probabilities are model scores. Unless the calibration check is good, read them as rankings rather than as real frequencies, and never as guarantees."
+  ],
+  "metrics_plan": {
+   "chosen_by": "rule",
+   "computed": [
+    "accuracy",
+    "balanced accuracy",
+    "precision",
+    "recall"
+   ],
+   "higher_is_better": true,
+   "not_computed": [],
+   "note": "Scores are ranked so that higher is always better (error metrics are shown with their sign flipped inside the ranking and as ordinary positive numbers in tables).",
+   "primary": "roc_auc",
+   "primary_label": "ROC-AUC",
+   "reasons": [
+    "The classes are balanced; models are ranked by ROC-AUC, which judges how well the model separates the two classes at any cut-off."
+   ]
+  },
+  "ml_version": "1",
+  "model_id": "4b512def281241e39ab7e552f97cab5c",
+  "problem": {
+   "chosen_by": "rule",
+   "classes": [
+    "false",
+    "true"
+   ],
+   "positive_label": "true",
+   "recommended": "binary_classification",
+   "target": {
+    "distinct": 2,
+    "labelled": 300,
+    "missing": 0,
+    "missing_pct": 0.0,
+    "name": "bought",
+    "role": "categorical",
+    "rows": 300,
+    "type": "boolean"
+   },
+   "type": "binary_classification",
+   "why": "The target has exactly two categories, so this is a binary classification."
+  },
+  "ranking": [
+   {
+    "cv_primary": 0.8267,
+    "cv_primary_shown": 0.8267,
+    "cv_std": 0.044,
+    "delta_vs_best": 0.0,
+    "fit_s": 0.01,
+    "id": "logistic_regression",
+    "label": "Logistic regression",
+    "model_bytes": 3244,
+    "overfitting": "low",
+    "rank": 1,
+    "test_primary": 0.8638,
+    "test_primary_shown": 0.8638,
+    "tuned": false,
+    "within_one_se_of_best": false
+   },
+   {
+    "cv_primary": 0.6841,
+    "cv_primary_shown": 0.6841,
+    "cv_std": 0.0837,
+    "delta_vs_best": -0.1427,
+    "fit_s": 0.009,
+    "id": "decision_tree",
+    "label": "Decision tree",
+    "model_bytes": 9485,
+    "overfitting": "high",
+    "rank": 2,
+    "test_primary": 0.6562,
+    "test_primary_shown": 0.6562,
+    "tuned": false,
+    "within_one_se_of_best": false
+   }
+  ],
+  "reproducibility": {
+   "config": {
+    "algorithms": [
+     "logistic_regression",
+     "decision_tree"
+    ],
+    "class_weight": "auto",
+    "features": {
+     "exclude": [],
+     "include": null,
+     "overrides": {}
+    },
+    "hpo": {
+     "cv_folds": 3,
+     "method": "none",
+     "n_iter": 10,
+     "param_grids": {},
+     "top_k": 2
+    },
+    "max_train_rows": null,
+    "positive_label": null,
+    "preprocessing": {
+     "categorical_impute": "most_frequent",
+     "datetime_features": true,
+     "drop_duplicates": true,
+     "encoding": "onehot",
+     "high_cardinality": "frequency",
+     "log_transform": "none",
+     "max_missing_pct": 60.0,
+     "max_onehot_levels": 20,
+     "missing_indicator": false,
+     "numeric_impute": "median",
+     "outliers": "none",
+     "rare_category_min_frequency": 0.01,
+     "scaling": "auto"
+    },
+    "primary_metric": "auto",
+    "problem_type": "auto",
+    "rare_classes": "error",
+    "seed": 20240601,
+    "target": "bought",
+    "time_budget_s": 60,
+    "validation": {
+     "cv_folds": 3,
+     "cv_repeats": 2,
+     "cv_strategy": "auto",
+     "shuffle": true,
+     "test_size": 0.2,
+     "time_column": null
+    }
+   },
+   "ml_version": "1",
+   "seed": 20240601,
+   "statement": "The same dataset version, configuration and seed reproduce the same split, folds and model on the same library versions.",
+   "versions": {
+    "joblib": "1.6.0",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "python": "3.13.18",
+    "scikit_learn": "1.9.1",
+    "scipy": "1.18.1"
+   }
+  },
+  "resources": {
+   "duration_s": 1.43,
+   "stored_model_bytes": 2578,
+   "time_budget_s": 60.0,
+   "uncompressed_model_bytes": 3244
+  },
+  "schema": "predictai.ml-report/1",
+  "validation": {
+   "cross_validation": {
+    "folds": 3,
+    "notes": [],
+    "repeats": 1,
+    "strategy": "stratified_kfold"
+   },
+   "holdout": {
+    "stratified": true,
+    "test_rows": 60,
+    "test_size": 0.2,
+    "time_ordered": false,
+    "train_rows": 240
+   },
+   "seed": 20240601,
+   "selection_rule": "Models are ranked by their mean cross-validation score on the training rows. The held-out test rows are used only to report each model's final score, never to choose among models."
+  },
+  "warnings": []
+ }
+}

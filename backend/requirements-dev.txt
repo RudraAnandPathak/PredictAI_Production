@@ -1,0 +1,5 @@
+-r requirements.txt
+# Required by FastAPI's TestClient
+httpx>=0.27,<1.0
+# Needed by tests that read PDFs (uploaded documents, arXiv papers). Free and open source; also listed as optional in requirements-data.txt. Without it those tests cannot run.
+pypdf>=4.0,<7

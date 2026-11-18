@@ -1,0 +1,87 @@
+{
+ "dataset_research": {
+  "max_datasets": 3,
+  "note": "Questions about a selected dataset are answered by calculation with the platform's own analysis and model services. No data values leave the platform and no number is written by a language model.",
+  "questions": [
+   "distribution",
+   "explain",
+   "groups"
+  ]
+ },
+ "external_ai_allowed": false,
+ "follow_ups": true,
+ "freshness_days": null,
+ "levels": [
+  {
+   "about": "A quick answer from your own documents, plus a couple of web sources if you allow them.",
+   "key": "basic",
+   "label": "Basic",
+   "min_sources": 1,
+   "subtopics": 1,
+   "web_pages": 3
+  },
+  {
+   "about": "Background, key facts and recent developments on one topic.",
+   "key": "topic",
+   "label": "Topic overview",
+   "min_sources": 2,
+   "subtopics": 3,
+   "web_pages": 6
+  },
+  {
+   "about": "Two or more things side by side, with differences and agreements.",
+   "key": "comparative",
+   "label": "Comparative",
+   "min_sources": 2,
+   "subtopics": 3,
+   "web_pages": 10
+  }
+ ],
+ "search_providers": [
+  {
+   "allowed": true,
+   "available": true,
+   "description": "Free encyclopedia articles, read through the official MediaWiki API. A tertiary source: good for background and definitions; confirm important claims in primary sources.",
+   "host": "en.wikipedia.org",
+   "key": "wikipedia",
+   "label": "Wikipedia (English)",
+   "reads_documents": true,
+   "reason": null,
+   "source_type": "encyclopedia",
+   "tier": "tertiary"
+  },
+  {
+   "allowed": true,
+   "available": true,
+   "description": "Free scientific preprints (physics, mathematics, computer science, statistics, biology), read through arXiv's official API; full text from the paper's HTML or PDF. Preprints are not peer reviewed. Not endorsed or supported by arXiv.",
+   "host": "export.arxiv.org",
+   "key": "arxiv",
+   "label": "arXiv (preprints)",
+   "reads_documents": true,
+   "reason": null,
+   "source_type": "preprint",
+   "tier": "preprint"
+  },
+  {
+   "allowed": true,
+   "available": true,
+   "description": "General web search through a SearXNG metasearch server that the platform owner runs. Needs PREDICTAI_SEARXNG_URL.",
+   "host": "the configured SearXNG instance",
+   "key": "searxng",
+   "label": "SearXNG (your own instance)",
+   "reads_documents": false,
+   "reason": null,
+   "source_type": "web",
+   "tier": "secondary"
+  }
+ ],
+ "web": {
+  "allowed": true,
+  "providers": [
+   "wikipedia",
+   "arxiv",
+   "searxng"
+  ],
+  "why_not": []
+ }
+}

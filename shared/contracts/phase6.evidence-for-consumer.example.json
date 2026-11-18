@@ -1,0 +1,160 @@
+{
+ "consumers": [
+  "assistant",
+  "analytics",
+  "predictive"
+ ],
+ "project_id": "e0c1512ce60e4403a7ff62a2b1d9c765",
+ "research": [
+  {
+   "bundle_id": "156c02cbfea14dc9887b3ff55279917d",
+   "conclusions": [
+    {
+     "caveats": [
+      "Only one source in this research says this."
+     ],
+     "citations": [
+      "[S1] river.pdf, p. 1"
+     ],
+     "confidence": "single_source",
+     "confidence_label": "one source says this",
+     "id": "C1",
+     "origin": "user_provided",
+     "statement_type": "stated",
+     "statement_type_label": "stated as fact by the source",
+     "text": "The river rose by 2.4 metres on Tuesday after heavy rainfall."
+    }
+   ],
+   "conflicts": [],
+   "created_at": "2026-01-01T12:00:00.000000Z",
+   "gaps": [
+    {
+     "note": "Nothing relevant was found for this part.",
+     "subtopic": "t2",
+     "title": "Background and definitions"
+    },
+    {
+     "note": "Nothing relevant was found for this part.",
+     "subtopic": "t3",
+     "title": "Key facts and figures"
+    }
+   ],
+   "integrity": "d1ea130dccfc77f9f20f1f5f7a9e8452207f698d337a23ec57e48634749f76f3",
+   "limitations": [
+    "Findings quote the sources; the platform does not add facts of its own.",
+    "A search returns what a provider ranks highly, not everything that exists.",
+    "Findings are quotations from sources. PredictAI has not independently verified that a source is correct."
+   ],
+   "quality_verdict": "caution",
+   "question": "How high did the river rise after the heavy rainfall?",
+   "schema": "predictai.evidence_summary/1",
+   "session_id": "e381043d4561497ba9c6f9edda747406",
+   "status": "partial",
+   "used_web": false,
+   "warnings": [
+    "Enough evidence: 1 independent source(s) were used; this depth of research aims for at least 2; 2 part(s) of the plan found nothing.",
+    "Conclusions are no stronger than the evidence: 1 conclusion(s) rest on one source, hedged wording, a prediction or a disputed claim; each is labelled that way."
+   ]
+  },
+  {
+   "bundle_id": "a502da053c34403393e57be893e3d768",
+   "conclusions": [
+    {
+     "caveats": [
+      "Only one source in this research says this."
+     ],
+     "citations": [
+      "[S1] river.pdf, p. 1"
+     ],
+     "confidence": "single_source",
+     "confidence_label": "one source says this",
+     "id": "C1",
+     "origin": "user_provided",
+     "statement_type": "stated",
+     "statement_type_label": "stated as fact by the source",
+     "text": "The river rose by 2.4 metres on Tuesday after heavy rainfall."
+    }
+   ],
+   "conflicts": [],
+   "created_at": "2026-01-01T12:00:00.000000Z",
+   "gaps": [
+    {
+     "note": "Nothing relevant was found for this part.",
+     "subtopic": "t2",
+     "title": "Background and definitions"
+    },
+    {
+     "note": "Nothing relevant was found for this part.",
+     "subtopic": "t3",
+     "title": "Key facts and figures"
+    }
+   ],
+   "integrity": "f22ad472d5d7dcf087172cad782afc8ccc8454edc7819d9ee871baaf89c9c325",
+   "limitations": [
+    "Findings quote the sources; the platform does not add facts of its own.",
+    "A search returns what a provider ranks highly, not everything that exists.",
+    "Findings are quotations from sources. PredictAI has not independently verified that a source is correct."
+   ],
+   "quality_verdict": "caution",
+   "question": "How high did the river rise after the heavy rainfall?",
+   "schema": "predictai.evidence_summary/1",
+   "session_id": "e381043d4561497ba9c6f9edda747406",
+   "status": "partial",
+   "used_web": false,
+   "warnings": [
+    "Enough evidence: 1 independent source(s) were used; this depth of research aims for at least 2; 2 part(s) of the plan found nothing.",
+    "Conclusions are no stronger than the evidence: 1 conclusion(s) rest on one source, hedged wording, a prediction or a disputed claim; each is labelled that way."
+   ]
+  }
+ ],
+ "rules": [
+  "Keep each conclusion's statement type (quoted, uncertain, opinion, forecast, calculated) and its origin label when you show it.",
+  "Never present a forecast or a news report as an established fact.",
+  "Show the citations with the text. A conclusion without its citation is not evidence."
+ ],
+ "schema": "predictai.evidence_for_consumer/1",
+ "skipped": [],
+ "world": [
+  {
+   "articles": [
+    {
+     "headline": "Floods hit northern village as river rises",
+     "outlet": "Outlet B",
+     "published": "2025-12-31T12:00:00Z",
+     "statement_kind": "stated",
+     "url": "https://b.example/floods-hit-northern-village-as-river-rises"
+    },
+    {
+     "headline": "River flood: village evacuated",
+     "outlet": "Outlet C",
+     "published": "2025-12-31T12:00:00Z",
+     "statement_kind": "stated",
+     "url": "https://c.example/river-flood--village-evacuated"
+    },
+    {
+     "headline": "River floods northern village",
+     "outlet": "Outlet A",
+     "published": "2025-12-31T12:00:00Z",
+     "statement_kind": "stated",
+     "url": "https://a.example/river-floods-northern-village"
+    }
+   ],
+   "basis": "3 outlets report matching facts in plain wording and no disagreement was found.",
+   "caveat": "Reported by news outlets and not verified by PredictAI. Agreement between outlets is not proof.",
+   "disagreements": [],
+   "event_id": "b63b7427e0274a9bacbbbf228a7237a7",
+   "first_seen": "2025-12-31T12:00:00Z",
+   "label": "River floods northern village",
+   "last_seen": "2025-12-31T12:00:00Z",
+   "origin": "external_research",
+   "outlets": [
+    "outlet a",
+    "outlet b",
+    "outlet c"
+   ],
+   "schema": "predictai.world_event_summary/1",
+   "statement_type": "reported",
+   "status": "confirmed"
+  }
+ ]
+}

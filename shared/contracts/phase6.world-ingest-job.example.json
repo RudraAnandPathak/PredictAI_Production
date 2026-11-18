@@ -1,0 +1,61 @@
+{
+ "cancel_requested": false,
+ "created_at": "2026-01-01T12:00:00.000000Z",
+ "duration_ms": 15,
+ "error_code": null,
+ "error_message": null,
+ "finished_at": "2026-01-01T12:00:00.000000Z",
+ "id": "5f7a16be828243a1bfa2af4f144094d9",
+ "kind": "news_ingest",
+ "progress": {
+  "fraction": 1.0,
+  "message": "3 new article(s); 0 source(s) failed",
+  "phase": "completed",
+  "results": [
+   {
+    "duplicates": 0,
+    "error": null,
+    "name": "A",
+    "new": 1,
+    "project_total": 1,
+    "quarantined": 0,
+    "removed_sentences": 0,
+    "seen_before": 0,
+    "skipped": 0,
+    "source_id": "000d91fa1b1840d5a3fdfd48c9698c79",
+    "status": "ok"
+   },
+   {
+    "duplicates": 0,
+    "error": null,
+    "name": "B",
+    "new": 1,
+    "project_total": 2,
+    "quarantined": 0,
+    "removed_sentences": 0,
+    "seen_before": 0,
+    "skipped": 0,
+    "source_id": "6a512927124245b7a925aeb18648f82b",
+    "status": "ok"
+   },
+   {
+    "duplicates": 0,
+    "error": null,
+    "name": "C",
+    "new": 1,
+    "project_total": 3,
+    "quarantined": 0,
+    "removed_sentences": 0,
+    "seen_before": 0,
+    "skipped": 0,
+    "source_id": "ff2847bfdadf4578a4d751fb75470b07",
+    "status": "ok"
+   }
+  ]
+ },
+ "result_id": null,
+ "session_id": null,
+ "started_at": "2026-01-01T12:00:00.000000Z",
+ "status": "completed",
+ "subject_id": null
+}

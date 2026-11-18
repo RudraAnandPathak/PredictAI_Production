@@ -1,0 +1,39 @@
+{
+ "note": "Each test sends a short fixed phrase to the provider. None of your documents, data or questions is sent.",
+ "results": [
+  {
+   "checked_at": "2026-01-01T12:00:00.000000Z",
+   "contact_configured": false,
+   "fix": "Optional: set PREDICTAI_RESEARCH_CONTACT so requests identify who is asking, as Wikimedia asks.",
+   "host": "en.wikipedia.org",
+   "label": "Wikipedia (English)",
+   "message": "Wikipedia (Wikipedia) answered through its official API.",
+   "ok": true,
+   "provider": "wikipedia",
+   "status": "ok"
+  },
+  {
+   "checked_at": "2026-01-01T12:00:00.000000Z",
+   "fix": "",
+   "host": "export.arxiv.org",
+   "label": "arXiv (preprints)",
+   "message": "arXiv answered through its official API.",
+   "ok": true,
+   "provider": "arxiv",
+   "status": "ok",
+   "total_results": 1
+  },
+  {
+   "checked_at": "2026-01-01T12:00:00.000000Z",
+   "fix": "",
+   "host": "the configured SearXNG instance",
+   "label": "SearXNG (your own instance)",
+   "message": "SearXNG answered in JSON with 1 results.",
+   "ok": true,
+   "provider": "searxng",
+   "results": 1,
+   "status": "ok",
+   "unresponsive_engines": []
+  }
+ ]
+}

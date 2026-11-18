@@ -1,0 +1,8 @@
+# Git integration
+
+* Uses the `git` command (not a library). Every invocation runs with hooks disabled, `protocol.allow` limited to https (plus `file` only when `PREDICTAI_DEV_GIT_ALLOW_LOCAL=true` on a non-hosted install), no system/global config, no prompts, and a controlled environment.
+* **Connect needs explicit consent** (`consent: true`, scope `read` or `read_write`). Remote must be `https://github.com/...` or `https://gitlab.com/...` (hosts from `PREDICTAI_DEV_GIT_HOSTS`); credentials in the URL, other ports, queries, `ext::`, `ssh`, `file` (unless allowed) are refused.
+* **Credentials** are encrypted secret records (purpose `git`), handed to git only through `GIT_ASKPASS` for that one command. They are never written to `.git/config`, notebooks, project files, job environments, logs, events or API responses; `.git/*`, `.env`, keys and `.netrc` cannot be saved as project files; a commit containing credential-looking content is refused and unstaged.
+* Operations: init, status, log, diff, branches, tags, commit, switch, pull (fast-forward only; refused with uncommitted changes), push (current branch, never force, protected branches refused, read-only consent refused), disconnect (revokes the credential).
+* **Webhooks**: `POST /api/v1/dev/webhooks/git/{repo_id}`, no session, authenticated by HMAC-SHA256 (`X-Hub-Signature-256`) or GitLab token (`X-Gitlab-Token`) plus a unique delivery id (replay refused). Every failure returns the same 401; body size is capped; disconnected repos or owners who lost access are rejected.
+* **Not verified**: pushes/pulls to real github.com/gitlab.com and the `GIT_ASKPASS` flow with a real token (no network in the build sandbox). Verified with real local bare repositories.

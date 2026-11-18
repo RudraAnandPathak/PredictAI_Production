@@ -1,0 +1,355 @@
+{
+ "bundle": {
+  "ai": {
+   "note": "Conclusions are quotations; no model wrote any of them.",
+   "requested": false,
+   "status": "not_requested"
+  },
+  "asset_ids": [
+   "eb28f6750d714a05b6bb8d97af0c2300"
+  ],
+  "collection": {
+   "failures": [],
+   "searches": []
+  },
+  "conclusions": [
+   {
+    "authored_by": "extracted",
+    "caveats": [
+     "Only one source in this research says this."
+    ],
+    "confidence": "single_source",
+    "evidence": [
+     "E1"
+    ],
+    "finding": "F1",
+    "id": "C1",
+    "kind": "stated",
+    "sources": [
+     "S1"
+    ],
+    "subtopic": "t1",
+    "text": "The river rose by 2.4 metres on Tuesday after heavy rainfall."
+   }
+  ],
+  "conflicts": [],
+  "context": {
+   "counts": {
+    "calculated": 0,
+    "external_research": 0,
+    "model_prediction": 0,
+    "user_provided": 1
+   },
+   "excluded": [],
+   "included": [
+    {
+     "asset_id": "eb28f6750d714a05b6bb8d97af0c2300",
+     "kind": "document",
+     "name": "river.pdf",
+     "passages": 1
+    }
+   ],
+   "private_material": true,
+   "project_id": "e0c1512ce60e4403a7ff62a2b1d9c765"
+  },
+  "counts": {
+   "conclusions": 1,
+   "conflicts": 0,
+   "evidence": 1,
+   "findings": 1,
+   "gaps": 2,
+   "sources": 1
+  },
+  "created_at": "2026-01-01T12:00:00.000000Z",
+  "engine": "research-engine/1",
+  "evidence": [
+   {
+    "citation": {
+     "asset_id": "eb28f6750d714a05b6bb8d97af0c2300",
+     "chunk_id": "c00001",
+     "document": "river.pdf",
+     "end": 61,
+     "page_end": 1,
+     "page_estimated": false,
+     "page_start": 1,
+     "quote_sha256": "cc92583ed5a6b41e",
+     "section": null,
+     "start": 0,
+     "version_id": "5a0117fecc974121b51347a91ca21068"
+    },
+    "flags": {
+     "direction": "up",
+     "hedged": false,
+     "negated": false
+    },
+    "id": "E1",
+    "kind": "stated",
+    "location": {
+     "chunk_id": "c00001",
+     "page_end": 1,
+     "page_estimated": false,
+     "page_start": 1,
+     "section": null
+    },
+    "numbers": [
+     "2.4"
+    ],
+    "origin": "user_provided",
+    "pass": 1,
+    "quote": "The river rose by 2.4 metres on Tuesday after heavy rainfall.",
+    "score": 3.5079,
+    "source": "S1",
+    "subtopic": "t1"
+   }
+  ],
+  "findings": [
+   {
+    "agreement": "single_source",
+    "evidence": [
+     "E1"
+    ],
+    "id": "F1",
+    "kind": "stated",
+    "near_identical": false,
+    "numbers": [
+     "2.4"
+    ],
+    "origin": "user_provided",
+    "representative": "E1",
+    "sources": [
+     "S1"
+    ],
+    "statement": "The river rose by 2.4 metres on Tuesday after heavy rainfall.",
+    "subtopic": "t1"
+   }
+  ],
+  "gaps": [
+   {
+    "note": "Nothing relevant was found for this part.",
+    "subtopic": "t2",
+    "title": "Background and definitions"
+   },
+   {
+    "note": "Nothing relevant was found for this part.",
+    "subtopic": "t3",
+    "title": "Key facts and figures"
+   }
+  ],
+  "id": "156c02cbfea14dc9887b3ff55279917d",
+  "integrity": {
+   "algorithm": "sha256",
+   "covers": "every field except this one",
+   "sha256": "d1ea130dccfc77f9f20f1f5f7a9e8452207f698d337a23ec57e48634749f76f3"
+  },
+  "job_id": "d05116b094c640be8ce8120446fff41b",
+  "level": "topic",
+  "level_label": "Topic overview",
+  "limitations": [
+   "Findings quote the sources; the platform does not add facts of its own.",
+   "A search returns what a provider ranks highly, not everything that exists.",
+   "Findings are quotations from sources. PredictAI has not independently verified that a source is correct."
+  ],
+  "number": 1,
+  "plan": {
+   "entities": [],
+   "intent": "general",
+   "level": "topic",
+   "level_label": "Topic overview",
+   "limitations": [
+    "Findings quote the sources; the platform does not add facts of its own.",
+    "A search returns what a provider ranks highly, not everything that exists."
+   ],
+   "local": {
+    "datasets": [],
+    "documents": [
+     "eb28f6750d714a05b6bb8d97af0c2300"
+    ],
+    "passages_per_subtopic": 4
+   },
+   "min_sources": 2,
+   "plan_hash": "4cd6c95f279f346e6fe7cc9b8913dca7abb1ea3ed3bdad268091d833452005f9",
+   "question": "How high did the river rise after the heavy rainfall?",
+   "rounds": 1,
+   "subtopics": [
+    {
+     "id": "t1",
+     "purpose": "overview",
+     "query": "high river rise after heavy rainfall",
+     "title": "Overview"
+    },
+    {
+     "id": "t2",
+     "purpose": "background and definitions",
+     "query": "high river rise after heavy rainfall definition background",
+     "title": "Background and definitions"
+    },
+    {
+     "id": "t3",
+     "purpose": "key facts and figures",
+     "query": "high river rise after heavy rainfall facts statistics data",
+     "title": "Key facts and figures"
+    }
+   ],
+   "tasks": [
+    {
+     "depends_on": [],
+     "description": "Collect what is in your project that relates to the question (documents, datasets, saved analyses and models).",
+     "id": "k1",
+     "kind": "context"
+    },
+    {
+     "depends_on": [
+      "k1"
+     ],
+     "description": "Pick the passages that answer each subtopic and keep their exact wording and location.",
+     "id": "k3",
+     "kind": "extract"
+    },
+    {
+     "depends_on": [
+      "k3"
+     ],
+     "description": "Group agreeing statements, flag disagreements, separate facts from uncertain or predicted statements.",
+     "id": "k4",
+     "kind": "reconcile"
+    }
+   ],
+   "web": {
+    "enabled": false,
+    "freshness_days": null,
+    "max_pages": 4,
+    "providers": [],
+    "queries": []
+   }
+  },
+  "project_id": "e0c1512ce60e4403a7ff62a2b1d9c765",
+  "purpose": "general",
+  "quality": {
+   "checks": [
+    {
+     "detail": "All 1 cited passages were found again at the recorded place and match what was quoted.",
+     "id": "citations_exist",
+     "items": [],
+     "status": "pass",
+     "title": "Citations exist"
+    },
+    {
+     "detail": "All 1 conclusions quote or closely follow passages that were found.",
+     "id": "claims_supported",
+     "items": [],
+     "status": "pass",
+     "title": "Claims are supported"
+    },
+    {
+     "detail": "Every source was read successfully.",
+     "id": "sources_accessible",
+     "items": [],
+     "status": "pass",
+     "title": "Sources could be read"
+    }
+   ],
+   "counts": {
+    "fail": 0,
+    "info": 1,
+    "pass": 8,
+    "warn": 2
+   },
+   "note": "These checks re-read the finished result. They catch missing or broken citations and over-strong wording; they cannot tell you whether a source is right.",
+   "schema": "predictai.research_quality/1",
+   "verdict": "caution",
+   "warnings": [
+    "Enough evidence: 1 independent source(s) were used; this depth of research aims for at least 2; 2 part(s) of the plan found nothing.",
+    "Conclusions are no stronger than the evidence: 1 conclusion(s) rest on one source, hedged wording, a prediction or a disputed claim; each is labelled that way."
+   ]
+  },
+  "question": "How high did the river rise after the heavy rainfall?",
+  "removed": [],
+  "schema": "predictai.evidence_bundle/1",
+  "session_id": "e381043d4561497ba9c6f9edda747406",
+  "sources": [
+   {
+    "asset_id": "eb28f6750d714a05b6bb8d97af0c2300",
+    "freshness": {
+     "age_days": null,
+     "label": "not applicable",
+     "note": "Your own material.",
+     "outdated": null,
+     "published": null
+    },
+    "id": "S1",
+    "injection_removed": 0,
+    "kind": "document",
+    "origin": "user_provided",
+    "origin_label": "user_provided",
+    "page_estimated": false,
+    "ref_id": "5a0117fecc974121b51347a91ca21068",
+    "reliability": {
+     "level": "your file",
+     "note": "These are indicators, not a verdict. Check important claims against the source itself.",
+     "signals": [
+      {
+       "basis": "You provided it. PredictAI has not checked whether its content is accurate.",
+       "effect": "0",
+       "name": "your own file"
+      }
+     ]
+    },
+    "status": "ok",
+    "title": "river.pdf"
+   }
+  ],
+  "status": "partial",
+  "used_web": false,
+  "web": {
+   "approved": false,
+   "approved_queries": [],
+   "denied_reason": null,
+   "providers": [],
+   "queries_sent": [],
+   "requested": false,
+   "used": false
+  }
+ },
+ "explanation": {
+  "basis": {
+   "method": "rules",
+   "note": "Written from the calculated result by fixed rules. No figure is added, rounded away or inferred; the technical result above is unchanged.",
+   "numbers_cited": 7
+  },
+  "cautions": [
+   "Enough evidence: 1 independent source(s) were used; this depth of research aims for at least 2; 2 part(s) of the plan found nothing.",
+   "Conclusions are no stronger than the evidence: 1 conclusion(s) rest on one source, hedged wording, a prediction or a disputed claim; each is labelled that way."
+  ],
+  "kind": "research:bundle",
+  "points": [
+   "What this is: research on \"How high did the river rise after the heavy rainfall?\" at topic overview depth, split into 3 parts.",
+   "What was found (quoted from the sources, not rewritten): \"The river rose by 2.4 metres on Tuesday after heavy rainfall.\" (stated as fact by its source).",
+   "Sources: 1 from your project and 0 from the web. Open any conclusion to see the exact passage and where it came from."
+  ],
+  "schema": "predictai.explanation/1",
+  "status": "available",
+  "summary": "The research found some of what was asked, with gaps listed below. It used 1 readable source and quotes 1 passage.",
+  "terms": [
+   {
+    "meaning": "The exact place a passage came from: the page of your document, or the web address and the saved copy of the page that was read.",
+    "term": "citation"
+   },
+   {
+    "meaning": "More than one independent source states something similar. It makes a statement more likely to be reliable, but does not prove it.",
+    "term": "corroborated"
+   },
+   {
+    "meaning": "Whether a source states something as fact, hedges it, gives an opinion, or makes a forecast. A forecast or a model estimate is never a fact.",
+    "term": "statement type"
+   }
+  ],
+  "title": "Explanation"
+ },
+ "integrity_ok": true,
+ "label": null,
+ "saved": false,
+ "warnings": [
+  "Enough evidence: 1 independent source(s) were used; this depth of research aims for at least 2; 2 part(s) of the plan found nothing.",
+  "Conclusions are no stronger than the evidence: 1 conclusion(s) rest on one source, hedged wording, a prediction or a disputed claim; each is labelled that way."
+ ]
+}

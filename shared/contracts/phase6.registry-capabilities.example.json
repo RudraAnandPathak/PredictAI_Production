@@ -1,0 +1,16 @@
+{
+ "deployment": {
+  "reason": "PredictAI does not deploy models. A trained model can be used for predictions inside this product only.",
+  "state": "not supported"
+ },
+ "phase7": "Deployment state, promotion, rollback and experiment records are Model Registry requirements for Phase 7 (OUT-02).",
+ "read": [
+  "metadata",
+  "versions",
+  "dataset lineage"
+ ],
+ "rollback": {
+  "reason": "There is no deployment to roll back from. Older versions stay available to open, compare and predict with.",
+  "supported": false
+ }
+}

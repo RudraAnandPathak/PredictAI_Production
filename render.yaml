@@ -1,0 +1,35 @@
+# Render Blueprint for the PredictAI API (Phase 11). Values marked sync: false are entered in the Render dashboard, never here.
+# Files (uploads, models, exports) are still written to the instance's temporary disk and are lost on restart until object
+# storage is added (next phase). See docs/PHASE11_TURSO_DATABASE_INTEGRATION.md.
+services:
+  - type: web
+    name: predictai-api
+    runtime: python
+    region: singapore
+    plan: starter            # the free plan sleeps after 15 minutes idle and has 512 MB RAM; change to free knowingly
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt -r requirements-turso.txt
+    # Migrations are forward-only and safe to run on every start (each one is applied once even if two instances start together).
+    startCommand: python -m app.cli migrate && uvicorn app.main:app --host 0.0.0.0 --port $PORT --proxy-headers
+    healthCheckPath: /api/v1/health/ready
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.13"            # the version the app is tested on; if pip finds no libsql wheel for it, try 3.12 and run the live tests
+      - key: PREDICTAI_ENV
+        value: production
+      - key: PREDICTAI_DATABASE_BACKEND
+        value: turso
+      - key: PREDICTAI_TURSO_MODE
+        value: remote
+      - key: PREDICTAI_AUTO_MIGRATE
+        value: "false"
+      - key: TURSO_DATABASE_URL
+        sync: false
+      - key: TURSO_AUTH_TOKEN
+        sync: false
+      - key: PREDICTAI_SECRET_KEY
+        sync: false
+      - key: PREDICTAI_FRONTEND_BASE_URL
+        sync: false
+      - key: PREDICTAI_CORS_ALLOWED_ORIGINS
+        sync: false

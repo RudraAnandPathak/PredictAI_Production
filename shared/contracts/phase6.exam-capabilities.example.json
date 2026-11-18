@@ -1,0 +1,33 @@
+{
+ "available_now": [
+  {
+   "about": "Explain a topic using only the course documents you choose, with a citation for every statement. Outside sources are used only if you allow them.",
+   "key": "topic_research",
+   "label": "Source-grounded topic research"
+  },
+  {
+   "about": "Find the passages in your own documents that bear on a topic, ranked, with the page they came from.",
+   "key": "educational_evidence",
+   "label": "Educational evidence retrieval"
+  }
+ ],
+ "how_to_use": "Create a topic research session with course documents; it is planned first and runs only after you approve it.",
+ "not_available": [
+  {
+   "feature": "Syllabus analysis",
+   "id": "OUT-01a",
+   "needs": "A syllabus parser that turns a document into units and topics, checked against the person's own text, and an agreed definition of a topic."
+  },
+  {
+   "feature": "Past-paper analysis, topic recurrence and weight",
+   "id": "OUT-01b",
+   "needs": "Question segmentation for scanned and typed papers, a topic labelling method with a measured error rate, and rules for what counts as the same topic across years."
+  },
+  {
+   "feature": "Question generation (multiple choice, short answer, long answer)",
+   "id": "OUT-01c",
+   "needs": "Generation grounded in cited source text, checks that the answer key is supported by that text, and a review step before anything is shown as an exam question."
+  }
+ ],
+ "phase": "Exam Intelligence is a Phase 7 requirement. None of the features listed under not_available exists yet."
+}

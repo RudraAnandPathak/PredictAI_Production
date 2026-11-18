@@ -1,0 +1,12 @@
+# Optional parsers for Phase 3 data extraction. All are free and open source; none are needed to run the API.
+# Without one, the matching file type is reported as "cannot be read on this server yet" instead of failing silently.
+# Install with:  pip install -r requirements-data.txt
+pypdf>=4.0,<7          # PDF text layer and page counts (required for PDF support)
+pdfplumber>=0.11,<1    # optional: table detection in PDFs
+xlrd>=2.0,<3           # optional: legacy .xls spreadsheets
+chardet>=5,<6          # optional: better text-encoding guesses for CSV/TXT
+
+# Scanned PDFs (OCR) need two free system programs, not Python packages:
+#   macOS:   brew install tesseract poppler
+#   Debian:  apt-get install tesseract-ocr poppler-utils
+# Extra languages: tesseract-ocr-hin, tesseract-ocr-fra, ... then set PREDICTAI_OCR_LANGUAGES=eng+hin

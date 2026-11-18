@@ -1,0 +1,20 @@
+{
+ "cancel_requested": false,
+ "created_at": "2026-01-01T12:00:00.000000Z",
+ "duration_ms": 11,
+ "error_code": null,
+ "error_message": null,
+ "finished_at": "2026-01-01T12:00:00.000000Z",
+ "id": "d05116b094c640be8ce8120446fff41b",
+ "kind": "research",
+ "progress": {
+  "fraction": 1.0,
+  "message": "Done",
+  "phase": "completed"
+ },
+ "result_id": "156c02cbfea14dc9887b3ff55279917d",
+ "session_id": "e381043d4561497ba9c6f9edda747406",
+ "started_at": "2026-01-01T12:00:00.000000Z",
+ "status": "completed",
+ "subject_id": null
+}
