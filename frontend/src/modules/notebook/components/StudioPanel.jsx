@@ -32,7 +32,7 @@ function Output({ output, onCite, exportsFor, setMsg }) {
       <div className="btn-row">{(exportsFor(output.kind)).map((f) => <button key={f} type="button" className="btn btn--ghost" onClick={() => download(f)}>Download {EXPORT_LABEL[f]}</button>)}</div>
       {hasStructuredView(output.kind) ? <StructuredView output={output} onCite={onCite} /> : items.map((b, i) => (b.type === 'heading' ? <h4 key={i}><Parts parts={b.parts} output={output} onCite={onCite} /></h4>
         : b.type === 'item' ? <p key={i} className="nb-item">• <Parts parts={b.parts} output={output} onCite={onCite} /></p>
-          : <p key={i} className={b.note ? 'row__meta' : undefined}><Parts parts={b.parts} output={output} onCite={onCite} /></p>)))}
+          : <p key={i} className={b.note ? 'row__meta' : undefined}><Parts parts={b.parts} output={output} onCite={onCite} /></p>))}
       <ReviewBox key={output.id} kind="notebook_output" targetId={output.id} />
     </div>
   );
