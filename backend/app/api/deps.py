@@ -131,11 +131,11 @@ def set_session_cookie(request: Request, response: Response, issued) -> None:
     settings = request.app.state.settings
     response.set_cookie(
         key=settings.session_cookie_name, value=issued.token, max_age=issued.max_age_seconds if issued.persistent else None,
-        path="/", secure=settings.cookie_secure, httponly=True, samesite="lax",
+        path="/", secure=settings.cookie_secure, httponly=True, samesite="none",
     )
 
 
 def clear_session_cookie(request: Request, response: Response) -> None:
     settings = request.app.state.settings
     response.set_cookie(key=settings.session_cookie_name, value="", max_age=0, expires=0, path="/",
-                        secure=settings.cookie_secure, httponly=True, samesite="lax")
+                        secure=settings.cookie_secure, httponly=True, samesite="none")
