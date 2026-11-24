@@ -45,7 +45,7 @@ class Migration(unittest.TestCase):
             self.assertEqual(added, {"mon_checks", "mon_outcomes"})
             self.assertTrue(all(rows1[t] == [] for t in added))
             self.assertEqual(list(conn.execute("PRAGMA foreign_key_check")), [])
-            self.assertEqual(migrate(conn), [13, 14, 15, 16])
+            self.assertEqual(migrate(conn), [13, 14, 15, 16, 17])
             conn.close()
 
 

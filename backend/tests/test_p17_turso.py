@@ -297,9 +297,9 @@ class Migrations(Base):
                     t.join(120)
                 self.assertEqual(errors, [])
                 applied = sorted(v for r in results for v in r)
-                self.assertEqual(applied, list(range(1, 17)))           # every migration exactly once across the four
+                self.assertEqual(applied, list(range(1, 18)))           # every migration exactly once across the four
                 with make().session() as c:
-                    self.assertEqual(c.execute("SELECT COUNT(*) FROM schema_migrations").fetchone()[0], 16)
+                    self.assertEqual(c.execute("SELECT COUNT(*) FROM schema_migrations").fetchone()[0], 17)
 
     def test_a_failing_migration_names_itself_rolls_back_and_keeps_earlier_ones(self):
         mig = Path(self.tmp.name) / "migs"

@@ -49,6 +49,9 @@ export const identityApi = (client) => ({
   changePassword: ({ currentPassword, newPassword }) =>
     client.request('/me/password', { method: 'POST', body: { current_password: currentPassword, new_password: newPassword } }),
   deleteAccount: (password) => client.request('/me/delete', { method: 'POST', body: { password: password ?? null } }),
+  apiTokens: () => client.request('/me/api-tokens'),
+  createApiToken: (body) => client.request('/me/api-tokens', { method: 'POST', body }),
+  revokeApiToken: (id) => client.request(`/me/api-tokens/${encodeURIComponent(id)}`, { method: 'DELETE' }),
   activateCode: (code) => client.request('/access-codes/activate', { method: 'POST', body: { code } }),
   entitlements: () => client.request('/me/entitlements'),
   sessions: () => client.request('/auth/sessions'),

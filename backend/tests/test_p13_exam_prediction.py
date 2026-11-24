@@ -610,7 +610,7 @@ class Migration(unittest.TestCase):
             pr_before = [tuple(r) for r in conn.execute("SELECT id, key, kind, label, enabled, privacy_class, paid, tasks, priority FROM ai_providers ORDER BY id")]
             with self.assertRaises(sqlite3.IntegrityError):
                 conn.execute("INSERT INTO exam_assessment_questions (id, assessment_id, position, text, qtype, marks, difficulty, origin) VALUES ('q2','a1',2,'x','short',1,'easy','ai_written')")
-            self.assertEqual(migrate(conn), [13, 14, 15, 16])
+            self.assertEqual(migrate(conn), [13, 14, 15, 16, 17])
             self.assertEqual([tuple(r) for r in conn.execute("SELECT * FROM exam_assessment_questions")], q_before)               # every question survives the copy, byte for byte
             self.assertEqual([tuple(r)[:len(a_before[0])] for r in conn.execute("SELECT * FROM exam_assessments")], a_before)
             self.assertEqual([tuple(r) for r in conn.execute("SELECT id, key, kind, label, enabled, privacy_class, paid, tasks, priority FROM ai_providers ORDER BY id")], pr_before)

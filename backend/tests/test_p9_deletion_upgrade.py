@@ -21,7 +21,7 @@ from p9_support import DevHarness
 class Upgrade(unittest.TestCase):
     def test_phase_eight_database_upgrades_to_phase_nine_adding_only_empty_dv_tables(self):
         migrations = discover()
-        self.assertEqual([m.version for m in migrations], list(range(1, 17)))        # Phase 10E added migration 16; Phase 10D added migration 15; Phase 10C added migration 14; Phase 10B added migration 13; Phase 10A added migration 12; Phase 10 added migrations 9, 10 and 11; the 7 -> 8 step below is checked against the migrations that existed at Phase 9
+        self.assertEqual([m.version for m in migrations], list(range(1, 18)))        # Personal API tokens added migration 17; Phase 10E added migration 16; Phase 10D added migration 15; Phase 10C added migration 14; Phase 10B added migration 13; Phase 10A added migration 12; Phase 10 added migrations 9, 10 and 11; the 7 -> 8 step below is checked against the migrations that existed at Phase 9
         with tempfile.TemporaryDirectory() as tmp:
             conn = sqlite3.connect(f"{tmp}/db.sqlite", isolation_level=None)
             conn.row_factory = sqlite3.Row

@@ -23,6 +23,7 @@ jobs:
           cache-dependency-path: backend/requirements-dev.txt
       - run: pip install -r requirements-dev.txt
       - run: pip install -r requirements-reports.txt   # Phase 7 export formats (the export tests need them)
+      - run: pip install -r requirements-devspace.txt   # Phase 9 secret storage (cryptography); the dev-workspace tests need it
       - run: python -m unittest discover -s tests -v
 
   frontend:

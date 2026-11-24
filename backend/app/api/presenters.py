@@ -21,5 +21,6 @@ def me_payload(services: Services, principal: Principal) -> Dict[str, Any]:
         "authz_version": principal.authz_version,
         "has_password": services.ctx.repo.password_identity(principal.user_id) is not None,
         "connected_providers": sorted(i["provider"] for i in services.ctx.repo.identities_for_user(principal.user_id) if i["provider"] != "password"),
-        "csrf_token": services.auth.csrf_for(principal.session_id),
+        "csrf_token": services.auth.csrf_for(principal.session_id) if principal.session_id else None,   # none for API-token requests
+        "via_api_token": bool(getattr(principal, "api_token_id", None)),
     }

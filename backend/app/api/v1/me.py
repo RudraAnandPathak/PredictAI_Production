@@ -33,6 +33,12 @@ class CodeBody(BaseModel):
     code: str = Field(max_length=200)
 
 
+class ApiTokenBody(BaseModel):
+    name: str = Field(max_length=80)
+    password: Optional[str] = Field(default=None, max_length=1024)   # absent for accounts that sign in only with Google/GitHub
+    expires_in_days: int = 90
+
+
 def _ok(request: Request, data: dict) -> dict:
     return success(data, request_id_from_scope(request.scope))
 
@@ -79,3 +85,22 @@ def my_entitlements(request: Request, principal: Principal = Depends(require_pri
 def activate_code(body: CodeBody, request: Request, principal: Principal = Depends(require_principal),
                   services: Services = Depends(get_services)) -> dict:
     return _ok(request, services.codes.activate(principal, body.code))
+
+
+# ---------------------------------------------------------------------------- personal API tokens (for your own scripts and AI agents)
+@router.get("/me/api-tokens", summary="Your personal API tokens (the token values are never shown again)")
+def list_api_tokens(request: Request, principal: Principal = Depends(require_principal), services: Services = Depends(get_services)) -> dict:
+    from ...modules.identity.api_tokens import ApiTokenService
+    return _ok(request, ApiTokenService(services.ctx).list(principal))
+
+
+@router.post("/me/api-tokens", status_code=201, summary="Create a personal API token (needs your password; the token is shown once)")
+def create_api_token(body: ApiTokenBody, request: Request, principal: Principal = Depends(require_principal), services: Services = Depends(get_services)) -> dict:
+    from ...modules.identity.api_tokens import ApiTokenService
+    return _ok(request, ApiTokenService(services.ctx).create(principal, body.name, body.password, body.expires_in_days))
+
+
+@router.delete("/me/api-tokens/{token_id}", summary="Revoke a personal API token")
+def revoke_api_token(token_id: str, request: Request, principal: Principal = Depends(require_principal), services: Services = Depends(get_services)) -> dict:
+    from ...modules.identity.api_tokens import ApiTokenService
+    return _ok(request, ApiTokenService(services.ctx).revoke(principal, token_id))

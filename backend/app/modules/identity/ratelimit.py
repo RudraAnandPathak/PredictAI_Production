@@ -69,6 +69,8 @@ POLICIES: Dict[str, Limit] = {
     "nb_deep:user": Limit(10, 3600),
     "nb_import:user": Limit(5, 3600),
     "review_write:user": Limit(60, 3600),
+    "api_token_create:user": Limit(20, 3600),
+    "api_token_auth:ip": Limit(30, 600),
     "p7_intel:user": Limit(60, 3600),
     "p7_report:user": Limit(60, 3600),
     "p7_export:user": Limit(60, 3600),

@@ -26,6 +26,7 @@ class Principal:
     authz_version: int
     session_id: Optional[str] = None
     reauthenticated_at: Optional[datetime] = None
+    api_token_id: Optional[str] = None          # set when the request was made with a personal API token instead of a browser session
 
     @property
     def is_owner(self) -> bool:

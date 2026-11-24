@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useAuth } from '../../features/identity/AuthContext.jsx';
 import { isOwner, hasSpecial } from '../../features/identity/permissions.js';
 import { AccessSection } from './AccessSection.jsx';
+import { ApiTokensSection } from './ApiTokensSection.jsx';
 import { ConnectedAccountsSection } from './ConnectedAccountsSection.jsx';
 import { DeleteSection } from './DeleteSection.jsx';
 import { PasswordSection } from './PasswordSection.jsx';
@@ -40,6 +41,7 @@ export function AccountPage() {
         <PasswordSection />
         <AccessSection />
         <SessionsSection />
+        <ApiTokensSection />
         <ConnectedAccountsSection outcome={outcome} />
         <DeleteSection />
       </div>

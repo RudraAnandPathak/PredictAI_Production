@@ -8,6 +8,7 @@ from ...db import transaction
 from .constants import Event, Role, Status
 from .context import Context
 from .errors import conflict, not_found, validation_failed
+from .api_token_revocation import revoke_user_tokens
 from .tokens import new_id
 from .validation import clean_display_name, normalize_email, password_problems
 
@@ -76,6 +77,7 @@ def recover_owner_access(ctx: Context, *, email: str, new_password: str) -> str:
         ctx.repo.update_user(user["id"], status=Status.ACTIVE, blocked_at=None, blocked_reason=None,
                              password_changed_at=now, updated_at=now, verified_at=user["verified_at"] or now)
         ctx.repo.revoke_user_sessions(user["id"], "owner_recovery", now)
+        revoke_user_tokens(ctx.conn, user["id"], "owner_recovery", now)
         ctx.repo.bump_authz_version(user["id"], now)
         ctx.audit.record(Event.OWNER_RECOVERED, target=user["id"], reason="server_command")
     ctx.mailer.security_notice(user["email"], "password_reset")

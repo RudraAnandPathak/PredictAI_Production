@@ -8,6 +8,7 @@ from .authentication import confirm_password, ensure_fresh_auth
 from .authorization import Principal, require
 from .constants import Event, Perm, Role, Status
 from .context import Context
+from .api_token_revocation import revoke_user_tokens
 from .errors import conflict, not_found, unavailable, validation_failed
 from .validation import clean_display_name
 
@@ -53,6 +54,7 @@ class UserService:
             ctx.repo.delete_identities_for_user(principal.user_id)
             ctx.repo.delete_sessions_for_user(principal.user_id)
             ctx.repo.delete_tokens_for_user(principal.user_id)
+            ctx.conn.execute("DELETE FROM api_tokens WHERE user_id = ?", (principal.user_id,))       # personal API tokens stop working at once
             ctx.repo.revoke_entitlements_for_user(principal.user_id, principal.user_id, "account_deleted", now)
             ctx.repo.revoke_roles_for_user(principal.user_id, principal.user_id, now)
             ctx.repo.bump_authz_version(principal.user_id, now)
@@ -115,6 +117,7 @@ class UserService:
         with transaction(ctx.conn):
             ctx.repo.update_user(target["id"], status=Status.BLOCKED, blocked_at=now, blocked_reason=text or None, updated_at=now)
             ctx.repo.revoke_user_sessions(target["id"], "account_blocked", now)
+            revoke_user_tokens(ctx.conn, target["id"], "account_blocked", now)
             ctx.repo.bump_authz_version(target["id"], now)
             ctx.audit.record(Event.USER_BLOCKED, actor=actor.user_id, target=target["id"], reason=text or None)
         ctx.mailer.security_notice(target["email"], "account_blocked")

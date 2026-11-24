@@ -118,7 +118,7 @@ class RegistrationAndLoginApiTests(ApiBase):
         cookie = response.headers.get_list("set-cookie")[0]
         for flag in ("HttpOnly", "Path=/", "Max-Age="):
             self.assertIn(flag, cookie)
-        self.assertRegex(cookie.lower(), r"samesite=lax")
+        self.assertRegex(cookie.lower(), r"samesite=none")  # cross-site frontend/API hosting (commit 1caa75e); browsers require Secure with it, which hosted environments force
         self.assertNotIn("Secure", cookie)  # test environment only; hosted environments force Secure (see config tests)
         data = response.json()["data"]
         self.assertEqual((data["email"], data["roles"], data["tiers"]), ("alice@example.com", ["user"], ["standard"]))

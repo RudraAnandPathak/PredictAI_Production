@@ -179,3 +179,6 @@ select.field__input { appearance: auto; }
 .review-box__star { position: relative; cursor: pointer; font-size: 1.5rem; line-height: 1; min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
 .review-box__star input { position: absolute; opacity: 0; width: 1px; height: 1px; }
 .review-box__star:focus-within { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+
+/* Personal API tokens */
+.token-value { display: block; word-break: break-all; padding: 0.5rem; background: var(--surface-2, rgba(0,0,0,0.04)); border-radius: 6px; user-select: all; }

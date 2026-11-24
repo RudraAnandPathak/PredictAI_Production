@@ -15,6 +15,7 @@ from .context import Context
 from .errors import (conflict, invalid_credentials, invalid_token, not_found, rate_limited, reauth_required,
                      session_expired, unauthenticated, validation_failed, wrong_password)
 from .ratelimit import Limit
+from .api_token_revocation import revoke_user_tokens
 from .tokens import csrf_token, hash_token, new_id, new_token
 from .validation import clean_display_name, normalize_email, password_problems, require_valid_password
 
@@ -166,6 +167,7 @@ class AuthService:
         ctx.repo.revoke_session(principal.session_id, reason, now)
         if revoke_others:
             ctx.repo.revoke_user_sessions(principal.user_id, "password_changed", now, except_id=issued.session_id)
+            revoke_user_tokens(ctx.conn, principal.user_id, "password_changed", now)
         return issued
 
     # ------------------------------------------------------------------ registration
@@ -398,5 +400,6 @@ class AuthService:
             ctx.repo.update_user(user["id"], **fields)
             ctx.repo.mark_identities_verified(user["id"])
             ctx.repo.revoke_user_sessions(user["id"], "password_reset", now)
+            revoke_user_tokens(ctx.conn, user["id"], "password_reset", now)
             ctx.audit.record(Event.PASSWORD_RESET_COMPLETED, actor=user["id"], target=user["id"])
         ctx.mailer.security_notice(user["email"], "password_reset")

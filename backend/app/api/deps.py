@@ -13,6 +13,7 @@ from ..core.errors import AppError
 from ..core.request_context import request_id_from_scope
 from ..db import MigrationError
 from ..modules.identity import errors as identity_errors
+from ..modules.identity import api_tokens
 from ..modules.identity.authorization import Principal
 from ..modules.identity.constants import Event
 from ..modules.identity.container import Services, build_services, run_housekeeping
@@ -76,9 +77,21 @@ def session_token(request: Request) -> Optional[str]:
     return request.cookies.get(request.app.state.settings.session_cookie_name)
 
 
+def _api_path(request: Request) -> str:
+    path = request.scope.get("path", "")
+    for prefix in ("/api/v1",):
+        if path.startswith(prefix):
+            return path[len(prefix):] or "/"
+    return path
+
+
 def enforce_csrf(request: Request, services: Services = Depends(get_services)) -> None:
-    """Router-level guard for state-changing requests: trusted Origin plus the session's CSRF token."""
+    """Router-level guard for state-changing requests: trusted Origin plus the session's CSRF token.
+    Requests authenticated with a personal API token (Authorization: Bearer pai_...) are exempt: CSRF abuses cookies a browser sends
+    by itself, and a browser never adds an Authorization header to a cross-site request. require_principal checks the token."""
     if request.method in SAFE_METHODS:
+        return
+    if api_tokens.bearer(request.headers.get("authorization")):
         return
     session_csrf = None
     token = session_token(request)
@@ -95,9 +108,17 @@ def enforce_csrf(request: Request, services: Services = Depends(get_services)) -
 
 
 def require_principal(request: Request, services: Services = Depends(get_services)) -> Principal:
-    principal = services.auth.authenticate(session_token(request))
+    raw = api_tokens.bearer(request.headers.get("authorization"))
+    if raw is not None:                                                    # a personal API token: only the agent routes, never owner or account tools
+        if not api_tokens.route_allowed(request.method, _api_path(request)):
+            raise AppError("TOKEN_NOT_ALLOWED", "API tokens can't be used for this. Open PredictAI in your browser to do it.", 403)
+        meta = getattr(services.ctx, "meta", None)
+        principal = api_tokens.ApiTokenService(services.ctx).authenticate(raw, ip=getattr(meta, "ip", None))
+    else:
+        principal = services.auth.authenticate(session_token(request))
     _maintenance_guard(request, services, principal)
     return principal
+
 
 
 def _maintenance_guard(request: Request, services: Services, principal: Principal) -> None:
