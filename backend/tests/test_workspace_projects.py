@@ -114,7 +114,7 @@ class ProjectTests(unittest.TestCase):
 class MigrationTests(unittest.TestCase):
     def test_history_is_preserved_and_upgrade_keeps_data(self):
         migrations = discover()
-        self.assertEqual([m.version for m in migrations], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16])
+        self.assertEqual([m.version for m in migrations], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17])
         self.assertEqual(migrations[0].name, "identity")
         import hashlib
 
@@ -127,7 +127,7 @@ class MigrationTests(unittest.TestCase):
             (only_first / "0001_identity.sql").write_text(migrations[0].sql)
             self.assertEqual(migrate(conn, only_first), [1])
             conn.execute("INSERT INTO users (id,email,email_normalized,status,created_at,updated_at) VALUES ('u1','a@x.io','a@x.io','active','t','t')")
-            self.assertEqual(migrate(conn), [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16])
+            self.assertEqual(migrate(conn), [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17])
             self.assertEqual(conn.execute("SELECT email FROM users WHERE id='u1'").fetchone()["email"], "a@x.io")
             tables = {r[0] for r in conn.execute("SELECT name FROM sqlite_master WHERE type='table'")}
             for name in ("projects", "assets", "asset_versions", "uploads", "upload_chunks", "extractions", "profiles", "transformations", "deletion_records", "project_events",
@@ -152,7 +152,7 @@ class MigrationTests(unittest.TestCase):
             self.assertEqual(migrate(conn, phase3), [1, 2])
             conn.execute("INSERT INTO users (id,email,email_normalized,status,created_at,updated_at) VALUES ('u1','a@x.io','a@x.io','active','t','t')")
             before = [dict(r) for r in conn.execute("SELECT version, checksum FROM schema_migrations ORDER BY version")] if "schema_migrations" in {r[0] for r in conn.execute("SELECT name FROM sqlite_master")} else None
-            self.assertEqual(migrate(conn), [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16])
+            self.assertEqual(migrate(conn), [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17])
             self.assertEqual(conn.execute("SELECT email FROM users WHERE id='u1'").fetchone()["email"], "a@x.io")
             if before is not None:
                 after = [dict(r) for r in conn.execute("SELECT version, checksum FROM schema_migrations WHERE version IN (1, 2) ORDER BY version")]
@@ -358,7 +358,7 @@ class MigrationTests(unittest.TestCase):
             self.assertTrue({"id", "project_id", "asset_id", "owner_user_id", "status", "config", "cancel_requested"} <= set(cols), cols)
             with self.assertRaises(sqlite3.IntegrityError):
                 conn.execute("INSERT INTO ml_jobs (id, project_id, asset_id, version_id, owner_user_id, status, config, config_hash, created_at) VALUES ('j','nope','nope','nope','nope','queued','{}','h','t')")
-        self.assertEqual([m.version for m in migrations][-1], 16)
+        self.assertEqual([m.version for m in migrations][-1], 17)
 
     def test_duplicate_live_assets_are_impossible_at_the_database_level(self):
         h = Harness()

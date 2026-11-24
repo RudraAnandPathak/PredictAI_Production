@@ -83,7 +83,7 @@ class ReportService(Service7):
                 if a["project_id"] != project_id:
                     raise conflict("PROJECT_MISMATCH", "All sources of a report must come from the same project.")
                 runs.append(run)
-                assets[run["asset_id"]] = a
+                assets[run["asset_id"]] = dict(a)  # composer reads it with .get(); DB rows (sqlite3.Row / libsql Row) have no .get
             pool = _merge(pool, C.dataset_pool(runs, assets, es))
             refs["run_ids"] = [r["id"] for r in runs]
             label = label or f"Analysis of {next(iter(assets.values()))['name']}"

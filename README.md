@@ -74,6 +74,10 @@ a random secret into `data/dev-secret-key` so sessions survive restarts.
 
 Backup/restore (`python -m app.ops.backup`), release manifest and migration-compatibility check (`python -m app.ops.release`), a security sweep and scanner, an accessibility contrast check, an offline performance baseline, pilot-scenario runner, 14 runbooks and a 16-gate release assessment. **Read `docs/phase11/RELEASE_GATES.md` first.** Verdict in one line: fine for local development; a restricted internal pilot only under the listed conditions; **not** ready for external or public release; untrusted code execution stays disabled. Nothing here was verified on a real server, in a browser, on macOS, with Docker or against live providers.
 
+## Personal API tokens and the agent skill
+
+People can create personal API tokens (Account → API tokens; password required, 30–180 day expiry, revocable, at most 10). A token is accepted as `Authorization: Bearer pai_…` only on an allow-list of analytics, ML and report routes: never for deletion, account changes, research or owner pages. Tokens are revoked on password change, reset, block and account deletion. This powers the PredictAI agent skill for AI coding agents. See `docs/phase12/API_TOKENS_AND_AGENT_SKILL.md`.
+
 ## Conversations
 
 One list and one chat over the dataset assistant and the research assistant: history, search, rename, delete, Markdown export, cited answers. See `docs/phase12/CONVERSATIONS.md`. Page: sidebar → Conversations. API: `/api/v1/conversations`.

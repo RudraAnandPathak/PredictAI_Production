@@ -23,7 +23,7 @@ class CliTests(unittest.TestCase):
     def test_migrate_applies_then_reports_up_to_date(self):
         with tempfile.TemporaryDirectory() as tmp:
             settings = replace(self.h.settings, database_path=f"{tmp}/fresh.db")
-            self.assertIn("Applied migrations: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]", self.run_cli(["migrate"], settings=settings)[1])
+            self.assertIn("Applied migrations: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]", self.run_cli(["migrate"], settings=settings)[1])
             self.assertIn("up to date", self.run_cli(["migrate"], settings=settings)[1])
 
     def test_other_commands_refuse_to_run_on_an_unmigrated_database(self):
