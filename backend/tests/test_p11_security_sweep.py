@@ -23,15 +23,24 @@ PUBLIC_PREFIXES = ("/auth/oauth", "/oauth")          # provider redirect/callbac
 
 
 def api_routes(app):
+    """Every (method, path under /api/v1). Walks nested routers/mounts too, because newer FastAPI/Starlette releases may keep included routers as one nested entry instead of flattening them."""
     seen = set()
-    for r in app.routes:
-        path = getattr(r, "path", "")
-        if not path.startswith("/api/v1"):
-            continue
-        for m in sorted(getattr(r, "methods", None) or []):
-            if m in ("HEAD", "OPTIONS"):
+
+    def walk(routes, prefix):
+        for r in routes:
+            path = prefix + getattr(r, "path", "")
+            inner = getattr(r, "routes", None)
+            if inner and not getattr(r, "methods", None):
+                walk(inner, path)
                 continue
-            seen.add((m, path[len("/api/v1"):]))
+            if not path.startswith("/api/v1"):
+                continue
+            for m in sorted(getattr(r, "methods", None) or []):
+                if m in ("HEAD", "OPTIONS"):
+                    continue
+                seen.add((m, path[len("/api/v1"):]))
+
+    walk(app.routes, "")
     return sorted(seen)
 
 
